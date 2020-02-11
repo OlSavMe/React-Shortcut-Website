@@ -1,12 +1,7 @@
 For Material-UI installation, run:
-
 ### npm install @material-ui/core
- or 
+or 
 ### yarn add @material-ui/core
-
-
-
-
 
 
 
