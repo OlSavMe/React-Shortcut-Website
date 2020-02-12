@@ -12,6 +12,7 @@ export default class Banner extends React.Component {
           adipisci nulla voluptatem.
         </p>
         <a>Our Story</a>
+        <img src="https://source.unsplash.com/user/kotecinho/6000x4000"></img>
       </div>
     );
   }
