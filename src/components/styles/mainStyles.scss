@@ -9,3 +9,12 @@ h1 {
 p {
   color: $black-color;
 }
+
+img {
+  width: 100%;
+}
+
+// @phone: ~"only screen and (max-width: 768px)";
+// @tablet: ~"only screen and (min-width: 768px) and (max-width: 1024px)";
+// @tablet-landscape: ~"only screen and (min-width: 1024px) and (max-width: 1200px)";
+// @desktop: ~"only screen and (min-width: 1200px)";
