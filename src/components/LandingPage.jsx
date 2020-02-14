@@ -16,7 +16,7 @@ export default class LandingPage extends React.Component {
                 <Nav />
                 <Banner />
                 <Calendar />
-                <CalendarItem />
+
                 <IconFlex />
                 <Footer />
 

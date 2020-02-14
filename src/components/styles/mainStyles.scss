@@ -12,8 +12,76 @@ p {
 
 img {
   width: 100%;
+
 }
 
+.maincontainer { 
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-shrink: 0; 
+  }
+.container { 
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-shrink: 0; 
+  margin: auto;
+  margin-top: 50px;
+  }
+  .image {
+    order: 1;
+    width: 50%;
+    display: flex;
+    padding: 20px;
+    object-fit: contain;
+    margin: auto;
+
+  }
+  .description {
+    order: 2;
+    width: 400px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+  
+
+  }
+
+  .activitybutton {
+    background-color: $yellow-color;
+    border: none;
+    color: $black-color;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    width: 150px;
+    
+  }
+
+  hr { 
+    
+    margin-top: 2em;
+    margin-bottom: 3em;
+    margin-left: 30vh;
+    margin-right: 20vh;
+    border-style: inset;
+    border-width: 2px;
+  } 
+
+  #calendarheader {
+    text-align: center;
+  }
+
+  .calendarbox {
+    margin-top: 20vh;;
+  }
 // @phone: ~"only screen and (max-width: 768px)";
 // @tablet: ~"only screen and (min-width: 768px) and (max-width: 1024px)";
 // @tablet-landscape: ~"only screen and (min-width: 1024px) and (max-width: 1200px)";
