@@ -1,26 +1,25 @@
-import React from 'react';
+import React from "react";
 import {
-    Banner,
-    Calendar,
-    CalendarItem,
-    IconFlex,
-    Footer,
-    Nav,
-} from './index.js'
-
+  Banner,
+  Calendar,
+  CalendarItem,
+  Partners,
+  Footer,
+  Nav
+} from "./index.js";
+import "./styles/mainStyles.scss";
 
 export default class LandingPage extends React.Component {
-    render() {
-        return (
-            <div style={{ margin: '70px' }}>
-                <Nav />
-                <Banner />
-                <Calendar />
-                <CalendarItem />
-                <IconFlex />
-                <Footer />
-
-            </div >
-        )
-    }
+  render() {
+    return (
+      <div className="landingPage">
+        <Nav />
+        <Banner />
+        <Calendar />
+        <CalendarItem />
+        <Partners />
+        <Footer />
+      </div>
+    );
+  }
 }
