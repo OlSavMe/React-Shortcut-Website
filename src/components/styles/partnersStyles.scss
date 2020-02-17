@@ -1,0 +1,28 @@
+// mainStyles.scss
+
+$yellow-color: rgb(253, 200, 30);
+$black-color: #202020;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// partnersStyles.scss
+
+.partners {
+  width: 100%;
+  background-color: $yellow-color;
+  padding: 100px 0;
+  @include flex-center;
+  flex-direction: column;
+
+  > div {
+    margin-bottom: 25px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
