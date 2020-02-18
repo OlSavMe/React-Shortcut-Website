@@ -1,5 +1,10 @@
+// mainStyles.scss
+
 $yellow-color: rgb(253, 200, 30);
-$black-color: #202020;
+$black-color: rgb(32, 32, 32);
+$red-color: #dc3545;
+$gray-color: rgb(111, 114, 135);
+$light-gray-color: #d3d3d3;
 
 @mixin phone {
   @media only screen and (max-width: 768px) {
@@ -31,78 +36,90 @@ $black-color: #202020;
   }
 }
 
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/*--------------EventList---------------*/
 
 .event-list {
-  width: 100%;
-  padding: 100px 0;
-  @include flex-center;
+  padding: 50px 0;
+  margin: 50px 0;
+  display: flex;
   flex-direction: column;
+  align-items: center;
 
-  h3 {
-    text-align: center;
+  .inner {
+    width: 90%;
+    padding: 50px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  a {
+    font-family: "CircularStd-Medium", sans-serif;
+    font-size: 1.5rem;
+    color: $black-color;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      outline: none;
+    }
   }
 }
 
+/*--------------EventListItem---------------*/
 .event-list-item {
-  width: 80%;
-  max-width: 60em;
-  padding: 75px 0;
-  border-bottom: 3px solid $black-color;
-  &:last-child {
-    border-bottom: none;
+  box-shadow: 0 0 10px $light-gray-color;
+  &:hover {
+    box-shadow: 0 0 30px $light-gray-color;
   }
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  transition: all 0.3s ease-in;
 
-  .image {
-    width: 40%;
-    p {
-      text-align: center;
-      font-size: 8rem;
-      font-family: "CircularStd-Bold";
-      line-height: 1;
-      span {
-        display: block;
-        font-size: 4rem;
-      }
-    }
-  }
+  width: 32%;
 
-  .text {
-    width: 60%;
-    h3 {
-      font-family: "CircularStd-Bold";
-      text-align: left;
-    }
-  }
-
-  button {
-    width: 200px;
-    color: $black-color;
-    border: 3px solid;
-    border-radius: 2px;
-    font-size: 1.5rem;
-    padding: 15px 15px;
-    margin: 15px 0;
-    &:hover {
-      color: $yellow-color;
-    }
+  @include tablet {
+    width: 48%;
   }
 
   @include phone {
-    width: 90%;
-    flex-direction: column;
-    max-width: 35em;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
 
-    .image,
-    .text {
-      width: 100%;
+  max-width: 30em;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  > div {
+    width: 100%;
+  }
+
+  .image {
+    margin-bottom: 25px;
+  }
+
+  .text {
+    h3,
+    p {
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+
+    .date {
+      color: $red-color;
+    }
+
+    .address {
+      color: $gray-color;
+    }
+
+    h3 {
+      text-align: left;
     }
   }
 }

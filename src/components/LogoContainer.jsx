@@ -8,28 +8,19 @@ export class LogoContainer extends Component {
     return (
       <div className="logo-container">
         <div className="logo">
-          <img src={require("../assets/shortcut-logo.png")} alt="" />
+          <img
+            src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_EU-logos-600x424.png"
+            alt=""
+          />
         </div>
         <div className="logo">
-          <img src={require("../assets/shortcut-logo.png")} alt="" />
+          <img src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Helsinki-logo-600x424.png "></img>
         </div>
         <div className="logo">
-          <img src={require("../assets/shortcut-logo.png")} alt="" />
-        </div>
-        <div className="logo">
-          <img src={require("../assets/shortcut-logo.png")} alt="" />
-        </div>
-        <div className="logo">
-          <img src={require("../assets/shortcut-logo.png")} alt="" />
-        </div>
-        <div className="logo">
-          <img src={require("../assets/shortcut-logo.png")} alt="" />
-        </div>
-        <div className="logo">
-          <img src={require("../assets/shortcut-logo.png")} alt="" />
-        </div>
-        <div className="logo">
-          <img src={require("../assets/shortcut-logo.png")} alt="" />
+          <img
+            src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Microsoft-logo-600x424.png "
+            alt=""
+          />
         </div>
       </div>
     );

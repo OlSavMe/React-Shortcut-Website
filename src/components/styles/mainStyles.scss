@@ -33,7 +33,10 @@
 /*--------------All colors---------------*/
 
 $yellow-color: rgb(253, 200, 30);
-$black-color: #202020;
+$black-color: rgb(32, 32, 32);
+$red-color: #dc3545;
+$gray-color: rgb(111, 114, 135);
+$light-gray-color: #d3d3d3;
 
 /*--------------Helper Mixins---------------*/
 @mixin flex-center {
@@ -77,28 +80,49 @@ h2 {
 
 h3 {
   font-size: 2rem;
+  font-family: "CircularStd-Medium";
 }
 
 p {
   font-size: 1.5rem;
 }
+// smallest texts - 1.25rem
 
 a {
+  font-family: "CircularStd-Medium", sans-serif;
   font-size: 1.5rem;
   color: $black-color;
   text-decoration: none;
   cursor: pointer;
   &:hover {
-    color: $black-color;
     text-decoration: underline;
+    outline: none;
   }
 }
-
 img {
   width: 100%;
   height: auto;
 }
 
+button {
+  width: 200px;
+  background-color: $black-color;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  padding: 15px 15px;
+  margin: 15px 0;
+  &:hover {
+    background-color: rgba(32, 32, 32, 0.9);
+  }
+  &:focus {
+    background-color: white;
+    border: 2px solid $black-color;
+    color: $black-color;
+    outline: none;
+  }
+}
 /*--------------Footer---------------*/
 .footer {
   width: 100vw;

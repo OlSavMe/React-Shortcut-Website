@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./styles/mainStyles.scss";
-import "./styles/EventListItemStyle.scss";
-
-// Placeholder image:
-//<img src={require(".././assets/placeholder-image.jpg")} />
 
 export default function EventListItem(props) {
   return (
     <div className="event-list-item">
       <div className="image">
-        <p>
-          <span>Feb</span>
-          12
-        </p>
+        <img src={require(".././assets/placeholder-image2.png")} />
       </div>
       <div className="text">
-        <h3>Activity title</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-          aspernatur! Ad recusandae consequatur quia itaque similique.
+        <p className="date">Thurs, 12 March, 17:30-19:30</p>
+        <h3>My Startup Debut</h3>
+        <p className="address">
+          The Shortcut Lab, <br />
+          Lapinlahdenkatu 16 (Entrance 15B), Helsinki
         </p>
-        <button>Register</button>
       </div>
     </div>
   );

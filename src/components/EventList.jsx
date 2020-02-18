@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
-
+import React from "react";
 import EventListItem from "./EventListItem";
+import "./styles/mainStyles.scss";
 import "./styles/EventListStyle.scss";
 
 export default function EventList(props) {
   return (
     <div className="event-list">
-      <EventListItem />
-      <EventListItem />
-      <EventListItem />
+      <h3>Upcoming events:</h3>
+      <div className="inner">
+        <EventListItem />
+        <EventListItem />
+        <EventListItem />
+      </div>
+      <a>See all events</a>
     </div>
   );
 }
