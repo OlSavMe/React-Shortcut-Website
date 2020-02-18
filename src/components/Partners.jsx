@@ -7,7 +7,7 @@ export default class Partners extends React.Component {
   render() {
     return (
       <div className="partners">
-        <h3>Our partners</h3>
+        <h3>Our partners:</h3>
         <LogoContainer />
         <a href="#">Become a partner</a>
       </div>

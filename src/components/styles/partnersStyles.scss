@@ -1,21 +1,17 @@
 // mainStyles.scss
-
 $yellow-color: rgb(253, 200, 30);
 $black-color: #202020;
-
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+$blue-color: rgb(23, 162, 184);
 
 // partnersStyles.scss
 
 .partners {
   width: 100%;
-  background-color: $yellow-color;
+  background-color: rgba(23, 162, 184, 0.2);
   padding: 100px 0;
-  @include flex-center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 
   > div {
@@ -24,5 +20,16 @@ $black-color: #202020;
 
   h3 {
     text-align: center;
+  }
+  a {
+    font-family: "CircularStd-Medium", sans-serif;
+    font-size: 1.5rem;
+    color: $black-color;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      outline: none;
+    }
   }
 }
