@@ -1,70 +1,108 @@
-
-
 $yellow-color: rgb(253, 200, 30);
 $black-color: #202020;
 
-
 @mixin phone {
-    @media only screen and (max-width: 768px) {
-      @content;
-    }
+  @media only screen and (max-width: 768px) {
+    @content;
   }
-  
-  @mixin tablet {
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-      @content;
-    }
-  }
-  
-  @mixin tablet-landcape {
-    @media only screen and (min-width: 1024px) and (max-width: 1200px) {
-      @content;
-    }
-  }
-  
-  @mixin desktop {
-    @media only screen and (min-width: 1200px) and (max-width: 1800px) {
-      @content;
-    }
-  }
-  
-  @mixin big-desktop {
-    @media only screen and (max-width: 1800px) {
-      @content;
-    }
-  }
-
-
-
-.event-list {
-    margin-top: 10%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    // @include phone {
-    //     background-color: blue;
-    //   }
-    //   @include desktop {
-    //     background-color: blue;
-    //   }
-   
-
-h1 {
-    text-align: center;
-    margin: 5%;
-    }
-// article{
-//     width: 100%;
-//     display: flex;
-//     flex-wrap: nowrap;
-//     flex-direction: column;
-//     // flex-shrink: 0; 
-//     // @include phone {
-//     //     background-color: blue;
-//     //   }
-
-// }
-
-
 }
 
+@mixin tablet {
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-landcape {
+  @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1200px) and (max-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media only screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-list {
+  width: 100%;
+  padding: 100px 0;
+  @include flex-center;
+  flex-direction: column;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.event-list-item {
+  width: 80%;
+  max-width: 60em;
+  padding: 75px 0;
+  border-bottom: 3px solid $black-color;
+  &:last-child {
+    border-bottom: none;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .image {
+    width: 40%;
+    p {
+      text-align: center;
+      font-size: 8rem;
+      font-family: "CircularStd-Bold";
+      line-height: 1;
+      span {
+        display: block;
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .text {
+    width: 60%;
+    h3 {
+      font-family: "CircularStd-Bold";
+      text-align: left;
+    }
+  }
+
+  button {
+    width: 200px;
+    color: $black-color;
+    border: 3px solid;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 15px 15px;
+    margin: 15px 0;
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+
+  @include phone {
+    width: 90%;
+    flex-direction: column;
+    max-width: 35em;
+
+    .image,
+    .text {
+      width: 100%;
+    }
+  }
+}
