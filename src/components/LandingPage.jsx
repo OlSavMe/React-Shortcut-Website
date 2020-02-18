@@ -3,9 +3,12 @@ import {
     Banner,
     Partners,
     Footer,
-    Nav
+    Nav,
+    EventListItem,
+    EventList
 } from "./index.js";
 import "./styles/mainStyles.scss";
+
 
 export default class LandingPage extends React.Component {
     render() {
@@ -13,7 +16,7 @@ export default class LandingPage extends React.Component {
             <div className="landingPage">
                 <Nav />
                 <Banner />
-
+                <EventList />
                 <Partners />
                 <Footer />
             </div>
