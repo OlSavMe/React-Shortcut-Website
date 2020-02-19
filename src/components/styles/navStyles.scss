@@ -1,0 +1,107 @@
+
+$yellow-color: rgb(253, 200, 30);
+$black-color: #202020;
+$white-color: white;
+$green-color: green;
+
+
+
+.navbar {
+    overflow: visible;
+    background-color: $white-color;
+    font-family: "CircularStd-Bold";
+    font-size: 1.5rem;
+    padding: 20px 70px;
+    margin-top: 50px;
+ }
+
+
+  .logo {
+    width: 20%;
+    margin-top: -70px;
+    justify-self: center;
+  
+  }
+  
+  /* Navigation links */
+  .navbar a {
+    float: left;
+    font-size: 1.5rem;
+    color: $black-color;
+    text-align: center;
+    padding: 40px 16px;
+    text-decoration: none;
+    
+  }
+  
+  /* The subnavigation menu */
+  .subnav {
+    overflow: visible;
+  }
+
+
+ 
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: inherit; 
+    border: none;
+    outline: none;
+    color: $black-color;
+    background-color: $white-color;
+    margin: 0;
+    width: fit-content;
+  }
+  
+  /* Add a red background color to navigation links on hover */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    color: $green-color;
+    background-color: $white-color;
+  }
+  
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    justify-content: stretch;
+    background-color: $white-color;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 1;
+    align-items: stretch;
+  }
+  
+  /* Style the subnav links */
+  .subnav-content a {
+    float: left;
+    color: $green-color;
+    text-decoration: none;
+
+  }
+
+
+  .navimage{
+    display: block;
+    margin: 0 0 .625rem;
+    max-width: 3.75rem;
+    width: 100%;
+    margin: 0.5rem 1rem 1rem;
+   
+  
+  }
+  
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: $white-color;
+    color: $green-color;
+   
+  }
+  
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+    padding: 0 50px;
+    text-align: center !important;
+  }
+
+
