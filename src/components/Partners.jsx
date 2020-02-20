@@ -9,7 +9,7 @@ export default class Partners extends React.Component {
       <div className="partners">
         <h3>Our partners:</h3>
         <LogoContainer />
-        <a href="#">Become a partner</a>
+        <a>Become a partner</a>
       </div>
     );
   }
