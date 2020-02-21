@@ -1,107 +1,157 @@
-
 $yellow-color: rgb(253, 200, 30);
 $black-color: #202020;
 $white-color: white;
 $green-color: green;
 
+@mixin phone {
+  @media only screen and (max-width: 950px) {
+    @content;
+  }
+}
 
+@mixin desktop {
+  @media only screen and (min-width: 1200px) and (max-width: 1800px) {
+    @content;
+  }
+}
 
-.navbar {
-    overflow: visible;
-    background-color: $white-color;
-    font-family: "CircularStd-Bold";
-    font-size: 1.5rem;
-    padding: 20px 70px;
-    margin-top: 50px;
- }
+@mixin big-desktop {
+  @media only screen and (min-width: 1800px) {
+    @content;
+  }
+}
 
+// Main container
+nav {
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 25px 0;
 
+  // Shortcut logo
   .logo {
-    width: 20%;
-    margin-top: -70px;
-    justify-self: center;
-  
-  }
-  
-  /* Navigation links */
-  .navbar a {
-    float: left;
-    font-size: 1.5rem;
-    color: $black-color;
-    text-align: center;
-    padding: 40px 16px;
-    text-decoration: none;
-    
-  }
-  
-  /* The subnavigation menu */
-  .subnav {
-    overflow: visible;
+    width: 150px;
   }
 
+  // Primary navigation
+  ul {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
 
- 
-  /* Subnav button */
-  .subnav .subnavbtn {
-    font-size: inherit; 
-    border: none;
-    outline: none;
-    color: $black-color;
-    background-color: $white-color;
-    margin: 0;
-    width: fit-content;
+    li {
+      list-style: none;
+      display: inline-block;
+      padding: 20px;
+
+      a {
+        color: $black-color;
+        text-decoration: none;
+        font-size: 1.2rem;
+        &:hover {
+          text-decoration: none;
+          color: #00a99d;
+        }
+      }
+    }
   }
-  
-  /* Add a red background color to navigation links on hover */
-  .navbar a:hover, .subnav:hover .subnavbtn {
-    color: $green-color;
-    background-color: $white-color;
-  }
-  
-  /* Style the subnav content - positioned absolute */
+
+  // Secondary navigation
+
   .subnav-content {
     display: none;
     position: absolute;
+    top: 120px;
     left: 0;
-    justify-content: stretch;
-    background-color: $white-color;
+    background-color: white;
     width: 100%;
-    justify-content: space-between;
-    z-index: 1;
-    align-items: stretch;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    > div {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .icon-container {
+        width: 100px;
+        margin: 0 auto;
+      }
+
+      li {
+        padding: 20px 5px;
+      }
+    }
   }
-  
-  /* Style the subnav links */
-  .subnav-content a {
-    float: left;
-    color: $green-color;
-    text-decoration: none;
 
+  .subnav {
+    &:hover {
+      .subnav-content {
+        display: flex;
+      }
+    }
   }
 
-
-  .navimage{
-    display: block;
-    margin: 0 0 .625rem;
-    max-width: 3.75rem;
+  .toggle {
     width: 100%;
-    margin: 0.5rem 1rem 1rem;
-   
-  
+    text-align: right;
+    display: none;
+    img {
+      width: 20px;
+    }
   }
-  
-  /* Add a grey background color on hover */
-  .subnav-content a:hover {
-    background-color: $white-color;
-    color: $green-color;
-   
-  }
-  
-  /* When you move the mouse over the subnav container, open the subnav content */
-  .subnav:hover .subnav-content {
-    display: block;
-    padding: 0 50px;
-    text-align: center !important;
-  }
+}
 
+// Mobile version
 
+nav {
+  @include phone {
+    .toggle {
+      display: block;
+    }
+
+    ul {
+      width: 100%;
+      height: calc(100vh - 120px);
+      position: absolute;
+      top: 120px;
+      display: flex;
+      background-color: white;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      display: none;
+      li {
+        display: block;
+      }
+
+      .subnav {
+        &:hover {
+          .subnav-content {
+            position: relative;
+            top: 0;
+            left: 0;
+            background-color: white;
+            width: 100%;
+
+            .icon-container {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}
