@@ -1,25 +1,15 @@
-import React from "react";
-import "./App.css";
-// import RevRestaurants from './components/RevRestaurants';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch // Redirect
-} from "react-router-dom";
-import LandingPage from "./components/LandingPage";
+import React, { Component } from "react";
+import "./App.scss";
+import LandingPage from "./sections/index/LandingPage";
 
-function App() {
-  return (
-    <Router>
-      <Switch>
-        <>
-          <div className="app">
-            <Route path="/" exact component={LandingPage} />
-          </div>
-        </>
-      </Switch>
-    </Router>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <div>
+        <LandingPage />
+      </div>
+    );
+  }
 }
 
 export default App;

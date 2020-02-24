@@ -1,0 +1,66 @@
+// Media queries
+@mixin phone {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 769px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet-landcape {
+  @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1200px) and (max-width: 1799px) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media only screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+// Colors
+$blue: rgb(77, 204, 229);
+$yellow: rgb(253, 200, 30);
+$green: rgb(0, 169, 157);
+$red: rgb(232, 89, 46);
+
+$black: rgb(32, 32, 32);
+$gray: rgb(111, 114, 135);
+$light-gray: rgb(211, 211, 211);
+
+header {
+  padding: 100px 0px 50px;
+  @include phone {
+    padding: 50px 0px;
+  }
+
+  // Page heading
+  h2 {
+    font-size: 4rem;
+    font-family: "CircularStd-Medium", sans-serif;
+
+    @include phone {
+      font-size: 10vw;
+    }
+  }
+
+  // Page subheading
+  h4 {
+    font-size: 2rem;
+
+    @include phone {
+      font-size: 5vw;
+    }
+  }
+}
