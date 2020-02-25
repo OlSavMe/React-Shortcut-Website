@@ -1,3 +1,6 @@
+@import '~font-awesome/css/font-awesome.min.css';
+
+
 // Media queries
 @mixin phone {
   @media only screen and (max-width: 768px) {
@@ -67,11 +70,21 @@ nav {
     margin: 0;
     padding: 0;
     display: flex;
+
+    .subnav >a::after{
+    
+      font-family: 'fontawesome'; 
+      content: "\f107";
+      color: black;
+      padding-left: 5px;
+}
    
    li {
       list-style: none;
       display: inline-block;
       padding: 20px;
+
+   
 
       a {
         color: $black;
@@ -81,6 +94,7 @@ nav {
           text-decoration: none;
           color: $green;
         }
+
       }
     }
     }
@@ -116,10 +130,21 @@ nav {
 
         a{
           border-bottom: 1px solid rgb(111, 114, 135);
+          
+
           }
         } 
       }
     }
+
+// .subnav a::before{
+//   content: 'f0d7';
+//   font-family: fontAwesome;
+//   position: absolute;
+//   color: black;
+//   left: 2px;
+
+// }
 
   .subnav {
     &:hover {
