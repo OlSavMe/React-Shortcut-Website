@@ -1,0 +1,19 @@
+// Colors
+$blue: rgb(77, 204, 229);
+$yellow: rgb(253, 200, 30);
+$green: rgb(0, 169, 157);
+$red: rgb(232, 89, 46);
+
+$black: rgb(32, 32, 32);
+$gray: rgb(111, 114, 135);
+$light-gray: rgb(211, 211, 211);
+
+footer {
+  width: 100vw;
+  height: 300px;
+  color: white;
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

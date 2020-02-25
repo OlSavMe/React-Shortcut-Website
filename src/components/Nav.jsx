@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/navStyles.scss";
+import "./stylesheets/NavStyles.scss";
 
 export default class Nav extends React.Component {
   constructor(props) {
@@ -16,47 +16,47 @@ export default class Nav extends React.Component {
     return (
       <nav>
         <div className="logo">
-          <img src={require(".././assets/shortcut-logo.png")}></img>
+          <img src={require(".././assets/shortcut-logo.png")} alt={""}></img>
         </div>
 
         <ul className={this.state.isActive ? "active" : ""}>
           {/*-------------------About--------------------*/}
           <li className="subnav">
-            <a className="subnav-btn" href="#">
+            <a className="subnav-btn" href="/#">
               About
             </a>
             <ul className="subnav-content">
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={" "}></img>
                 </div>
                 <li>Our story</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>Our team</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>Talents pool</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>Success stories</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>Contact</li>
               </div>
@@ -65,21 +65,21 @@ export default class Nav extends React.Component {
 
           {/*-------------------Activities-----------------*/}
           <li className="subnav">
-            <a className="subnav-btn" href="#">
+            <a className="subnav-btn" href="/#">
               Activities
             </a>
 
             <ul className="subnav-content">
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>What's on?</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>See all</li>
               </div>
@@ -88,41 +88,41 @@ export default class Nav extends React.Component {
 
           {/*-------------------Resources-----------------*/}
           <li className="subnav">
-            <a className="subnav-btn" href="#">
+            <a className="subnav-btn" href="/#">
               Resources
             </a>
             <ul className="subnav-content">
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>Blog</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>Gallery</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>Yearbook</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>White paper</li>
               </div>
 
               <div>
                 <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")}></img>
+                  <img src={require(".././assets/twitter.png")} alt={""}></img>
                 </div>
                 <li>For media</li>
               </div>
@@ -132,7 +132,7 @@ export default class Nav extends React.Component {
         </ul>
 
         <div className="toggle" onClick={this.toggleMenu}>
-          <a> X</a>
+          <a href="/#">X</a>
         </div>
       </nav>
     );
