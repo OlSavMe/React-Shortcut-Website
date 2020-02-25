@@ -18,123 +18,124 @@ export default class Nav extends React.Component {
         <div className="logo">
           <img src={require(".././assets/shortcut-logo.png")} alt={""}></img>
         </div>
-
-        <ul className={this.state.isActive ? "active" : ""}>
-          {/*-------------------About--------------------*/}
-          <li className="subnav">
-            <a className="subnav-btn" href="/#">
-              About
+        <section className={this.state.isActive ? "active" : ""}>
+          <ul>
+            {/*-------------------About--------------------*/}
+            <li className="subnav">
+              <a className="subnav-btn" href="/#">
+                About
             </a>
-            <ul className="subnav-content">
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={" "}></img>
+              <ul className="subnav-content">
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={" "}></img>
+                  </div>
+                  <li>Our story</li>
                 </div>
-                <li>Our story</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>Our team</li>
                 </div>
-                <li>Our team</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>Talents pool</li>
                 </div>
-                <li>Talents pool</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>Success stories</li>
                 </div>
-                <li>Success stories</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>Contact</li>
                 </div>
-                <li>Contact</li>
-              </div>
-            </ul>
-          </li>
+              </ul>
+            </li>
 
-          {/*-------------------Activities-----------------*/}
-          <li className="subnav">
-            <a className="subnav-btn" href="/#">
-              Activities
+            {/*-------------------Activities-----------------*/}
+            <li className="subnav">
+              <a className="subnav-btn" href="/#">
+                Activities
             </a>
 
-            <ul className="subnav-content">
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+              <ul className="subnav-content">
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>What's on?</li>
                 </div>
-                <li>What's on?</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>See all</li>
                 </div>
-                <li>See all</li>
-              </div>
-            </ul>
-          </li>
+              </ul>
+            </li>
 
-          {/*-------------------Resources-----------------*/}
-          <li className="subnav">
-            <a className="subnav-btn" href="/#">
-              Resources
+            {/*-------------------Resources-----------------*/}
+            <li className="subnav">
+              <a className="subnav-btn" href="/#">
+                Resources
             </a>
-            <ul className="subnav-content">
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+              <ul className="subnav-content">
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>Blog</li>
                 </div>
-                <li>Blog</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>Gallery</li>
                 </div>
-                <li>Gallery</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>Yearbook</li>
                 </div>
-                <li>Yearbook</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>White paper</li>
                 </div>
-                <li>White paper</li>
-              </div>
 
-              <div>
-                <div className="icon-container">
-                  <img src={require(".././assets/twitter.png")} alt={""}></img>
+                <div>
+                  <div className="icon-container">
+                    <img src={require(".././assets/twitter.png")} alt={""}></img>
+                  </div>
+                  <li>For media</li>
                 </div>
-                <li>For media</li>
-              </div>
-            </ul>
-          </li>
-          {/*-------------------For-partners-----------------*/}
-        </ul>
+              </ul>
+            </li>
+            {/*-------------------For-partners-----------------*/}
+          </ul>
+        </section>
 
         <div className="toggle" onClick={this.toggleMenu}>
           <a href="/#">X</a>
         </div>
-      </nav>
+      </nav >
     );
   }
 }

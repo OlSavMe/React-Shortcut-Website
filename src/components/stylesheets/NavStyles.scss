@@ -55,14 +55,20 @@ nav {
   }
 
   // Primary navigation
-  ul {
+  section {
     width: 80%;
     margin: 0 auto;
     padding: 0;
     display: flex;
     justify-content: flex-end;
 
-    li {
+   ul {
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+   
+   li {
       list-style: none;
       display: inline-block;
       padding: 20px;
@@ -76,6 +82,7 @@ nav {
           color: $green;
         }
       }
+    }
     }
   }
 
@@ -106,9 +113,13 @@ nav {
 
       li {
         padding: 20px 5px;
+
+        a{
+          border-bottom: 1px solid rgb(111, 114, 135);
+          }
+        } 
       }
     }
-  }
 
   .subnav {
     &:hover {
@@ -132,44 +143,77 @@ nav {
 
 nav {
   @include phone {
+padding: 0;
+justify-content: flex-end;
+height: 100px;
+
     .toggle {
       display: block;
+  
+      a {
+        padding-right: 5%;
+      }
     }
 
-    ul {
-      width: 100%;
-      height: calc(100vh - 120px);
+    .logo {
+      padding-left: 5%;
+    }
+
+    section {
+      width: 300px;
+      height: 100%;
       position: absolute;
-      top: 120px;
+      top: 100px;
       display: flex;
       background-color: white;
       flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-end;
       display: none;
+
+    ul {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       li {
-        display: block;
+        border-bottom: 1px solid #dbd9d2;
       }
 
       .subnav {
         &:hover {
+         
           .subnav-content {
-            position: relative;
+            text-align: left;
+            height: 100%;
             top: 0;
-            left: 0;
-            background-color: white;
-            width: 100%;
+            position: relative;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background-color: #f6f6f4;
 
-            .icon-container {
-              display: none;
+            > div {
+              width: 100%;
+              display: flex;
+              flex-direction: none;
+              justify-content: flex-start;
+              align-items: flex-start;
+              border-bottom: 1px solid #dbd9d2;
+              li {
+                border-bottom: none;
+              }
+              .icon-container {
+                display: none;
+              }
             }
           }
         }
       }
 
-      &.active {
-        display: flex;
-      }
     }
+    &.active {
+      display: flex;
+    }
+  }
   }
 }
