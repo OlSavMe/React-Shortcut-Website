@@ -60,10 +60,12 @@ nav {
   // Primary navigation
   section {
     width: 80%;
+    height: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 20px 0 0;
     display: flex;
     justify-content: flex-end;
+  
 
    ul {
 
@@ -93,6 +95,8 @@ nav {
         &:hover {
           text-decoration: none;
           color: $green;
+        }
+
         }
 
       }
@@ -128,11 +132,19 @@ nav {
       li {
         padding: 20px 5px;
 
-        a{
-          border-bottom: 1px solid rgb(111, 114, 135);
-          
-
+        .nav-link {
+          text-decoration: none;
+          font-size: inherit;
+          font-family: inherit;
+          padding: 0;
+          display: initial;
+          &:hover {
+            text-decoration: none;
+            color: $green;
           }
+
+        }
+
         } 
       }
     }
@@ -149,7 +161,8 @@ nav {
   .subnav {
     &:hover {
       .subnav-content {
-        display: flex;
+        display: flex !important;
+        z-index: 99999;
       }
       >a::after{
         font-family: 'fontawesome'; 
@@ -168,7 +181,7 @@ nav {
       width: 20px;
     }
   }
-}
+
 
 // Mobile version
 
@@ -245,6 +258,9 @@ height: 100px;
     &.active {
       display: flex;
     }
+    // &:visited{
+    //   display:inline-block !important;
+    //   }
   }
   }
 }

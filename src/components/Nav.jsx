@@ -1,7 +1,8 @@
 import React from "react";
 import "./stylesheets/NavStyles.scss";
-
-
+import {
+  Link
+} from "react-router-dom";
 
 
 export default class Nav extends React.Component {
@@ -19,7 +20,7 @@ export default class Nav extends React.Component {
     return (
       <nav>
         <div className="logo">
-          <img src={require(".././assets/shortcut-logo.png")} alt={""}></img>
+          <Link to="/home"><img src={require(".././assets/shortcut-logo.png")} alt={""}></img></Link>
         </div>
         <section className={this.state.isActive ? "active" : ""}>
           <ul>
@@ -33,14 +34,14 @@ export default class Nav extends React.Component {
                   <div className="icon-container">
                     <img src={require(".././assets/twitter.png")} alt={" "}></img>
                   </div>
-                  <li>Our story</li>
+                  <li><Link to="/ourstory" className="nav-link">Our story</Link></li>
                 </div>
 
                 <div>
                   <div className="icon-container">
                     <img src={require(".././assets/twitter.png")} alt={""}></img>
                   </div>
-                  <li>Our team</li>
+                  <li><Link to="/ourteam" className="nav-link">Our team</Link></li>
                 </div>
 
                 <div>
@@ -61,7 +62,7 @@ export default class Nav extends React.Component {
                   <div className="icon-container">
                     <img src={require(".././assets/twitter.png")} alt={""}></img>
                   </div>
-                  <li>Contact</li>
+                  <li><Link to="/contact" className="nav-link">Contact</Link></li>
                 </div>
               </ul>
             </li>
