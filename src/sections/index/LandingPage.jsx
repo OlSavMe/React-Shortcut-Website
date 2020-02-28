@@ -1,4 +1,7 @@
 import React from "react";
+import {
+  Link
+} from "react-router-dom";
 
 // Reusable components
 import { Nav, Footer } from "../../components/index.jsx";
