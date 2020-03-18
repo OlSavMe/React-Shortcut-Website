@@ -54,7 +54,7 @@ export default function OurTeam() {
                 <p>{teammate.acf.position}</p>
               </div>
               <div className="social-links">
-                <a href={teammate.acf.email}>
+                <a href={`mailto:${teammate.acf.email}`}>
                   <img
                     src="https://theshortcut.org/wp-content/uploads/2019/10/email-icon-01.png"
                     alt="mail-icon"
