@@ -67,11 +67,14 @@ main {
     padding: 0;
 
     // Teammate component styles
-    > div {
+  .card {
+    display: flex;
+    justify-content: space-between;
       width: 30%;
       max-width: 25em;
       padding: 50px 25px;
-
+      border: none;
+     
       @include phone {
         width: 100%;
       }
@@ -95,14 +98,15 @@ main {
         }
 
         p {
-          font-size: 1.5rem;
+          // p styles are anyway overwritten by App.scss
+          
         }
       }
 
       .social-links {
         display: flex;
         align-items: center;
-        > div {
+        > a {
           margin-right: 25px;
           // Letter icon
           &:first-child {
