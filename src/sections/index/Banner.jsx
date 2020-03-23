@@ -2,7 +2,7 @@ import React from "react";
 // Stylesheets
 import "./stylesheets/BannerStyles.scss";
 import bannervideo from '../../assets/video.mp4';
-import poster from '../../assets/poster.png';
+
 
 export default class Banner extends React.Component {
   render() {
