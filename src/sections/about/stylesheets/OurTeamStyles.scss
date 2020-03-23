@@ -67,7 +67,7 @@ main {
     padding: 0;
 
     // Teammate component styles
-  .card {
+  .card, i {
     display: flex;
     justify-content: space-between;
       width: 30%;
@@ -111,6 +111,10 @@ main {
           // Letter icon
           &:first-child {
             width: 50px;
+          }
+
+          #mail {
+            visibility: hidden;
           }
           // Linkedin icon
           &:nth-child(2) {
