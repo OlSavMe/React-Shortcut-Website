@@ -44,7 +44,7 @@ export default function Boardmember() {
                     </div>
                     <div className="social-links">
                         <a href='link'>
-                            <img
+                            <img id="mail"
                                 src="https://theshortcut.org/wp-content/uploads/2019/10/email-icon-01.png"
                                 alt="mail-icon"
                             ></img>
@@ -58,6 +58,11 @@ export default function Boardmember() {
                         </a>
                     </div>
                 </div>))}
+            <i aria-hidden={true}></i>
+            <i aria-hidden={true}></i>
+            <i aria-hidden={true}></i>
+            <i aria-hidden={true}></i>
+            <i aria-hidden={true}></i>
         </div>
 
     );

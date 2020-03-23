@@ -58,7 +58,12 @@ export default function Teammate() {
             </a>
           </div>
         </div>))}
-    </div>
+      <i aria-hidden={true}></i>
+      <i aria-hidden={true}></i>
+      <i aria-hidden={true}></i>
+      <i aria-hidden={true}></i>
+      <i aria-hidden={true}></i>
+    </div >
 
   );
 
