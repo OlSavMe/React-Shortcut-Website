@@ -4,9 +4,8 @@ import LandingPage from "./sections/index/LandingPage";
 import Contact from "./sections/about/Contact";
 import OurStory from "./sections/about/OurStory";
 import OurTeam from "./sections/about/OurTeam";
-import {
-  BrowserRouter as Router, Route, Switch
-} from 'react-router-dom';
+import FAQ from "./sections/about/FAQ";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export class App extends Component {
   render() {
@@ -25,6 +24,9 @@ export class App extends Component {
             </Route>
             <Route path="/ourteam">
               <OurTeam />
+            </Route>
+            <Route path="/faq">
+              <FAQ />
             </Route>
             <Route path="/contact">
               <Contact />
