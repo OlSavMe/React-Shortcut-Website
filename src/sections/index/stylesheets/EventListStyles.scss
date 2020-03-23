@@ -43,14 +43,17 @@ $light-gray: rgb(211, 211, 211);
 @mixin section-container {
   width: 70%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding-bottom: 100px;
+  margin-top: 5rem;
 
   @include phone {
     width: 90%;
+    margin-top: 3rem;
   }
 
   @include tablet {
     width: 80%;
+    margin-top: 4rem;
   }
   @include tablet-landcape {
     width: 80%;
@@ -68,6 +71,7 @@ $light-gray: rgb(211, 211, 211);
   display: flex;
   flex-direction: column;
   align-items: center;
+
 
   h3 {
     padding: 25px 0 50px;
@@ -116,6 +120,14 @@ $light-gray: rgb(211, 211, 211);
     margin-bottom: 50px;
     max-width: 35em;
  
+  }
+
+  @include tablet-landcape {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    max-width: 35em;
+    
   }
 
   @include big-desktop {
