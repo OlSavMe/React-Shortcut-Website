@@ -116,3 +116,15 @@ img {
   text-align: center;
   padding: 25px 0;
 }
+
+.link {
+  text-decoration: underline;
+  color: $black;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    color: $black;
+    outline: none;
+  }
+}

@@ -1,25 +1,16 @@
 import React from "react";
-import {
-  Link
-} from "react-router-dom";
-
-// Reusable components
 import { Nav, Footer } from "../../components/index.jsx";
-
-// Non-reusable components
 import Banner from "./Banner.jsx";
-import EventList from "./EventList.jsx";
+import Events from "./Events.jsx";
 import Partners from "./Partners.jsx";
-
-// Stylesheets
 
 export default class LandingPage extends React.Component {
   render() {
     return (
-      <div className="landingPage">
+      <div>
         <Nav />
         <Banner />
-        <EventList />
+        <Events />
         <Partners />
         <Footer />
       </div>
