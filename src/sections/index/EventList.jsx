@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
+import "./stylesheets/EventListStyles.scss";
 import css from "./Events.module.scss";
 import Axios from 'axios';
 
-export default function Events() {
+export default function EventList() {
   const [events, setEvents] = React.useState([]);
   const URL =
     "https://theshortcut.org/wp-json/wp/v2/events/?per_page=100";
@@ -105,3 +106,4 @@ export default function Events() {
     </div >
   );
 }
+
