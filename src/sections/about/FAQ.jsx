@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { Accordion, Card } from "react-bootstrap";
-import { Nav, Header } from "../../components/index.jsx";
+import { Nav, Footer } from "../../components/index.jsx";
+
 // Stylesheets
-import "./stylesheets/FAQStyles.scss";
+import css from "./FAQ.module.scss";
 
 import Axios from "axios";
 
@@ -21,27 +22,28 @@ export default function FAQ() {
   };
 
   // const colors = ["F0FAF9", "F7FBFD", "FFF5F1", "FFFBF4"];
-
   return (
     <>
       <Nav />
-      <main>
-        <Header
-          title="Frequently Asked Questions"
-          subtitle="How can we help?"
-        />
+      <header className={css.header}>
+        <div>
+          <h2>Frequently Asked Questions</h2>
+          <p>How can we help?</p>
+        </div>
+      </header>
 
+      <main className={css.main}>
         <Accordion>
           {faq.map((qna, i) => (
-            <Card key={i} className="qna">
+            <Card key={i} className={css.qna}>
               <Accordion.Toggle
                 as={Card.Header}
                 eventKey={i}
-                className="question"
+                className={css.question}
               >
                 <h4>{qna.acf.question}</h4>
               </Accordion.Toggle>
-              <Accordion.Collapse eventKey={i} className="answer">
+              <Accordion.Collapse eventKey={i} className={css.answer}>
                 <Card.Body>
                   <p>{qna.acf.answer}</p>
                 </Card.Body>
@@ -49,7 +51,14 @@ export default function FAQ() {
             </Card>
           ))}
         </Accordion>
+        <div className={css.illustration}>
+          <img
+            src={require("../../assets/illustrations/Illustrations_big-man-coding.png")}
+            alt="illustration"
+          />
+        </div>
       </main>
+      <Footer />
     </>
   );
 }

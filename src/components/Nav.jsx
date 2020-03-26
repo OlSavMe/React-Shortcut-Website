@@ -37,7 +37,7 @@ export default class Nav extends React.Component {
                     ></img>
                   </div>
                   <li>
-                    <Link to="/ourstory" className="nav-link">
+                    <Link to="/story" className="nav-link">
                       Our story
                     </Link>
                   </li>
@@ -51,7 +51,7 @@ export default class Nav extends React.Component {
                     ></img>
                   </div>
                   <li>
-                    <Link to="/ourteam" className="nav-link">
+                    <Link to="/team" className="nav-link">
                       Our team
                     </Link>
                   </li>
@@ -69,16 +69,6 @@ export default class Nav extends React.Component {
                       FAQ
                     </Link>
                   </li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>Success stories</li>
                 </div>
 
                 <div>

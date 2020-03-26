@@ -1,8 +1,15 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  font-family: "CircularStd-Book";
+  height: auto;
+  font-family: "Calibri", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,7 +19,16 @@ code {
     monospace;
 }
 
-/* Circular Std Font Family */
+h1,
+h2 {
+  font-family: "CircularStd-Bold";
+}
+
+img {
+  width: 100%;
+}
+
+/*-------------Circular Std Font Family-------------*/
 
 @font-face {
   font-family: "CircularStd-Black";
@@ -118,9 +134,32 @@ code {
     url("./assets/fonts/CircularStd-MediumItalic.ttf") format("truetype");
 }
 
+/*-------------Calibri Font Family-------------*/
+
 @font-face {
-  font-family: "Zurich-Lt-BT-Light";
+  font-family: "Calibri";
   font-style: normal;
-  src: local("Zurich-Lt-BT-Light"), local("Zurich-Lt-BT-Light"),
-    url("./assets/fonts/Zurich-Lt-BT-Light.ttf") format("truetype");
+  src: local("Calibri"), local("Calibri"),
+    url("./assets/fonts/Calibri.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Calibri-Bold";
+  font-style: normal;
+  src: local("Calibri-Bold"), local("Calibri-Bold"),
+    url("./assets/fonts/Calibri-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Calibri-Italic";
+  font-style: normal;
+  src: local("Calibri-Italic"), local("Calibri-Italic"),
+    url("./assets/fonts/Calibri-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Calibri-Bold-Italic";
+  font-style: normal;
+  src: local("Calibri Bold Italic"), local("Calibri Bold Italic"),
+    url("./assets/fonts/Calibri-Bold-Italic.ttf") format("truetype");
 }

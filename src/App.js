@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import "./App.scss";
 import LandingPage from "./sections/index/LandingPage";
 import Contact from "./sections/about/Contact";
-import OurStory from "./sections/about/OurStory";
-import OurTeam from "./sections/about/OurTeam";
+import Story from "./sections/about/Story";
+import Team from "./sections/about/Team";
 import FAQ from "./sections/about/FAQ";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -19,11 +18,11 @@ export class App extends Component {
             <Route path="/home">
               <LandingPage />
             </Route>
-            <Route path="/ourstory">
-              <OurStory />
+            <Route path="/story">
+              <Story />
             </Route>
-            <Route path="/ourteam">
-              <OurTeam />
+            <Route path="/team">
+              <Team />
             </Route>
             <Route path="/faq">
               <FAQ />

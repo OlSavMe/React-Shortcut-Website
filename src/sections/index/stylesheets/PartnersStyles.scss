@@ -35,6 +35,12 @@ $yellow: rgb(253, 200, 30);
 $green: rgb(0, 169, 157);
 $red: rgb(232, 89, 46);
 
+// Pastel TS Colors
+$pastel-blue: #f7fbfd;
+$pastel-yellow: #fffbf4;
+$pastel-green: #f0faf9;
+$pastel-red: #fff5f1;
+
 $black: rgb(32, 32, 32);
 $gray: rgb(111, 114, 135);
 $light-gray: rgb(211, 211, 211);
@@ -61,7 +67,7 @@ $light-gray: rgb(211, 211, 211);
 }
 
 .partners-bg {
-  background-color: rgba(23, 162, 184, 0.2);
+  background-color: $pastel-blue;
 }
 
 .partners {
