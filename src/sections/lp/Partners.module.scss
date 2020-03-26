@@ -1,0 +1,55 @@
+@import "../index.scss";
+
+.partners {
+  background-color: rgba(77, 204, 229, 0.1);
+}
+
+.container {
+  @include container;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  > div {
+    margin-bottom: 25px;
+  }
+
+  a {
+    font-family: "CircularStd-Book", sans-serif;
+    font-size: 1.5rem;
+  }
+}
+
+.logos {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .logo {
+    width: 25%;
+    padding: 25px;
+  }
+
+  @include tablet-landscape {
+    .logo {
+      width: 30%;
+    }
+  }
+
+  @include tablet {
+    .logo {
+      width: 30%;
+    }
+  }
+
+  @include phone {
+    .logo {
+      width: 50%;
+      max-width: 20em;
+      padding: 35px;
+    }
+  }
+}

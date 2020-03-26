@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LandingPage from "./sections/index/LandingPage";
+import LP from "./sections/lp/LP";
 import Contact from "./sections/about/Contact";
 import Story from "./sections/about/Story";
 import Team from "./sections/about/Team";
@@ -13,10 +13,10 @@ export class App extends Component {
         <div>
           <Switch>
             <Route exact path="/">
-              <LandingPage />
+              <LP />
             </Route>
             <Route path="/home">
-              <LandingPage />
+              <LP />
             </Route>
             <Route path="/story">
               <Story />

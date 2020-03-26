@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-// Reusable components
 import { Nav, Footer } from "../../components/index.jsx";
-// Non-reusable components
-
-// Stylesheets
 import css from "./Contact.module.scss";
 
 export class Contact extends Component {
@@ -82,7 +78,9 @@ export class Contact extends Component {
             Are you smart, beautiful, sexy dare devil? <br></br>
             Come join us!{" "}
           </p>
-          <a>Learn more</a>
+          <a className={css.link} href="/#">
+            Learn more
+          </a>
         </section>
 
         <Footer />
