@@ -1,0 +1,39 @@
+@import "./stylesheets/common.scss";
+
+.ourstory {
+  @include container;
+}
+
+header.header {
+  @include container;
+  padding: 100px 0 0;
+  @include phone {
+    padding: 50px 0 0;
+  }
+  display: flex;
+  align-items: center;
+
+  h2 {
+    @include page-title;
+  }
+
+  .illustration1 {
+    width: 100px;
+    @include phone {
+      width: 75px;
+    }
+    margin-left: 50px;
+    position: relative;
+    top: -25px;
+  }
+}
+
+.illustration2 {
+  width: 60%;
+  @include phone {
+    width: 80%;
+  }
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 50px 0;
+}

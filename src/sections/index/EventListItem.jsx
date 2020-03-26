@@ -16,6 +16,7 @@ export default function EventListItem(props) {
           The Shortcut Lab, <br />
           Lapinlahdenkatu 16 (Entrance 15B), Helsinki
         </p>
+        <button>register</button>
       </div>
     </div>
   );

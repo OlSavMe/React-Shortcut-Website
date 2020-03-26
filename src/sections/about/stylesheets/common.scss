@@ -1,0 +1,118 @@
+/*-------------------Variables-------------------*/
+
+// Colors
+$blue: rgb(77, 204, 229);
+$yellow: rgb(253, 200, 30);
+$green: rgb(0, 169, 157);
+$red: rgb(232, 89, 46);
+
+// Pastel TS Colors
+$pastel-blue: #f7fbfd;
+$pastel-yellow: #fffbf4;
+$pastel-green: #f0faf9;
+$pastel-red: #fff5f1;
+
+$black: rgb(32, 32, 32);
+$gray: rgb(111, 114, 135);
+$light-gray: rgb(211, 211, 211);
+
+/*-------------------Media queries-------------------*/
+@mixin phone {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 769px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1200px) and (max-width: 1799px) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media only screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+/*-------------------Mixins-------------------*/
+
+@mixin container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 50px 0;
+
+  @include phone {
+    width: 90%;
+  }
+
+  @include tablet {
+    width: 80%;
+  }
+
+  @include tablet-landscape {
+    width: 80%;
+  }
+
+  @include desktop {
+    width: 60%;
+  }
+
+  @include big-desktop {
+    width: 60%;
+    max-width: 80em;
+  }
+}
+
+@mixin page-title {
+  font-size: 4rem;
+  padding: 10px 0;
+
+  @include phone {
+    font-size: 3rem;
+  }
+}
+
+@mixin page-subtitle {
+  font-size: 1.5rem;
+  font-family: "CircularStd-Medium", sans-serif;
+  color: $green;
+
+  @include phone {
+    font-size: 1.25rem;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+// Regular text in paragraths
+.p {
+  font-size: 1.5rem;
+  @include phone {
+    font-size: 1.25rem;
+  }
+
+  line-height: 1.5;
+}
+
+// Heading in between page sections
+.heading {
+  font-family: "CircularStd-Medium", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  padding: 25px 0;
+}

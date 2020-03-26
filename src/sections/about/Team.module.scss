@@ -1,0 +1,143 @@
+@import "./stylesheets/common.scss";
+
+.teammates {
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 0;
+
+  @include phone {
+    justify-content: space-around;
+  }
+
+  @include tablet {
+    justify-content: space-around;
+  }
+}
+
+.boardmembers {
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 0;
+
+  @include phone {
+    justify-content: space-around;
+  }
+
+  @include tablet {
+    justify-content: space-around;
+  }
+  .links {
+    a:first-child {
+      display: none;
+    }
+  }
+}
+
+.header {
+  @include container;
+  padding: 100px 0 0;
+  @include phone {
+    padding: 50px 0 0;
+  }
+
+  display: flex;
+
+  h2 {
+    @include page-title;
+  }
+
+  p {
+    @include page-subtitle;
+  }
+  .illustration {
+    width: 150px;
+    @include phone {
+      width: 100px;
+    }
+
+    position: relative;
+    top: -25px;
+  }
+}
+
+.card,
+i {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid #dcdcdc;
+  box-shadow: 5px 5px 5px #f3f3f3;
+  border-radius: 2px;
+  background-color: white;
+  margin: 25px 10px;
+
+  @include phone {
+    width: 80%;
+    max-width: 17em;
+  }
+
+  @include tablet {
+    width: 50%;
+    max-width: 22em;
+  }
+
+  @include tablet-landscape {
+    width: 30%;
+  }
+
+  @include desktop {
+    width: 30%;
+  }
+
+  @include big-desktop {
+    width: 25%;
+  }
+
+  .info {
+    padding: 10px 5px;
+  }
+
+  h4 {
+    font-family: "Calibri-Bold", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .links {
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    > a {
+      margin-right: 15px;
+      // Letter icon
+      &:first-child {
+        width: 30px;
+      }
+
+      // Linkedin icon
+      &:nth-child(2) {
+        width: 20px;
+      }
+    }
+  }
+}
+
+i {
+  border: none;
+  box-shadow: none;
+  border-radius: none;
+
+  @include phone {
+    display: none;
+  }
+}

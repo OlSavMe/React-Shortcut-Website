@@ -1,15 +1,14 @@
 import React from "react";
 // Stylesheets
 import "./stylesheets/BannerStyles.scss";
-import bannervideo from '../../assets/video.mp4';
-
+//import bannervideo from "../../assets/.video.mp4.icloud";
 
 export default class Banner extends React.Component {
   render() {
     return (
       <div className="banner">
-        <video id='videobanner' autoPlay muted loop>
-          <source src={bannervideo} type="video/mp4"></source>
+        <video id="videobanner" autoPlay muted loop>
+          {/*<source src={bannervideo} type="video/mp4"></source>*/}
         </video>
         <div className="inner">
           <h1>The Shortcut</h1>
