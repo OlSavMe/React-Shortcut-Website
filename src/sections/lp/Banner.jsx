@@ -8,7 +8,7 @@ export default class Banner extends React.Component {
   render() {
     return (
       <div className={css.banner}>
-        <video id="videobanner" autoPlay muted loop>
+        <video autoPlay muted loop>
           <source src={bannervideo} type="video/mp4"></source>
         </video>
         <div className={css.inner}>
