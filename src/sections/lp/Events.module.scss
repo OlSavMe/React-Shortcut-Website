@@ -2,7 +2,24 @@
 
 // Outer container
 .events {
-  background: rgba(253, 200, 30, 0.1);
+
+  @include phone {
+    margin-top: 3rem;
+  }
+
+  @include tablet {
+    margin-top: 4rem;
+  }
+
+
+  @include desktop {
+    margin-top: 5rem;
+  }
+
+  @include big-desktop {
+    margin-top: 10rem;
+  }
+
 }
 
 // Inner container
@@ -13,7 +30,7 @@
   flex-direction: column;
   align-items: center;
 
-  > div {
+  .eventlist {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -33,8 +50,6 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 50px;
   width: 48%;
 
@@ -49,14 +64,14 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 50px;
-    max-width: 35em;
+    width: 48%;
   }
 
   @include tablet-landscape {
     width: 100%;
     margin: 0 auto;
     margin-bottom: 50px;
-    max-width: 35em;
+    width: 48%;
   }
 
   @include big-desktop {
@@ -64,12 +79,17 @@
     max-width: 35em;
   }
 
-  > div {
-    width: 100%;
-  }
+  // >div  {
+  //   width: 100%;
+  // }
 
   .info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     padding: 25px;
+    height: 100%;
+    justify-content: space-around;
 
     .date {
       font-size: 1.25rem;
@@ -88,7 +108,6 @@
     }
 
     .address {
-      font-size: 1.25rem;
       color: $gray;
       font-size: 1rem;
       line-height: 1;
@@ -97,6 +116,10 @@
 
     a {
       font-size: 1.25rem;
+      text-decoration: underline;
+      cursor: pointer;
+   
+
     }
   }
 
@@ -107,3 +130,5 @@
   }
   transition: all 0.3s ease-in;
 }
+
+
