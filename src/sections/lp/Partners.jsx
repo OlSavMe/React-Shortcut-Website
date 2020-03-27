@@ -6,47 +6,54 @@ export default class Partners extends React.Component {
     return (
       <div className={css.partners}>
         <div className={css.container}>
-          <h3 className={css.heading}>Our partners</h3>
+          <h3>Our partners</h3>
 
           <div className={css.logos}>
-            <div className={css.logo}>
+            <div>
               <img
                 src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_EU-logos-600x424.png"
                 alt="partner-logo"
               />
             </div>
 
-            <div className={css.logo}>
+            <div>
               <img
                 src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Helsinki-logo-600x424.png "
                 alt="partner-logo"
               ></img>
             </div>
 
-            <div className={css.logo}>
+            <div>
               <img
                 src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Microsoft-logo-600x424.png "
                 alt="partner-logo"
               />
             </div>
 
-            <div className={css.logo}>
+            <div>
               <img
-                src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_EU-logos-600x424.png"
-                alt="partner-logo"
-              />
-            </div>
-
-            <div className={css.logo}>
-              <img
-                src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Helsinki-logo-600x424.png "
+                src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Maria-01-logo-1.png"
                 alt="partner-logo"
               ></img>
             </div>
 
-            <div className={css.logo}>
+            <div>
               <img
-                src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Microsoft-logo-600x424.png "
+                src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Slush-logo-1.png"
+                alt="partner-logo"
+              />
+            </div>
+
+            <div>
+              <img
+                src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Junction-logo.png"
+                alt="partner-logo"
+              />
+            </div>
+
+            <div>
+              <img
+                src="https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Wave-Ventures-logo-2.png"
                 alt="partner-logo"
               />
             </div>
