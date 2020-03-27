@@ -5,48 +5,57 @@
 }
 
 .container {
-  @include container;
-
+  width: 80%;
+  margin: 0 auto;
+  padding: 100px 0;
+  max-width: 70em;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  > div {
-    margin-bottom: 25px;
+  h3 {
+    font-family: "CircularStd-Medium", sans-serif;
+    font-size: 2rem;
   }
 
   a {
-    font-family: "CircularStd-Book", sans-serif;
     font-size: 1.5rem;
+    font-family: "CircularStd-Book", sans-serif;
   }
 }
 
 .logos {
   width: 100%;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  .logo {
+
+  > div {
     width: 25%;
     padding: 25px;
+    transform: scale(1);
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.25);
+    }
   }
 
   @include tablet-landscape {
-    .logo {
+    > div {
       width: 30%;
     }
   }
 
   @include tablet {
-    .logo {
+    > div {
       width: 30%;
     }
   }
 
   @include phone {
-    .logo {
+    > div {
       width: 50%;
       max-width: 20em;
       padding: 35px;
