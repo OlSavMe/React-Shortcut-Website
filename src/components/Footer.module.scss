@@ -56,7 +56,7 @@ $black: rgb(32, 32, 32);
   display: flex;
   justify-content: space-between;
   > div {
-    width: 15%;
+    width: 13%;
   }
   img {
     filter: invert(100%);
@@ -139,6 +139,7 @@ $black: rgb(32, 32, 32);
       font-size: 1.25rem;
       padding: 5px;
       outline: none;
+      -webkit-appearance: none;
     }
 
     input[type="submit"] {

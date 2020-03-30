@@ -1,8 +1,9 @@
-import React from "react";
-import "./stylesheets/NavStyles.scss";
+import React, { Component } from "react";
+import "./Nav.scss";
+
 import { Link } from "react-router-dom";
 
-export default class Nav extends React.Component {
+export class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,177 +11,226 @@ export default class Nav extends React.Component {
     };
   }
 
-  toggleMenu = () => {
+  toggleActive = () => {
     this.setState(prevState => ({ isActive: !prevState.isActive }));
   };
+
   render() {
     return (
-      <nav>
-        <div className="logo">
-          <Link to="/home">
-            <img src={require(".././assets/shortcut-logo.png")} alt={""}></img>
-          </Link>
+      <div className="nav">
+        <div className="nav-container">
+          <div className="logo">
+            <div className="logo-desktop">
+              <Link to="/home">
+                <img
+                  src={require("../assets/icons/shortcut-logo.png")}
+                  alt="shortcut-logo"
+                />
+              </Link>
+            </div>
+            <div className="logo-mobile">
+              <Link to="/home">
+                <img
+                  src={require("../assets/icons/shortcut-logo-mobile.png")}
+                  alt="shortcut-logo"
+                />
+              </Link>
+            </div>
+          </div>
+          <nav>
+            <ul className={this.state.isActive ? "menu active" : "menu"}>
+              <li className="submenu">
+                <a href="/#" className="submenu-btn">
+                  About
+                </a>
+                <ul className="submenu-list">
+                  <Link to="/story" className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Our story</a>
+                  </Link>
+                  <Link to="/team" className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Our team</a>
+                  </Link>
+
+                  <Link to="/faq" className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">FAQ</a>
+                  </Link>
+                  <Link to="/contact" className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Contact</a>
+                  </Link>
+                </ul>
+              </li>
+              <li className="submenu" id="events">
+                <a className="submenu-btn" href="#events">
+                  Events
+                </a>
+                <ul className="submenu-list">
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">What's on?</a>
+                  </li>
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">All events</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="submenu" id="resources">
+                <a className="submenu-btn" href="#resources">
+                  Resources
+                </a>
+                <ul className="submenu-list">
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Blog</a>
+                  </li>
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Gallery</a>
+                  </li>
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Yearbook</a>
+                  </li>
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Whitepaper</a>
+                  </li>
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">For media</a>
+                  </li>
+                </ul>
+              </li>
+              <li className="submenu" id="partners">
+                <a className="submenu-btn" href="#partners">
+                  For partners
+                </a>
+                <ul className="submenu-list">
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Info</a>
+                  </li>
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Contact</a>
+                  </li>
+                </ul>
+              </li>
+              <li className="submenu" id="join">
+                <a className="submenu-btn" href="#join">
+                  Join
+                </a>
+                <ul className="submenu-list">
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Intern</a>
+                  </li>
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Volunteer</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <div className="search">
+            <img
+              src={require("../assets/icons/search.png")}
+              alt="search-icon"
+            />
+          </div>
+
+          <div
+            onClick={this.toggleActive}
+            className={this.state.isActive ? "toggle active" : "toggle"}
+          >
+            <div className="hamburger"></div>
+          </div>
         </div>
-        <section className={this.state.isActive ? "active" : ""}>
-          <ul>
-            {/*-------------------About--------------------*/}
-            <li className="subnav">
-              <a className="subnav-btn" href="/#">
-                About
-              </a>
-              <ul className="subnav-content">
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={" "}
-                    ></img>
-                  </div>
-                  <li>
-                    <Link to="/story" className="nav-link">
-                      Our story
-                    </Link>
-                  </li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>
-                    <Link to="/team" className="nav-link">
-                      Our team
-                    </Link>
-                  </li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>
-                    <Link to="/faq" className="nav-link">
-                      FAQ
-                    </Link>
-                  </li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>
-                    <Link to="/contact" className="nav-link">
-                      Contact
-                    </Link>
-                  </li>
-                </div>
-              </ul>
-            </li>
-
-            {/*-------------------Activities-----------------*/}
-            <li className="subnav">
-              <a className="subnav-btn" href="/#">
-                Activities
-              </a>
-
-              <ul className="subnav-content">
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>What's on?</li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>See all</li>
-                </div>
-              </ul>
-            </li>
-
-            {/*-------------------Resources-----------------*/}
-            <li className="subnav">
-              <a className="subnav-btn" href="/#">
-                Resources
-              </a>
-              <ul className="subnav-content">
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>Blog</li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>Gallery</li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>Yearbook</li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>White paper</li>
-                </div>
-
-                <div>
-                  <div className="icon-container">
-                    <img
-                      src={require(".././assets/twitter.png")}
-                      alt={""}
-                    ></img>
-                  </div>
-                  <li>For media</li>
-                </div>
-              </ul>
-            </li>
-            {/*-------------------For-partners-----------------*/}
-          </ul>
-        </section>
-
-        <div className="toggle" onClick={this.toggleMenu}>
-          <a href="/#">X</a>
-        </div>
-      </nav>
+      </div>
     );
   }
 }
+
+export default Nav;
