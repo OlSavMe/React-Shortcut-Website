@@ -55,7 +55,7 @@
   }
 
   .illustration {
-    width: 150px;
+    width: 300px;
     @include phone {
       width: 100px;
     }
@@ -142,4 +142,10 @@ i {
   @include phone {
     display: none;
   }
+}
+
+.illustrations {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
 }

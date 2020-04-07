@@ -2,6 +2,7 @@
 
 .form {
   @include container;
+  padding: 100px 0 0;
 
   display: flex;
   justify-content: space-between;
@@ -111,6 +112,10 @@
   padding: 50px 0;
 }
 
+/*
+Map 
+*/
+
 .location {
   display: flex;
   width: 100%;
@@ -122,8 +127,8 @@
 
   .address {
     width: 50%;
-    height: 600px;
-    background-color: rgba(253, 200, 30, 0.2);
+    height: 500px;
+    background-color: rgba(77, 204, 229, 0.25);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,17 +151,29 @@
       }
     }
   }
+
   .map {
     width: 50%;
-    height: 600px;
-    background-color: rgba(0, 169, 157, 0.2);
+    height: 500px;
+    //background-color: rgba(0, 169, 157, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .marker {
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 50px;
+      img {
+        width: 100%;
+      }
+    }
   }
 
   @include phone {
     flex-direction: column;
+    height: 1000px;
     .address {
       width: 100%;
     }
@@ -178,17 +195,12 @@
 .icon {
   width: 500px;
   margin: 0 auto;
-  padding: 25px 0 100px;
+  padding: 50px 0 100px;
   text-align: center;
+  position: relative;
   > div {
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
-  }
-
-  // Get img with no padding, remove following
-  img {
-    position: relative;
-    top: 20px;
   }
 
   h3 {

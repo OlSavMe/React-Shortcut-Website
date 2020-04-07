@@ -10,7 +10,7 @@
   height: calc(100vh - 100px);
   // 100vh - nav height
 
-  background-color: rgba(77, 204, 229, 0.2);
+  background-color: rgba(77, 204, 229, 0.25);
   .text {
     h1 {
       font-family: "CircularStd-Bold", sans-serif;
@@ -38,22 +38,4 @@
       }
     }
   }
-
-  /*
-  Hero video css:
-
-  overflow: hidden;
-
-  > video {
-    position: absolute;
-    z-index: -1;
-    height: auto;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    background-size: cover;
-    transition: 1s opacity;
-    background-attachment: fixed;
-    overflow: hidden;
-  }
-  */
 }

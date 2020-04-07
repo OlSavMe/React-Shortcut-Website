@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { Accordion, Card } from "react-bootstrap";
 import { Nav, Footer } from "../../components/index.jsx";
-
-// Stylesheets
 import css from "./FAQ.module.scss";
 
 import Axios from "axios";
@@ -16,11 +14,11 @@ export default function FAQ() {
   }, []);
 
   const getFaq = async () => {
-    await Axios.get(URL).then(response => {
+    await Axios.get(URL).then((response) => {
       setFaq(response.data);
     });
   };
-
+  console.log(faq);
   // const colors = ["F0FAF9", "F7FBFD", "FFF5F1", "FFFBF4"];
   return (
     <>
