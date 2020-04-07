@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Nav, Footer } from "../../components/index.jsx";
+import Map from "./Map";
 import css from "./Contact.module.scss";
 
 export class Contact extends Component {
@@ -63,13 +64,15 @@ export class Contact extends Component {
               </p>
             </div>
           </div>
-          <div className={css.map}>Map here</div>
+          <div className={css.map}>
+            <Map />
+          </div>
         </section>
 
         <section className={css.icon}>
           <div>
             <img
-              src={require("../../assets/icons/icon1.png")}
+              src={require("../../assets/icons/join-icon.png")}
               alt="illustration"
             />
           </div>

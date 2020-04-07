@@ -1,8 +1,5 @@
 import React from "react";
-// Reusable components
 import { Nav, Footer } from "../../components/index.jsx";
-
-// Stylesheets
 import css from "./Team.module.scss";
 
 import Teammates from "./Teammates";
@@ -22,7 +19,7 @@ export default function Team() {
         </div>
         <div className={css.illustration}>
           <img
-            src={require("../../assets/illustrations/Illustrations_big-fly-paper.png")}
+            src={require("../../assets/illustrations/Illustrations_member-pic.png")}
             alt="illustration"
           />
         </div>

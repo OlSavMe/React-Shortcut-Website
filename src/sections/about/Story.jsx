@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-
-// Reusable components
 import { Nav, Footer } from "../../components/index.jsx";
-
-// Stylesheets
 import css from "./Story.module.scss";
 
 export class Story extends Component {
@@ -13,21 +9,21 @@ export class Story extends Component {
         <Nav />
         <header className={css.header}>
           <h2>Our story</h2>
-          <div className={css.illustration1}>
+          <div className={css.illustrationTop}>
             <img
-              src={require("../../assets/illustrations/Illustrations_big-green-three.png")}
+              src={require("../../assets/illustrations/tree.png")}
               alt="illustration"
             />
           </div>
         </header>
         <main className={css.ourstory}>
-          <p className={css.p}>
+          <p>
             The Shortcut is the largest talent accelerator in the Nordics. We
             equip foreign talent with the skills and networks they need to drive
             growth and innovation, and to kickstart their entry into the Finnish
             startup world.{" "}
           </p>
-          <p className={css.p}>
+          <p>
             Owned by Startup Foundation, The Shortcut is a non-profit
             organization dedicated to enhancing and expanding the startup
             community in the Nordics. We are committed to helping fill the
@@ -37,18 +33,36 @@ export class Story extends Component {
             personal growth through upskilling, reskilling, and expanding their
             personal networks.{" "}
           </p>
-          <p className={css.p}>
+          <p>
             The Shortcut has already helped thousands of people accelerate their
             entry into the startup world; so what are you waiting for? Join our
             community – we just might be the shortcut to your dream career.{" "}
           </p>
-          <div className={css.illustration2}>
+        </main>
+        <div className={css.illustrationBottom}>
+          <div>
             <img
-              src={require("../../assets/illustrations/Illustrations_big-group-people.png")}
+              src={require("../../assets/illustrations/people-1.png")}
               alt="illustration"
             />
           </div>
-        </main>
+          <div>
+            <img
+              src={require("../../assets/icons/shortcut-logo.png")}
+              alt="illustration"
+            />
+            <img
+              src={require("../../assets/icons/shortcut-logo-mobile.png")}
+              alt="illustration"
+            />
+          </div>
+          <div>
+            <img
+              src={require("../../assets/illustrations/people-2.png")}
+              alt="illustration"
+            />
+          </div>
+        </div>
         <Footer />
       </>
     );

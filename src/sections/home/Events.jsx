@@ -12,8 +12,8 @@ export default function Events() {
 
   const getEvents = async () => {
     await Axios.get(URL)
-      .then(response => response.data)
-      .then(data => {
+      .then((response) => response.data)
+      .then((data) => {
         setEvents(data);
       });
   };
@@ -25,7 +25,7 @@ export default function Events() {
   //   return `${tomorrow.getFullYear()}/${tomorrow.getMonth() + 1}/${tomorrow.getDate()}`;
   // }
 
-  const formatDate = e => {
+  const formatDate = (e) => {
     const months = [
       "January",
       "February",
@@ -38,7 +38,7 @@ export default function Events() {
       "September",
       "October",
       "November",
-      "December"
+      "December",
     ];
 
     const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -54,7 +54,7 @@ export default function Events() {
     return formatted;
   };
 
-  const formatTime = e => {
+  const formatTime = (e) => {
     const t = e.slice(0, -3);
     return t;
   };
@@ -78,11 +78,11 @@ export default function Events() {
                 </p>
                 <h4 className={css.title}>{event.acf.title}</h4>
                 <p className={css.description}>{event.acf.description}</p>
-                <p className={css.address}>{event.acf.location}</p>
+                <p className={css.address}>@ {event.acf.location}</p>
               </div>
               <div className={css.btn}>
-                <a className={css.link} href={event.acf.register}>
-                  Learn more{" "}
+                <a href={event.acf.register}>
+                  Learn more <span>&#x2b;</span>
                 </a>
               </div>
             </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import css from "./Footer.module.scss";
 
+import { Link } from "react-router-dom";
+
 export default class Footer extends React.Component {
   render() {
     return (
@@ -67,26 +69,35 @@ export default class Footer extends React.Component {
             <div className={css.menu}>
               <div>
                 <h4>About</h4>
-                <p>FAQ</p>
-                <p>Careers</p>
-                <p>Terms of use</p>
-                <p>Privacy policy</p>
-                <p>Code of coduct</p>
+                <Link to="/faq">
+                  <a href="/faq">FAQ</a>
+                </Link>
+                <Link to="/code">
+                  <a href="/code">Code of coduct</a>
+                </Link>
+                <a href="/">Careers</a>
+                <a href="/">Terms of use</a>
+                <a href="/">Privacy policy</a>
               </div>
               <div>
                 <h4>Programs</h4>
-                <p>Events</p>
-                <p>Trainings</p>
-                <p>Certifications</p>
-                <p>Clubs</p>
+                <a href="/">Events</a>
+                <a href="/">Trainings</a>
+                <a href="/">Certifications</a>
+                <a href="/">Clubs</a>
               </div>
               <div>
                 <h4>Resources</h4>
-                <p>For partners</p>
-                <p>For media</p>
-                <p>Yearbook</p>
-                <p>Whitepaper</p>
-                <p>Blog</p>
+                <a href="/">For partners</a>
+                <a href="/">Blog</a>
+                <a href="/">Press</a>
+                <a
+                  href="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  White paper
+                </a>
               </div>
             </div>
 

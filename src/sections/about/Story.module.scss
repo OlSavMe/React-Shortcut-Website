@@ -1,9 +1,5 @@
 @import "../index.scss";
 
-.ourstory {
-  @include container;
-}
-
 header.header {
   @include container;
   padding: 100px 0 0;
@@ -17,7 +13,7 @@ header.header {
     @include page-title;
   }
 
-  .illustration1 {
+  .illustrationTop {
     width: 100px;
     @include phone {
       width: 75px;
@@ -29,12 +25,51 @@ header.header {
   }
 }
 
-.illustration2 {
-  width: 60%;
-  @include phone {
-    width: 80%;
-  }
-  max-width: 400px;
+main.ourstory {
+  @include container;
+}
+
+.illustrationBottom {
+  width: 90%;
+  max-width: 80em;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 25px 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div:first-of-type {
+    width: 35%;
+  }
+  > div:nth-of-type(2) {
+    img:first-of-type {
+      display: none;
+    }
+    width: 10%;
+    padding: 0 25px;
+  }
+  > div:nth-of-type(3) {
+    width: 35%;
+  }
+
+  @include phone {
+    flex-direction: column-reverse;
+
+    > div:first-of-type {
+      width: 50%;
+    }
+    > div:nth-of-type(2) {
+      width: 25%;
+      img:first-of-type {
+        display: block;
+      }
+      img:nth-of-type(2) {
+        display: none;
+      }
+    }
+
+    > div:nth-of-type(3) {
+      display: none;
+    }
+  }
 }

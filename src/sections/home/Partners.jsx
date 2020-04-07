@@ -4,10 +4,9 @@ import css from "./Partners.module.scss";
 export default class Partners extends React.Component {
   render() {
     return (
-      <div className={css.partners}>
+      <div className={css.section}>
         <div className={css.container}>
-          <h3>Our partners</h3>
-
+          <h3 className={css.heading}>Our partners</h3>
           <div className={css.logos}>
             <div>
               <img

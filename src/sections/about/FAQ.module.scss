@@ -2,9 +2,10 @@
 
 .header {
   @include container;
-  padding: 100px 0 0;
+  padding: 100px 0 50px;
+
   @include phone {
-    padding: 50px 0 0;
+    padding: 50px 0 25px;
   }
 
   display: flex;
@@ -52,6 +53,7 @@ h4 {
 .qna {
   border: none;
   padding: 2px 0;
+  z-index: -1;
 }
 
 .question {
