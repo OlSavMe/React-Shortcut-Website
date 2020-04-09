@@ -23,15 +23,23 @@ export default function FAQ() {
   return (
     <>
       <Nav />
-      <header className={css.header}>
-        <div>
-          <h2>Frequently Asked Questions</h2>
-          <p>How can we help?</p>
-        </div>
-      </header>
 
-      <main className={css.main}>
-        <Accordion>
+      <div className={css.container}>
+        <header>
+          <h2>
+            Frequently Asked Questions
+            <br />
+            <span>How can we help?</span>
+          </h2>
+
+          <div>
+            <img
+              src={require("../../assets/illustrations/1.png")}
+              alt="illustration"
+            />
+          </div>
+        </header>
+        <Accordion className={css.accordion}>
           {faq.map((qna, i) => (
             <Card key={i} className={css.qna}>
               <Accordion.Toggle
@@ -49,13 +57,7 @@ export default function FAQ() {
             </Card>
           ))}
         </Accordion>
-        <div className={css.illustration}>
-          <img
-            src={require("../../assets/illustrations/Illustrations_big-man-coding.png")}
-            alt="illustration"
-          />
-        </div>
-      </main>
+      </div>
       <Footer />
     </>
   );
