@@ -69,16 +69,21 @@ $black: rgb(32, 32, 32);
 
 .menu {
   display: flex;
+
   max-width: 400px;
   justify-content: space-between;
-
-  h4 {
-    font-size: 1.25rem;
+  > div {
+    display: flex;
+    flex-direction: column;
   }
 
-  p {
+  h4 {
     font-size: 1rem;
-    line-height: 0.5;
+  }
+
+  a {
+    font-size: 1rem;
+    color: white;
     cursor: pointer;
     &:hover {
       text-decoration: underline;

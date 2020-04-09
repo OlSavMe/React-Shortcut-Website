@@ -7,12 +7,12 @@ export class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: false
+      isActive: false,
     };
   }
 
   toggleActive = () => {
-    this.setState(prevState => ({ isActive: !prevState.isActive }));
+    this.setState((prevState) => ({ isActive: !prevState.isActive }));
   };
 
   render() {
@@ -47,7 +47,7 @@ export class Nav extends Component {
                   <Link to="/story" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/nav-icon.png")}
+                        src={require("../assets/icons/heart.png")}
                         alt="icon"
                       />
                     </div>
@@ -56,17 +56,26 @@ export class Nav extends Component {
                   <Link to="/team" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/nav-icon.png")}
+                        src={require("../assets/icons/team-icon.png")}
                         alt="icon"
                       />
                     </div>
                     <a href="/#">Our team</a>
                   </Link>
+                  <Link to="/code" className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/plate.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Code of conduct</a>
+                  </Link>
 
                   <Link to="/faq" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/nav-icon.png")}
+                        src={require("../assets/icons/faq-icon.png")}
                         alt="icon"
                       />
                     </div>
@@ -75,7 +84,7 @@ export class Nav extends Component {
                   <Link to="/contact" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/nav-icon.png")}
+                        src={require("../assets/icons/contact.png")}
                         alt="icon"
                       />
                     </div>
@@ -132,6 +141,7 @@ export class Nav extends Component {
                     </div>
                     <a href="/#">Gallery</a>
                   </li>
+
                   <li className="link">
                     <div>
                       <img
@@ -139,7 +149,13 @@ export class Nav extends Component {
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Yearbook</a>
+                    <a
+                      href="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      White paper
+                    </a>
                   </li>
                   <li className="link">
                     <div>
@@ -148,16 +164,7 @@ export class Nav extends Component {
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Whitepaper</a>
-                  </li>
-                  <li className="link">
-                    <div>
-                      <img
-                        src={require("../assets/icons/nav-icon.png")}
-                        alt="icon"
-                      />
-                    </div>
-                    <a href="/#">For media</a>
+                    <a href="/press">Press</a>
                   </li>
                 </ul>
               </li>

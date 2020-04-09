@@ -1,7 +1,64 @@
 @import "../index.scss";
 
-.teammates {
+.container {
   @include container;
+  padding: 100px 0 50px;
+
+  header {
+    display: flex;
+    align-items: center;
+
+    h2 {
+      font-family: "CircularStd-Medium", sans-serif;
+      font-size: 3rem;
+    }
+
+    p {
+      font-family: "CircularStd-Medium", sans-serif;
+      color: $green;
+      font-size: 2rem;
+    }
+
+    @include tablet {
+      h2 {
+        font-size: 5.5vw;
+      }
+      p {
+        font-size: 3.5vw;
+      }
+    }
+
+    @include phone {
+      h2 {
+        font-size: 7vw;
+      }
+
+      p {
+        font-size: 4vw;
+      }
+    }
+
+    > div:nth-of-type(2) {
+      z-index: -10;
+      width: 400px;
+      margin-left: 100px;
+      position: relative;
+
+      @include tablet {
+        margin-left: 50px;
+        top: 0;
+      }
+
+      @include phone {
+        width: 45vw;
+        margin-left: 0px;
+        top: 10px;
+      }
+    }
+  }
+}
+
+.teammates {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -17,7 +74,6 @@
 }
 
 .boardmembers {
-  @include container;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -30,39 +86,11 @@
   @include tablet {
     justify-content: space-around;
   }
+
   .links {
     a:first-child {
       display: none;
     }
-  }
-}
-
-.header {
-  @include container;
-  padding: 100px 0 0;
-  @include phone {
-    padding: 50px 0 0;
-  }
-
-  display: flex;
-
-  h2 {
-    @include page-title;
-  }
-
-  p {
-    @include page-subtitle;
-  }
-
-  .illustration {
-    width: 150px;
-    @include phone {
-      width: 100px;
-    }
-
-    position: relative;
-    top: -25px;
-    z-index: -1;
   }
 }
 
@@ -142,4 +170,10 @@ i {
   @include phone {
     display: none;
   }
+}
+
+.illustrations {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
 }

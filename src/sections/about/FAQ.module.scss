@@ -1,63 +1,103 @@
 @import "../index.scss";
 
-.header {
+.container {
   @include container;
-  padding: 100px 0 0;
-  @include phone {
-    padding: 50px 0 0;
+  @include page-transitions;
+  padding: 50px 0 100px;
+
+  header {
+    display: flex;
+    align-items: center;
+    //border: 1px solid red;
+
+    h2 {
+      //border: 1px solid red;
+      font-family: "CircularStd-Medium", sans-serif;
+      font-size: 3rem;
+      max-width: 10em;
+
+      span {
+        font-size: 2rem;
+        color: $yellow;
+      }
+
+      @include tablet {
+        font-size: 5.5vw;
+
+        span {
+          font-size: 3.5vw;
+        }
+      }
+
+      @include phone {
+        font-size: 7vw;
+
+        span {
+          font-size: 4vw;
+        }
+      }
+
+      @include big-desktop {
+        font-size: 3.5rem;
+      }
+    }
+
+    > div {
+      z-index: -10;
+      width: 350px;
+      margin-left: 25px;
+      position: relative;
+      top: -30px;
+
+      @include tablet {
+        margin-left: 5px;
+        top: 0;
+      }
+
+      @include phone {
+        width: 45vw;
+        margin-left: -30px;
+        top: 10px;
+      }
+    }
   }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /*
+  Accordion
+  */
 
-  h2 {
-    @include page-title;
+  .accordion {
+    margin-top: -50px;
+
+    @include tablet {
+      margin-top: -25px;
+    }
+
+    @include phone {
+      margin-top: 0px;
+    }
   }
 
-  p {
-    @include page-subtitle;
+  .qna {
+    border: none;
+    padding: 2px 0;
+    max-width: 80em;
+
+    .question {
+      border: 1px solid #dcdcdc;
+      box-shadow: 5px 5px 5px #f3f3f3;
+      border-radius: 2px;
+      background-color: white;
+      margin-bottom: 2px;
+    }
+
+    h4 {
+      font-family: "CircularStd-Book";
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
   }
-}
-
-.main {
-  @include container;
-}
-
-.illustration {
-  width: 60%;
-  @include phone {
-    width: 80%;
-  }
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 25px 0;
-}
-
-h4 {
-  font-family: "CircularStd-Book";
-}
-
-p,
-h4 {
-  font-size: 1.5rem;
-  @include phone {
-    font-size: 1.25rem;
-  }
-
-  line-height: 1.5;
-}
-
-// Accordion
-.qna {
-  border: none;
-  padding: 2px 0;
-}
-
-.question {
-  border: 1px solid #dcdcdc;
-  box-shadow: 5px 5px 5px #f3f3f3;
-  border-radius: 2px;
-  background-color: white;
-  margin-bottom: 5px;
 }
