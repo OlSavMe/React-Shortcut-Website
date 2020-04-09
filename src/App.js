@@ -11,7 +11,7 @@ import FAQ from "./sections/about/FAQ";
 import Contact from "./sections/about/Contact";
 
 // Resources
-import Press from "./sections/resources/Press";
+import ForMedia from "./sections/resources/ForMedia";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivacyPolicies from "./sections/home/PrivacyPolicies";
@@ -48,8 +48,8 @@ export class App extends Component {
             </Route>
 
             {/* Resources */}
-            <Route path="/press">
-              <Press />
+            <Route path="/media">
+              <ForMedia />
             </Route>
 
             {/* Footer */}
