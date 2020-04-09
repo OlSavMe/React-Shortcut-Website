@@ -92,7 +92,9 @@ export default class Footer extends React.Component {
                 <h4>Resources</h4>
                 <a href="/">For partners</a>
                 <a href="/">Blog</a>
-                <a href="/">Press</a>
+                <Link to="/media">
+                  <a href="/media">For media</a>
+                </Link>
                 <a
                   href="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf"
                   target="_blank"
