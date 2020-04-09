@@ -47,7 +47,7 @@ export class Nav extends Component {
                   <Link to="/story" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/story-icon.png")}
+                        src={require("../assets/icons/heart.png")}
                         alt="icon"
                       />
                     </div>
@@ -65,7 +65,7 @@ export class Nav extends Component {
                   <Link to="/code" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/info-icon.png")}
+                        src={require("../assets/icons/plate.png")}
                         alt="icon"
                       />
                     </div>
@@ -84,7 +84,7 @@ export class Nav extends Component {
                   <Link to="/contact" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/contact-icon.png")}
+                        src={require("../assets/icons/contact.png")}
                         alt="icon"
                       />
                     </div>
@@ -164,7 +164,7 @@ export class Nav extends Component {
                         alt="icon"
                       />
                     </div>
-                    <a href="/press">For media</a>
+                    <a href="/press">Press</a>
                   </li>
                 </ul>
               </li>

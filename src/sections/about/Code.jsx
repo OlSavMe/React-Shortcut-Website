@@ -7,7 +7,9 @@ export default function Code() {
     <>
       <Nav />
       <div className={css.container}>
-        <h2>Code of conduct</h2>
+        <header>
+          <h2>Code of conduct</h2>
+        </header>
         <h3>
           <span>1.</span> Background
         </h3>
@@ -110,9 +112,7 @@ export default function Code() {
         <p>
           If you are a victim of or observe inappropriate conduct you must
           inform The Shortcut HR team immediately:{" "}
-          <a className={css.link} href="mailto:hr@theshortcut.org">
-            hr@theshortcut.org
-          </a>
+          <a href="mailto:hr@theshortcut.org">hr@theshortcut.org</a>
         </p>
       </div>
       <Footer />

@@ -5,18 +5,19 @@ import css from "./Story.module.scss";
 export class Story extends Component {
   render() {
     return (
-      <>
+      <div>
         <Nav />
-        <header className={css.header}>
-          <h2>Our story</h2>
-          <div className={css.illustrationTop}>
-            <img
-              src={require("../../assets/illustrations/tree.png")}
-              alt="illustration"
-            />
-          </div>
-        </header>
-        <main className={css.ourstory}>
+        <div className={css.container}>
+          <header>
+            <h2>Our story</h2>
+            <div>
+              <img
+                src={require("../../assets/illustrations/2.png")}
+                alt="visual"
+              />
+            </div>
+          </header>
+
           <p>
             The Shortcut is the largest talent accelerator in the Nordics. We
             equip foreign talent with the skills and networks they need to drive
@@ -38,33 +39,33 @@ export class Story extends Component {
             entry into the startup world; so what are you waiting for? Join our
             community – we just might be the shortcut to your dream career.{" "}
           </p>
-        </main>
-        <div className={css.illustrationBottom}>
+        </div>
+        <div className={css.visual}>
           <div>
             <img
               src={require("../../assets/illustrations/people-1.png")}
-              alt="illustration"
+              alt="visual"
             />
           </div>
           <div>
             <img
               src={require("../../assets/icons/shortcut-logo.png")}
-              alt="illustration"
+              alt="shortcut-logo"
             />
             <img
               src={require("../../assets/icons/shortcut-logo-mobile.png")}
-              alt="illustration"
+              alt="shortcut-logo"
             />
           </div>
           <div>
             <img
               src={require("../../assets/illustrations/people-2.png")}
-              alt="illustration"
+              alt="visual"
             />
           </div>
         </div>
         <Footer />
-      </>
+      </div>
     );
   }
 }

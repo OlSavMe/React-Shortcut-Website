@@ -14,6 +14,7 @@ import Contact from "./sections/about/Contact";
 import Press from "./sections/resources/Press";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PrivacyPolicies from "./sections/home/PrivacyPolicies";
 
 export class App extends Component {
   render() {
@@ -49,6 +50,11 @@ export class App extends Component {
             {/* Resources */}
             <Route path="/press">
               <Press />
+            </Route>
+
+            {/* Footer */}
+            <Route path="/privacy">
+              <PrivacyPolicies />
             </Route>
           </Switch>
         </div>

@@ -1,0 +1,93 @@
+@import "../index.scss";
+
+.container {
+  @include container;
+  padding: 100px 0;
+
+  header {
+    display: flex;
+    align-items: center;
+
+    > div:first-of-type {
+      width: 50%;
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 25px;
+      }
+
+      p {
+        &:first-of-type {
+          font-size: 1.75rem;
+        }
+        font-size: 1.25rem;
+        max-width: 80em;
+      }
+
+      a {
+        font-family: "CircularStd-Medium", sans-serif;
+      }
+    }
+
+    > div:nth-of-type(2) {
+      //border: 1px solid red;
+      width: 40%;
+      max-width: 20em;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .center {
+    //line-height: 1;
+    // padding: 50px 0;
+    p {
+      font-size: 1.75rem;
+
+      a {
+        font-size: inherit;
+        font-family: "CircularStd-Medium", sans-serif;
+      }
+    }
+  }
+  h3 {
+    font-family: "CircularStd-Medium", sans-serif;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-content: center;
+    }
+  }
+
+  p,
+  a {
+    font-size: 1.25rem;
+    color: $black;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+
+    .icon {
+      width: 20px;
+      margin-right: 5px;
+    }
+
+    > div {
+      //border: 1px solid red;
+      width: 50%;
+      max-width: 25em;
+
+      @include desktop {
+        max-width: 30em;
+      }
+      padding: 25px 0;
+    }
+  }
+}

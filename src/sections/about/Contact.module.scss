@@ -1,9 +1,12 @@
 @import "../index.scss";
 
+.container {
+  @include page-transitions;
+}
+
 .form {
   @include container;
   padding: 100px 0 0;
-
   display: flex;
   justify-content: space-between;
 
@@ -143,11 +146,7 @@ Map
         font-family: "CircularStd-Medium", sans-serif;
       }
       p {
-        font-family: "CircularStd-Book", sans-serif;
         font-size: 1.25rem;
-        span {
-          font-family: "CircularStd-Medium", sans-serif;
-        }
       }
     }
   }
@@ -155,7 +154,6 @@ Map
   .map {
     width: 50%;
     height: 500px;
-    //background-color: rgba(0, 169, 157, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +190,7 @@ Map
   }
 }
 
-.icon {
+.join {
   width: 500px;
   margin: 0 auto;
   padding: 50px 0 100px;
@@ -208,12 +206,19 @@ Map
     font-size: 2rem;
   }
 
+  p {
+    font-size: 1.25rem;
+  }
+
   a {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-decoration: underline;
     cursor: pointer;
-    @include phone {
-      font-size: 1.25rem;
+    color: $black;
+
+    &:hover {
+      text-decoration: none;
+      outline: none;
     }
   }
 }

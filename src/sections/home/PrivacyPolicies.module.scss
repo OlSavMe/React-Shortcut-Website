@@ -11,11 +11,11 @@
 
     h2 {
       font-family: "CircularStd-Medium", sans-serif;
-      font-size: 3.5rem;
+      font-size: 3rem;
       padding: 50px 0;
 
       @include phone {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
 
       @include big-desktop {
@@ -24,11 +24,11 @@
     }
 
     > div {
-      width: 125px;
+      width: 100px;
       margin-left: 25px;
 
       @include phone {
-        width: 100px;
+        width: 75px;
         margin-left: 5px;
       }
     }
@@ -38,10 +38,6 @@
     font-family: "CircularStd-Medium", sans-serif;
     font-size: 1.5rem;
     padding: 50px 0 25px;
-
-    &:first-of-type {
-      padding: 0 0 25px;
-    }
 
     span {
       background-color: $yellow;
@@ -55,26 +51,27 @@
     }
   }
 
+  h4 {
+    font-family: "CircularStd-BookItalic", sans-serif;
+    font-size: 1.25rem;
+    margin: 50px 0 25px;
+
+    @include big-desktop {
+      font-size: 1.5rem;
+    }
+  }
+
   p {
     font-size: 1.25rem;
     line-height: 1.5;
 
-    @include big-desktop {
-      font-size: 1.5rem;
+    span {
+      font-family: "CircularStd-Medium", sans-serif;
     }
-  }
-
-  ul {
-    list-style: none;
-    font-size: 1.25rem;
 
     @include big-desktop {
       font-size: 1.5rem;
     }
-  }
-
-  ul.parent {
-    padding: 0;
   }
 
   a {

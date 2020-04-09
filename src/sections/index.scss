@@ -77,16 +77,6 @@ Mixins
   }
 }
 
-@mixin page-subtitle {
-  font-family: "CircularStd-Medium", sans-serif;
-  font-size: 1.5rem;
-  color: $yellow;
-
-  @include phone {
-    font-size: 1.25rem;
-  }
-}
-
 img {
   width: 100%;
 }
@@ -126,6 +116,14 @@ Link hover effect
 /*
 Page transitions
 */
+
+@mixin page-transitions {
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
+}
 
 @keyframes fadein {
   from {

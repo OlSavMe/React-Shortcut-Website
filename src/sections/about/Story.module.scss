@@ -1,36 +1,52 @@
 @import "../index.scss";
 
-header.header {
+.container {
   @include container;
-  padding: 100px 0 0;
-  @include phone {
-    padding: 50px 0 0;
-  }
-  display: flex;
-  align-items: center;
+  @include page-transitions;
+  padding: 100px 0 50px;
 
-  h2 {
-    @include page-title;
-  }
+  header {
+    display: flex;
+    align-items: center;
 
-  .illustrationTop {
-    width: 100px;
-    @include phone {
-      width: 75px;
+    h2 {
+      font-family: "CircularStd-Medium", sans-serif;
+      font-size: 3.5rem;
+      padding: 50px 0;
+
+      @include phone {
+        font-size: 3rem;
+      }
+
+      @include big-desktop {
+        font-size: 3.5rem;
+      }
     }
-    margin-left: 50px;
-    position: relative;
-    top: -25px;
-    z-index: -1;
+
+    > div {
+      width: 250px;
+      margin-left: 50px;
+
+      @include phone {
+        width: 200px;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+
+    @include big-desktop {
+      font-size: 1.5rem;
+    }
   }
 }
 
-main.ourstory {
-  @include container;
-}
-
-.illustrationBottom {
-  width: 90%;
+.visual {
+  @include page-transitions;
+  width: 80%;
   max-width: 80em;
   margin: 0 auto;
   padding: 25px 0 100px;
@@ -41,6 +57,7 @@ main.ourstory {
   > div:first-of-type {
     width: 35%;
   }
+
   > div:nth-of-type(2) {
     img:first-of-type {
       display: none;
@@ -48,18 +65,24 @@ main.ourstory {
     width: 10%;
     padding: 0 25px;
   }
+
   > div:nth-of-type(3) {
     width: 35%;
   }
 
+  @include tablet {
+    width: 80%;
+  }
+
   @include phone {
+    width: 100%;
     flex-direction: column-reverse;
 
     > div:first-of-type {
-      width: 50%;
+      width: 70%;
     }
     > div:nth-of-type(2) {
-      width: 25%;
+      width: 30%;
       img:first-of-type {
         display: block;
       }
