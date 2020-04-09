@@ -1,109 +1,268 @@
 @import "../index.scss";
 
-// Outer container
 .events {
-  background: rgba(253, 200, 30, 0.1);
-}
-
-// Inner container
-.container {
-  @include container;
-
+  /* 
+  Main container for events lp page section 
+  (sets section background color, side margins, aligns headings and main content )
+  */
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  .heading {
+    // Section heading
+    padding: 50px 0;
   }
-  a {
+
+  .link {
+    // Link at the bottom of section
+    // Same class exists in index.scss, takes care of a hover effect
     font-size: 1.5rem;
     font-family: "CircularStd-Book", sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
   }
 }
 
-.heading {
-  padding: 25px 0 50px 0;
-}
-
-// Event item
-.event {
-  background-color: white;
+.container {
+  // Container for events array
+  border: 1px solid yellow;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  width: 48%;
+  flex-wrap: wrap;
+
+  .event {
+    // Event array item
+    // Children elements: div.visual, div.info
+    border: 1px solid red;
+    background-color: white;
+
+    // All events (hero event has some additional css below)
+    .visual {
+      width: 100%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+
+    .info {
+      // Children elements: div.text, div.btn
+      border: 1px solid blue;
+      display: flex;
+      flex-direction: column;
+      padding: 25px 5px;
+      justify-content: space-between;
+      // this way learn more link is always at the bottom no matter how much text we have
+      height: 250px;
+      // fixed height (!)
+
+      .text {
+        border: 1px solid cyan;
+
+        .date {
+          font-size: 1.25rem;
+          font-family: "CircularStd-Book", sans-serif;
+          text-transform: uppercase;
+          color: $red;
+          padding: 0;
+          margin: 0;
+        }
+
+        .title {
+          font-size: 1.25rem;
+          font-family: "CircularStd-Medium", sans-serif;
+        }
+
+        .description {
+          font-size: 1rem;
+          line-height: 1;
+        }
+
+        .address {
+          font-size: 1rem;
+          color: #c0c0c0;
+          line-height: 1;
+          margin: 0;
+          text-transform: capitalize;
+        }
+
+        @include phone {
+          .date {
+            font-size: 1.5rem;
+          }
+
+          .title {
+            font-size: 2rem;
+            font-family: "CircularStd-Medium", sans-serif;
+          }
+
+          .description {
+            font-size: 1.25rem;
+          }
+
+          .address {
+            font-size: 1.25rem;
+          }
+        }
+      }
+
+      .btn {
+        a {
+          font-family: "CircularStd-Book", sans-serif;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &:first-of-type {
+      // Hero event
+      width: 100%;
+      flex-basis: 100%;
+      // set width: 100%; flex-basis: 100%; for flex item to span whole row
+
+      flex-direction: row-reverse;
+      // .info goes first
+
+      .visual {
+        width: 80%;
+      }
+
+      .info {
+        height: 100%;
+        // = image height
+
+        .text {
+          border: 1px solid cyan;
+
+          .date {
+            font-size: 1.5rem;
+          }
+
+          .title {
+            font-size: 2rem;
+            font-family: "CircularStd-Medium", sans-serif;
+          }
+
+          .description {
+            font-size: 1.25rem;
+          }
+
+          .address {
+            font-size: 1.25rem;
+          }
+        }
+
+        .btn {
+          a {
+            font-family: "CircularStd-Book", sans-serif;
+            font-size: 1.25rem;
+          }
+        }
+      }
+
+      @include phone {
+        flex-direction: column;
+        // rest of phone css takes from regular phone v event
+      }
+    }
+
+    // Box shadow
+    box-shadow: 0 0 10px $light-gray;
+    &:hover {
+      box-shadow: 0 0 30px $light-gray;
+    }
+    transition: all 0.3s ease-in;
+  }
+
+  /*
+  !!!! This is where all flexbox stuff happens !!!!
+  We change item container width + item width in relation to its container width
+  */
+
+  margin: 0 auto;
+  // so main container is always in center no matter its width
 
   @include phone {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    max-width: 30em;
+    width: 90%;
+
+    .event {
+      width: 100%;
+      max-width: 30em;
+      // when reaches max-width, free space is equally distributed on the sides
+      margin: 25px auto;
+    }
   }
 
   @include tablet {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    max-width: 35em;
+    width: 90%;
+    justify-content: space-between;
+
+    .event {
+      width: 49%;
+      max-width: 27em;
+
+      &:first-of-type {
+        // Hero event
+        width: 100%;
+        max-width: 100%;
+        flex-basis: 100%;
+        // set width: 100%; flex-basis: 100%; for flex item to span whole row
+      }
+    }
   }
 
+  // Down below only main container width changes, so we always have 3 events per row max
+
   @include tablet-landscape {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    max-width: 35em;
+    width: 90%;
+    justify-content: space-between;
+
+    .event {
+      width: 32%;
+      max-width: 28em;
+
+      &:first-of-type {
+        // Hero event
+        width: 100%;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  @include desktop {
+    width: 70%;
+    justify-content: space-between;
+
+    .event {
+      width: 32%;
+      max-width: 28em;
+
+      &:first-of-type {
+        // Hero event
+        width: 100%;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
   }
 
   @include big-desktop {
-    width: 30%;
-    max-width: 35em;
-  }
+    width: 60%;
 
-  > div {
-    width: 100%;
-  }
+    .event {
+      width: 32%;
+      max-width: 28em;
 
-  .info {
-    padding: 25px;
-
-    .date {
-      font-size: 1.25rem;
-      text-transform: uppercase;
-      color: $red;
-      margin: 0;
-    }
-
-    .title {
-      padding: 5px 0;
-    }
-
-    .description {
-      font-size: 1.25rem;
-      line-height: 1;
-    }
-
-    .address {
-      font-size: 1.25rem;
-      color: $gray;
-      font-size: 1rem;
-      line-height: 1;
-      margin: 0;
-    }
-
-    a {
-      font-size: 1.25rem;
+      &:first-of-type {
+        // Hero event
+        width: 100%;
+        max-width: 100%;
+        flex-basis: 100%;
+      }
     }
   }
-
-  // Box shadow
-  box-shadow: 0 0 10px $light-gray;
-  &:hover {
-    box-shadow: 0 0 30px $light-gray;
-  }
-  transition: all 0.3s ease-in;
 }

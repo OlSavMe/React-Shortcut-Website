@@ -53,6 +53,7 @@
   p {
     @include page-subtitle;
   }
+
   .illustration {
     width: 150px;
     @include phone {
@@ -61,6 +62,7 @@
 
     position: relative;
     top: -25px;
+    z-index: -1;
   }
 }
 

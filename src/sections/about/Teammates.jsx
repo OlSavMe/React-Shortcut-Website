@@ -53,9 +53,6 @@ export default function Teammates() {
           </div>
         </div>
       ))}
-      <i aria-hidden={true}></i>
-      <i aria-hidden={true}></i>
-      <i aria-hidden={true}></i>
     </div>
   );
 }

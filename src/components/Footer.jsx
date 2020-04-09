@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
                 <a
                   href="https://web.facebook.com/theshortcut/"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src={require("../assets/icons/facebook.png")}
@@ -30,7 +30,7 @@ export default class Footer extends React.Component {
                 <a
                   href="https://www.instagram.com/theshortcutorg/"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src={require("../assets/icons/instagram.png")}
@@ -42,7 +42,7 @@ export default class Footer extends React.Component {
                 <a
                   href="https://twitter.com/theshortcutorg?lang=en"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src={require("../assets/icons/twitter.png")}
@@ -54,7 +54,7 @@ export default class Footer extends React.Component {
                 <a
                   href="https://www.linkedin.com/company/theshortcut/"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src={require("../assets/icons/linkedin.png")}
