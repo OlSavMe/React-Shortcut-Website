@@ -1,4 +1,18 @@
 [build]
-base = "React-Shortcut-Website/"
-publish = "React-Shortcut-Website/build/"
-command = "yarn build"
+  base    = ""
+  publish = "build"
+  command = "REACT_APP_STAGE=dev npm run build"
+
+[context.production]
+  command = "REACT_APP_STAGE=prod npm run build"
+
+[context.deploy-preview]
+  command = "REACT_APP_STAGE=dev npm run build"
+
+[context.branch-deploy]
+  command = "REACT_APP_STAGE=dev npm run build"
+
+[[redirects]]
+    from    = "/*"
+    to      = "/index.html"
+    status  = 200
