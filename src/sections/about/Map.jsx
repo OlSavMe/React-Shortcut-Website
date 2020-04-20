@@ -13,7 +13,7 @@ export default function Map() {
   return (
     <ReactMapGL
       {...viewport}
-      mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+      mapboxApiAccessToken={"pk.eyJ1IjoidGhlc2hvcnRjdXQiLCJhIjoiY2s4bG0xbTViMDB0dDNlbWR2eGprNmh1dyJ9.4QBkAdaE0_gdOPHFD3QUlQ"}
       mapStyle="mapbox://styles/theshortcut/ck8repsqp094u1imyveq7vkk8"
       onViewportChange={(viewport) => {
         setViewport(viewport);
