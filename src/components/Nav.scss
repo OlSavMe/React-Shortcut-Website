@@ -260,8 +260,8 @@ $red: rgb(232, 89, 46);
       justify-content: flex-start;
       overflow: hidden;
       position: relative;
-      height: 0;
-      // use height 0/ height auto to open/close subnav, touch events
+      // height: 0;
+      // use height 0/ height auto to open/close subnav, touch events this is commented out for temporery deploy
       top: 0;
       transform: scaleY(1);
     }
