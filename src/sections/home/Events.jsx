@@ -1,31 +1,58 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import css from "./Events.module.scss";
 import Axios from "axios";
 
-export default function Events() {
-  const [events, setEvents] = React.useState([]);
-  const URL = "https://theshortcut.org/wp-json/wp/v2/events/?per_page=6";
+const Events = () => {
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     getEvents();
   }, []);
 
   const getEvents = async () => {
-    await Axios.get(URL)
-      .then((response) => response.data)
-      .then((data) => {
-        setEvents(data);
-      });
+    await Axios.get(
+      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
+    ).then((response) => {
+      setEvents(response.data.events);
+    });
   };
 
-  // const today = new Date();
-  // const getTomorrow = () => {
-  //   const tomorrow = new Date();
-  //   tomorrow.setDate(tomorrow.getDate() + 1); // even 32 is acceptable
-  //   return `${tomorrow.getFullYear()}/${tomorrow.getMonth() + 1}/${tomorrow.getDate()}`;
-  // }
-
+  // date
   const formatDate = (e) => {
+    const date = new Date(e);
+    const eventDate = date.getDay();
+    return eventDate;
+  };
+
+  // time
+  const formatTime = (e) => {
+    const date = new Date(e);
+    const eventTime = date.toLocaleString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+    return eventTime;
+  };
+
+  // day
+  const formatDay = (e) => {
+    const days = [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ];
+    const date = new Date(e);
+    const eventDay = days[date.getDay()].substring(0, 3);
+    return eventDay;
+  };
+
+  // month
+  const formatMonth = (e) => {
     const months = [
       "January",
       "February",
@@ -41,58 +68,46 @@ export default function Events() {
       "December",
     ];
 
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-    const dateParts = e.split("/");
-    const d = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
-    console.log(d);
-    const date = d.getDate();
-    const dayName = days[d.getDay()];
-    const monthName = months[d.getMonth()];
-    const formatted = `${dayName}, ${date} ${monthName}`;
-    console.log(formatted);
-    return formatted;
+    const date = new Date(e);
+    const eventMonth = months[date.getMonth()];
+    return eventMonth;
   };
 
-  const formatTime = (e) => {
-    const t = e.slice(0, -3);
-    return t;
+  // month
+  const formatText = (e) => {
+    const eventText = e + " ...";
+    return eventText;
   };
 
   return (
-    <div className={css.events}>
-      <h3 className={css.heading}>Upcoming events</h3>
-
-      <div className={css.container}>
-        {events.map((event, i) => (
-          <div key={i} className={css.event}>
-            <div className={css.visual}>
-              <img src={event.acf.image.url} alt="event" />
-            </div>
-            <div className={css.info}>
-              <div className={css.text}>
-                <p className={css.date}>
-                  {formatDate(event.acf.date_start)}{" "}
-                  {formatTime(event.acf.time_start)}{" "}
-                  {formatTime(event.acf.time_end)}{" "}
-                </p>
-                <h4 className={css.title}>{event.acf.title}</h4>
-                <p className={css.description}>{event.acf.description}</p>
-                <p className={css.address}>@ {event.acf.location}</p>
-              </div>
-              <div className={css.btn}>
-                <a href={event.acf.register}>
-                  Learn more <span>&#x2b;</span>
-                </a>
-              </div>
-            </div>
+    <div>
+      {events.slice(0, 5).map((event, i) => (
+        <div className={css.container} key={i}>
+          <aside>
+            <p>{formatDay(event.start.local)}</p>
+            <p>{formatDate(event.start.local)}</p>
+          </aside>
+          <div>
+            <p className={css.date}>
+              <span>
+                {formatMonth(event.start.local)},{" "}
+                {formatDate(event.start.local)}
+              </span>{" "}
+              <span>
+                @ {formatTime(event.start.local)} -{" "}
+                {formatTime(event.end.local)}
+              </span>
+            </p>
+            <p className={css.title}>{event.name.text}</p>
+            <p className={css.text}>{formatText(event.summary)}</p>
+            <a href={event.url} target="_blank" rel="noopener noreferrer">
+              Learn more +
+            </a>
           </div>
-        ))}
-      </div>
-
-      <a className={css.link} href="/#">
-        See all events
-      </a>
+        </div>
+      ))}
     </div>
   );
-}
+};
+
+export default Events;

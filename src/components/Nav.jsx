@@ -164,7 +164,7 @@ export class Nav extends Component {
                         alt="icon"
                       />
                     </div>
-                    <a href="/press">Press</a>
+                    <a href="/media">For media</a>
                   </li>
                 </ul>
               </li>
