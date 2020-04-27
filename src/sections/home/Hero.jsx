@@ -6,9 +6,9 @@ export default class Hero extends React.Component {
   render() {
     return (
       <div className={css.hero}>
-        <div className={css.text}>
+        <div>
           <h1>The Shortcut</h1>
-          <h3>Accelerating your entrance into the startup world</h3>
+          <h3>Accelerating your entry into the startup world</h3>
           <Link to="/story">
             <a href="/#">Our story</a>
           </Link>

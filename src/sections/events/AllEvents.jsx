@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import css from "./Events.module.scss";
+import css from "./AllEvents.module.scss";
 import Axios from "axios";
 
-const Events = () => {
+const AllEvents = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -80,10 +80,9 @@ const Events = () => {
   };
 
   // online
-
   return (
     <div>
-      {events.slice(0, 3).map((event, i) => (
+      {events.slice(0, 10).map((event, i) => (
         <div className={css.container} key={i}>
           <aside>
             <p>{formatDay(event.start.local)}</p>
@@ -106,6 +105,9 @@ const Events = () => {
             <a href={event.url} target="_blank" rel="noopener noreferrer">
               Learn more +
             </a>
+            <div>
+              <img src={event.logo.original.url} />
+            </div>
           </div>
         </div>
       ))}
@@ -113,4 +115,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default AllEvents;
