@@ -13,6 +13,9 @@ import Contact from "./sections/about/Contact";
 // Resources
 import ForMedia from "./sections/resources/ForMedia";
 
+// Events
+import AllEvents from "./sections/events/AllEvents";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivacyPolicies from "./sections/home/PrivacyPolicies";
 
@@ -50,6 +53,11 @@ export class App extends Component {
             {/* Resources */}
             <Route path="/media">
               <ForMedia />
+            </Route>
+
+            {/* All events */}
+            <Route path="/all-events">
+              <AllEvents />
             </Route>
 
             {/* Footer */}
