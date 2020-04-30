@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import css from "./AllEvents.module.scss";
 import Axios from "axios";
+import { Venue } from '../../components/index';
 
 const AllEvents = () => {
   const [events, setEvents] = useState([]);
@@ -102,6 +103,7 @@ const AllEvents = () => {
             </p>
             <p className={css.title}>{event.name.text}</p>
             <p className={css.text}>{formatText(event.summary)}</p>
+            <p>{event.venue_id ? <Venue id={event.venue_id} /> : null}</p>
             <a href={event.url} target="_blank" rel="noopener noreferrer">
               Learn more +
             </a>

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import css from "./Events.module.scss";
 import Axios from "axios";
+import { Venue } from '../../components/index';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+  const [venue, setVenue] = useState([]);
 
   useEffect(() => {
     getEvents();
@@ -16,6 +18,8 @@ const Events = () => {
       setEvents(response.data.events);
     });
   };
+
+
 
   // date
   const formatDate = (e) => {
@@ -103,6 +107,8 @@ const Events = () => {
             </p>
             <p className={css.title}>{event.name.text}</p>
             <p className={css.text}>{formatText(event.summary)}</p>
+            <p className={css.text} id={event.venue_id}>{venue}</p>
+            <p>{event.venue_id ? <Venue id={event.venue_id} /> : null}</p>
             <a href={event.url} target="_blank" rel="noopener noreferrer">
               Learn more +
             </a>
