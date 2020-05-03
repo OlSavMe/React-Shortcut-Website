@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 // Home
 import Home from "./sections/home/Home";
@@ -20,6 +20,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivacyPolicies from "./sections/home/PrivacyPolicies";
 
 export class App extends Component {
+  state = {
+    loading: true
+  };
+
   render() {
     return (
       <Router>
