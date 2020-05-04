@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 // Home
 import Home from "./sections/home/Home";
@@ -21,7 +21,7 @@ import PrivacyPolicies from "./sections/home/PrivacyPolicies";
 
 export class App extends Component {
   state = {
-    loading: true
+    loading: true,
   };
 
   render() {

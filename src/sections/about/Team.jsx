@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Nav, Footer } from "../../components/index.jsx";
 import css from "./Team.module.scss";
-import { Spinner } from '../../components/index';
 import Teammates from "./Teammates";
 import Boardmembers from "./BoardMembers";
 
-
 export default function Team() {
-
   return (
     <>
       <Nav />

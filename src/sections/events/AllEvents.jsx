@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import css from "./AllEvents.module.scss";
 import Axios from "axios";
-import { Venue } from '../../components/index';
-import { Spinner } from '../../components/index';
+import { Venue } from "../../components/index";
+import { Spinner } from "../../components/index";
 
 const AllEvents = () => {
   const [events, setEvents] = useState([]);
@@ -112,7 +112,7 @@ const AllEvents = () => {
               Learn more +
             </a>
             <div>
-              <img src={event.logo.original.url} />
+              <img src={event.logo.original.url} alt="event-logo" />
             </div>
           </div>
         </div>

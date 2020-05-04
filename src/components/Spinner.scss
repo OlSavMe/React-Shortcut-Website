@@ -1,27 +1,24 @@
 @mixin phone {
-    @media only screen and (max-width: 768px) {
-      @content;
-    }
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
 }
 
-
 .spinner {
-    text-align: center;
-    min-height: 50vh;
-    min-width: 100%;
-    margin: 15% 0;
-    top: 50%;
-    left: 50%;
- 
-  
-  >i {
+  text-align: center;
+  min-height: 50vh;
+  min-width: 100%;
+  margin: 15% 0;
+  top: 50%;
+  left: 50%;
+
+  > i {
     font-size: 300px;
-    color:  rgba(15, 144, 191, 0.25);; 
+    color: rgba(15, 144, 191, 0.25);
     text-align: center;
 
     @include phone {
-        font-size: 100px;
-      }
-  }  
-
+      font-size: 100px;
+    }
   }
+}
