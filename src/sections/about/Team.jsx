@@ -1,7 +1,6 @@
 import React from "react";
 import { Nav, Footer } from "../../components/index.jsx";
 import css from "./Team.module.scss";
-
 import Teammates from "./Teammates";
 import Boardmembers from "./BoardMembers";
 

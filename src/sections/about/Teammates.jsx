@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Spinner } from "../../components/index";
 
 // Stylesheets
 import css from "./Team.module.scss";
 
 import Axios from "axios";
 
-export default function Teammates() {
+export default function Teammates(props) {
   const [teammates, setTeammates] = React.useState([]);
+  const [loading, setLoading] = useState(true);
   const URL = "https://theshortcut.org/wp-json/wp/v2/team/?per_page=100";
 
   useEffect(() => {
@@ -14,8 +16,9 @@ export default function Teammates() {
   }, []);
 
   const getTeammates = async () => {
-    await Axios.get(URL).then(response => {
+    Axios.get(URL).then((response) => {
       setTeammates(response.data);
+      setLoading(false);
     });
   };
 
@@ -53,6 +56,7 @@ export default function Teammates() {
           </div>
         </div>
       ))}
+      {loading && <Spinner />}
     </div>
   );
 }

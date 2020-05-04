@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import css from "./AllEvents.module.scss";
 import Axios from "axios";
+import { Venue } from "../../components/index";
+import { Spinner } from "../../components/index";
 
 const AllEvents = () => {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getEvents();
@@ -14,6 +17,7 @@ const AllEvents = () => {
       "https://www.eventbriteapi.com/v3/users/me/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
     ).then((response) => {
       setEvents(response.data.events);
+      setLoading(false);
     });
   };
 
@@ -82,6 +86,7 @@ const AllEvents = () => {
   // online
   return (
     <div>
+      {loading && <Spinner />}
       {events.slice(0, 10).map((event, i) => (
         <div className={css.container} key={i}>
           <aside>
@@ -102,11 +107,12 @@ const AllEvents = () => {
             </p>
             <p className={css.title}>{event.name.text}</p>
             <p className={css.text}>{formatText(event.summary)}</p>
+            <p>{event.venue_id ? <Venue id={event.venue_id} /> : null}</p>
             <a href={event.url} target="_blank" rel="noopener noreferrer">
               Learn more +
             </a>
             <div>
-              <img src={event.logo.original.url} />
+              <img src={event.logo.original.url} alt="event-logo" />
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import css from "./Events.module.scss";
 import Axios from "axios";
+import { Venue } from "../../components/index";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -11,7 +12,7 @@ const Events = () => {
 
   const getEvents = async () => {
     await Axios.get(
-      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
+      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=created_asc&token=AZNI42XD3WB4DJ5MPNSW"
     ).then((response) => {
       setEvents(response.data.events);
     });
@@ -103,6 +104,7 @@ const Events = () => {
             </p>
             <p className={css.title}>{event.name.text}</p>
             <p className={css.text}>{formatText(event.summary)}</p>
+            <p>{event.venue_id ? <Venue id={event.venue_id} /> : null}</p>
             <a href={event.url} target="_blank" rel="noopener noreferrer">
               Learn more +
             </a>

@@ -20,6 +20,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivacyPolicies from "./sections/home/PrivacyPolicies";
 
 export class App extends Component {
+  state = {
+    loading: true,
+  };
+
   render() {
     return (
       <Router>
