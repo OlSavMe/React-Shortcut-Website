@@ -7,9 +7,12 @@ $yellow: rgb(253, 200, 30);
 $green: rgb(0, 169, 157);
 $red: rgb(232, 89, 46);
 
-$black: rgb(32, 32, 32);
+$black: rgb(29, 7, 7);
 $gray: rgb(111, 114, 135);
 $light-gray: rgb(211, 211, 211);
+
+$book: "CircularStd-Book", sans-serif;
+$medium: "CircularStd-Medium", sans-serif;
 
 /*
 Media queries
@@ -94,23 +97,6 @@ Heading in between page sections
   font-size: 2rem;
   text-align: center;
   padding: 50px 0;
-}
-
-/*
-Link hover effect
-*/
-
-.link {
-  font-family: "CircularStd-Book", sans-serif;
-  text-decoration: underline;
-  color: $black;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: none;
-    color: $black;
-    outline: none;
-  }
 }
 
 /*

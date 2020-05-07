@@ -1,0 +1,224 @@
+@import "../../index.scss";
+
+.container {
+  @include page-transitions;
+}
+
+.form {
+  @include container;
+  padding: 100px 0 0;
+  display: flex;
+  justify-content: space-between;
+
+  aside {
+    width: 45%;
+    h2 {
+      font-size: 3rem;
+      padding: 25px 0;
+    }
+  }
+
+  form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    label {
+      font-size: 1.25rem;
+      margin-bottom: 5px;
+    }
+
+    input:not([type="submit"]),
+    select,
+    textarea {
+      border: 1px solid #dcdcdc;
+      border-radius: 2px;
+      background-color: white;
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      padding: 5px;
+      box-shadow: 5px 5px 5px #f3f3f3;
+      // Reconsider outline
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 150px;
+    }
+
+    input[type="submit"] {
+      background-color: $yellow;
+      border: none;
+      border-radius: 50px;
+      text-transform: uppercase;
+      padding: 10px 50px;
+      font-size: 1.25rem;
+      font-family: "CircularStd-Book", sans-serif;
+      margin: 15px 0;
+      &:hover {
+        background-color: rgba(253, 200, 30, 0.5);
+      }
+      &:focus {
+        border: 1px solid #d3d3d3;
+        background-color: white;
+        // Reconsider outline
+        outline: none;
+      }
+    }
+  }
+
+  @include tablet {
+    flex-direction: column;
+
+    aside {
+      width: 100%;
+      max-width: 25em;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  @include phone {
+    flex-direction: column;
+
+    aside {
+      width: 100%;
+      max-width: 25em;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.heading {
+  font-family: "CircularStd-Medium", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  padding: 50px 0;
+}
+
+/*
+Map 
+*/
+
+.location {
+  display: flex;
+  width: 100%;
+
+  @include big-desktop {
+    max-width: 80em;
+    margin: 0 auto;
+  }
+
+  .address {
+    width: 50%;
+    height: 500px;
+    background-color: rgba(77, 204, 229, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .inner {
+      width: 60%;
+      padding: 25px;
+      background-color: white;
+      border-radius: 2px;
+      h4 {
+        font-size: 1.5rem;
+        font-family: "CircularStd-Medium", sans-serif;
+      }
+      p {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .map {
+    width: 50%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .marker {
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 50px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @include phone {
+    flex-direction: column;
+    height: 1000px;
+    .address {
+      width: 100%;
+    }
+    .map {
+      width: 100%;
+    }
+  }
+  @include tablet {
+    flex-direction: column;
+    .address {
+      width: 100%;
+    }
+    .map {
+      width: 100%;
+    }
+  }
+}
+
+.join {
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px 0 100px;
+  text-align: center;
+  position: relative;
+  > div {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  h3 {
+    font-family: "CircularStd-Medium", sans-serif;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  a {
+    font-size: 1.25rem;
+    text-decoration: underline;
+    cursor: pointer;
+    color: $black;
+
+    &:hover {
+      text-decoration: none;
+      outline: none;
+    }
+  }
+}

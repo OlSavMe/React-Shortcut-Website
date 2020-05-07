@@ -1,75 +1,55 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+// Components
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 // Home
 import Home from "./sections/home/Home";
 
 // About
-import Story from "./sections/about/Story";
-import Team from "./sections/about/Team";
-import Code from "./sections/about/Code";
-import FAQ from "./sections/about/FAQ";
-import Contact from "./sections/about/Contact";
+import Story from "./sections/about/1_story/Story";
+import Team from "./sections/about/2_team/Team";
+import Code from "./sections/about/3_code/Code";
+import FAQ from "./sections/about/4_faq/FAQ";
+import Contact from "./sections/about/5_contact/Contact";
 
 // Resources
-import ForMedia from "./sections/resources/ForMedia";
+import ForMedia from "./sections/resources/3_formedia/ForMedia";
 
 // Events
 import AllEvents from "./sections/events/AllEvents";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PrivacyPolicies from "./sections/home/PrivacyPolicies";
+// Footer
+import PrivacyPolicies from "./sections/footer/PrivacyPolicies";
 
 export class App extends Component {
-  state = {
-    loading: true,
-  };
-
   render() {
     return (
       <Router>
-        <div>
-          <Switch>
-            {/* Home */}
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/home">
-              <Home />
-            </Route>
+        <Nav />
+        <Switch>
+          {/* Home */}
+          <Route exact path="/" component={Home} />
 
-            {/* About */}
-            <Route path="/story">
-              <Story />
-            </Route>
-            <Route path="/team">
-              <Team />
-            </Route>
-            <Route path="/code">
-              <Code />
-            </Route>
-            <Route path="/faq">
-              <FAQ />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
+          {/* About */}
+          <Route path="/story" component={Story} />
+          <Route path="/team" component={Team} />
+          <Route path="/code" component={Code} />
+          <Route path="/faq" component={FAQ} />
+          <Route path="/contact" component={Contact} />
 
-            {/* Resources */}
-            <Route path="/media">
-              <ForMedia />
-            </Route>
+          {/* Resources */}
+          <Route path="/media" component={ForMedia} />
 
-            {/* All events */}
-            <Route path="/all-events">
-              <AllEvents />
-            </Route>
+          {/* All events */}
+          <Route path="/all-events" component={AllEvents} />
 
-            {/* Footer */}
-            <Route path="/privacy">
-              <PrivacyPolicies />
-            </Route>
-          </Switch>
-        </div>
+          {/* Footer */}
+          <Route path="/privacy" component={PrivacyPolicies} />
+        </Switch>
+        <Footer />
       </Router>
     );
   }
