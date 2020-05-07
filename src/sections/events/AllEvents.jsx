@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
-import css from "./AllEvents.module.scss";
 import Axios from "axios";
+
+// Styles
+import css from "./styles.module.scss";
+
+// Children
 import { Venue } from "../../components/index";
 import { Spinner } from "../../components/index";
 

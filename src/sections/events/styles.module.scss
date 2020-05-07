@@ -1,0 +1,66 @@
+@import "../index.scss";
+
+.container {
+  display: flex;
+  width: 80vw;
+  max-width: 60em;
+  margin: 100px auto;
+  //border: 1px solid red;
+  aside {
+    //border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 50px;
+
+    p {
+      font-family: "CircularStd-Medium", sans-serif;
+      margin: 0;
+      &:first-of-type {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        color: $red;
+      }
+      &:nth-of-type(2) {
+        font-family: "CircularStd-Book", sans-serif;
+        font-size: 3rem;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  > div {
+    // border: 1px solid red;
+    // padding: 0 25px;
+
+    .date {
+      font-family: "CircularStd-Book", sans-serif;
+      color: $gray;
+      margin: 0;
+    }
+
+    .title {
+      font-family: "CircularStd-Medium", sans-serif;
+      font-size: 1.5rem;
+      line-height: 1;
+      margin: 5px 0;
+    }
+
+    a {
+      color: $black;
+      font-family: "CircularStd-Medium", sans-serif;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include phone {
+    width: 90vw;
+    aside {
+      width: 5vw;
+    }
+  }
+}
