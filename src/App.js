@@ -6,7 +6,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 // Home
-import Home from "./sections/home/Home";
+import Home from "./layout/_home/Home";
 
 // About
 import AboutUs from "./layout/1_about/1_about_us/AboutUs";
