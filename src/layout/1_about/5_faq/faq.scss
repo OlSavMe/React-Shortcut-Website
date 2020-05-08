@@ -1,0 +1,195 @@
+@import "../../index.scss";
+
+.faq {
+  @include container;
+  @include page-transitions;
+  padding: 50px 0 100px;
+
+  // Header
+  header {
+    display: flex;
+    align-items: center;
+
+    h2 {
+      font-family: $medium;
+      font-size: 3rem;
+      max-width: 10em;
+
+      span {
+        font-size: 2rem;
+        color: $yellow;
+      }
+
+      @include tablet {
+        font-size: 5.5vw;
+
+        span {
+          font-size: 3.5vw;
+        }
+      }
+
+      @include phone {
+        font-size: 7vw;
+
+        span {
+          font-size: 4vw;
+        }
+      }
+
+      @include big-desktop {
+        font-size: 3.5rem;
+      }
+    }
+
+    > div {
+      z-index: -10;
+      width: 350px;
+      margin-left: 25px;
+      position: relative;
+      top: -30px;
+
+      @include tablet {
+        margin-left: 5px;
+        top: 0;
+      }
+
+      @include phone {
+        width: 45vw;
+        margin-left: -30px;
+        top: 10px;
+      }
+    }
+  }
+
+  // Accordion container
+  .accordion {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  // Accordion item
+  .item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  // Question
+  .question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $yellow;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 5px 5px 5px #f3f3f3;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+
+    &:hover,
+    .active {
+      background-color: rgba(253, 200, 30, 0.25);
+    }
+
+    p {
+      font-size: 1.25rem;
+      padding: 0 10px;
+      margin-top: 15px;
+      font-family: $book;
+      width: 90%;
+    }
+  }
+
+  // Answer
+  .answer {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    margin-bottom: 10px;
+
+    p {
+      font-size: 1.25rem;
+      padding: 5px 10px;
+    }
+
+    a {
+      color: $black;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0 10px;
+      li {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  // Toggle
+  .toggle {
+    background-color: none;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    //border: 1px solid red;
+    position: relative;
+    outline: none;
+
+    span {
+      position: absolute;
+      transition: 0.3s;
+      background: $yellow;
+      border-radius: 1px;
+
+      &:first-of-type {
+        top: 32%;
+        bottom: 32%;
+        width: 3px;
+        left: 52%;
+      }
+
+      &:last-of-type {
+        left: 36%;
+        right: 27%;
+        height: 3px;
+        top: 47%;
+      }
+    }
+
+    &.active {
+      background-color: transparent;
+      span:first-of-type {
+        transform: rotate(90deg);
+      }
+
+      span:last-of-type {
+        transform: rotate(90deg);
+        left: 50%;
+        right: 50%;
+      }
+    }
+  }
+
+  // Contact
+  .contact {
+    p {
+      padding: 50px 0;
+      font-family: $book;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    a {
+      color: $black;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
