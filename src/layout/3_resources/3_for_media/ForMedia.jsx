@@ -12,14 +12,17 @@ export default function Press() {
             {" "}
             <h2>For media</h2>
             <p>
-              The Shortcut is the largest talent accelerator in the Nordics. We
-              equip foreign talent with the skills and networks they need to
-              succeed in the startup world.
+              As the biggest talent accelerator in the Nordics and one of the
+              biggest not-for-profit talent accelerators in the world, we’re
+              committed to connecting talent with startups and high-growth
+              companies, or encouraging talent to consider founding a startup of
+              their own. We do this through events, workshops, training sessions
+              and internships.
             </p>
           </div>
           <div>
             <img
-              src={require("../../../assets/illustrations/4.png")}
+              src={require("../../../assets/illustrations/2.png")}
               alt="illustration"
             />
           </div>

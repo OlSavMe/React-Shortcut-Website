@@ -14,12 +14,13 @@
       max-width: 30em;
 
       h2 {
+        font-family: $medium;
         font-size: 3rem;
         margin-bottom: 25px;
       }
 
       p {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
       }
     }
 
@@ -85,8 +86,15 @@
       width: 50%;
       margin-bottom: 25px;
 
+      p {
+        max-width: 15em;
+      }
+
       @include phone {
         margin-bottom: 0;
+        p {
+          max-width: 50em;
+        }
       }
 
       @include tablet {
