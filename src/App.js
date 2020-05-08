@@ -9,21 +9,21 @@ import Footer from "./components/Footer";
 import Home from "./sections/home/Home";
 
 // About
-import Story from "./sections/about/1_story/Story";
-import SuccessStories from "./sections/about/success_stories/SuccessStories";
-import Team from "./sections/about/2_team/Team";
-import Code from "./sections/about/3_code/Code";
-import FAQ from "./sections/about/4_faq/FAQ";
-import Contact from "./sections/about/5_contact/Contact";
+import AboutUs from "./layout/1_about/1_about_us/AboutUs";
+import SuccessStories from "./layout/1_about/2_success_stories/SuccessStories";
+import Team from "./layout/1_about/3_team/Team";
+import Code from "./layout/1_about/4_code/Code";
+import FAQ from "./layout/1_about/5_faq/FAQ";
+import Contact from "./layout/1_about/6_contact/Contact";
 
 // Resources
-import ForMedia from "./sections/resources/3_formedia/ForMedia";
+import ForMedia from "./layout/3_resources/3_for_media/ForMedia";
 
 // Events
-import AllEvents from "./sections/events/AllEvents";
+import AllEvents from "./layout/2_events/AllEvents";
 
 // Footer
-import PrivacyPolicies from "./sections/footer/PrivacyPolicies";
+import PrivacyPolicies from "./layout/footer/PrivacyPolicies";
 
 export class App extends Component {
   render() {
@@ -35,7 +35,7 @@ export class App extends Component {
           <Route exact path="/" component={Home} />
 
           {/* About */}
-          <Route path="/story" component={Story} />
+          <Route path="/story" component={AboutUs} />
           <Route path="/success" component={SuccessStories} />
           <Route path="/team" component={Team} />
           <Route path="/code" component={Code} />
