@@ -10,6 +10,7 @@ import Home from "./sections/home/Home";
 
 // About
 import Story from "./sections/about/1_story/Story";
+import SuccessStories from "./sections/about/success_stories/SuccessStories";
 import Team from "./sections/about/2_team/Team";
 import Code from "./sections/about/3_code/Code";
 import FAQ from "./sections/about/4_faq/FAQ";
@@ -35,6 +36,7 @@ export class App extends Component {
 
           {/* About */}
           <Route path="/story" component={Story} />
+          <Route path="/success" component={SuccessStories} />
           <Route path="/team" component={Team} />
           <Route path="/code" component={Code} />
           <Route path="/faq" component={FAQ} />
