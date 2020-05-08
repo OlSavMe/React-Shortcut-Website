@@ -51,7 +51,16 @@ export class Nav extends Component {
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Our story</a>
+                    <a href="/#">About us</a>
+                  </Link>
+                  <Link to="/success" className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/story.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/success">Success stories</a>
                   </Link>
                   <Link to="/team" className="link">
                     <div>
