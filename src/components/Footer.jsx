@@ -120,7 +120,7 @@ export default class Footer extends React.Component {
             <div>
               <form>
                 <h4>Subscribe to our newsletter</h4>
-                <input type="text" />
+                <input type="email" />
                 <input type="submit" value="Go" />
               </form>
               <div>

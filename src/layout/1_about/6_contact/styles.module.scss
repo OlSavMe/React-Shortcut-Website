@@ -2,223 +2,241 @@
 
 .container {
   @include page-transitions;
+  padding: 100px 0 0;
 }
 
-.form {
+section.form {
   @include container;
-  padding: 100px 0 0;
-  display: flex;
-  justify-content: space-between;
+  padding: 0 0 100px;
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "header aside"
+    "form aside";
 
-  aside {
-    width: 45%;
+  // Header
+  header {
+    // border: 1px solid red;
+    grid-area: header;
+    padding: 50px 0 0;
+    display: flex;
+    margin-bottom: 25px;
+
     h2 {
+      font-family: $medium;
       font-size: 3rem;
-      padding: 25px 0;
+      //padding: 25px 0;
+    }
+
+    > div {
+      display: none;
+      //border: 1px solid red;
+
+      img {
+        width: 25vw;
+
+        transform: scaleX(-1);
+        margin-top: -15vw;
+      }
     }
   }
 
+  // Form
   form {
-    width: 50%;
+    grid-area: form;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 45em;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 5px 5px 50px #f5f5f5;
+    padding: 35px 25px;
 
     label {
       font-size: 1.25rem;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     input:not([type="submit"]),
     select,
     textarea {
-      border: 1px solid #dcdcdc;
+      border: 1px solid #e5e5e5;
       border-radius: 2px;
       background-color: white;
       font-size: 1.25rem;
+      padding: 10px;
       margin-bottom: 15px;
-      padding: 5px;
-      box-shadow: 5px 5px 5px #f3f3f3;
-      // Reconsider outline
-      outline: none;
+      outline-color: $yellow;
+      outline-width: 1px;
     }
 
     textarea {
       resize: none;
       height: 150px;
+      margin-bottom: 25px;
     }
 
     input[type="submit"] {
-      background-color: $yellow;
-      border: none;
-      border-radius: 50px;
-      text-transform: uppercase;
-      padding: 10px 50px;
+      width: 200px;
+      background: #e5e5e5;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      font-family: $book;
       font-size: 1.25rem;
-      font-family: "CircularStd-Book", sans-serif;
-      margin: 15px 0;
-      &:hover {
-        background-color: rgba(253, 200, 30, 0.5);
-      }
-      &:focus {
-        border: 1px solid #d3d3d3;
-        background-color: white;
-        // Reconsider outline
-        outline: none;
-      }
-    }
-  }
-
-  @include tablet {
-    flex-direction: column;
-
-    aside {
-      width: 100%;
-      max-width: 25em;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    form {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-  }
-
-  @include phone {
-    flex-direction: column;
-
-    aside {
-      width: 100%;
-      max-width: 25em;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    form {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-  }
-}
-
-.heading {
-  font-family: "CircularStd-Medium", sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  padding: 50px 0;
-}
-
-/*
-Map 
-*/
-
-.location {
-  display: flex;
-  width: 100%;
-
-  @include big-desktop {
-    max-width: 80em;
-    margin: 0 auto;
-  }
-
-  .address {
-    width: 50%;
-    height: 500px;
-    background-color: rgba(77, 204, 229, 0.25);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .inner {
-      width: 60%;
-      padding: 25px;
-      background-color: white;
-      border-radius: 2px;
-      h4 {
-        font-size: 1.5rem;
-        font-family: "CircularStd-Medium", sans-serif;
-      }
-      p {
-        font-size: 1.25rem;
-      }
-    }
-  }
-
-  .map {
-    width: 50%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .marker {
-      background: none;
-      border: none;
-      cursor: pointer;
-      width: 50px;
-      img {
-        width: 100%;
-      }
-    }
-  }
-
-  @include phone {
-    flex-direction: column;
-    height: 1000px;
-    .address {
-      width: 100%;
-    }
-    .map {
-      width: 100%;
-    }
-  }
-  @include tablet {
-    flex-direction: column;
-    .address {
-      width: 100%;
-    }
-    .map {
-      width: 100%;
-    }
-  }
-}
-
-.join {
-  width: 500px;
-  margin: 0 auto;
-  padding: 50px 0 100px;
-  text-align: center;
-  position: relative;
-  > div {
-    width: 40%;
-    margin: 0 auto;
-  }
-
-  h3 {
-    font-family: "CircularStd-Medium", sans-serif;
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1.25rem;
-  }
-
-  a {
-    font-size: 1.25rem;
-    text-decoration: underline;
-    cursor: pointer;
-    color: $black;
-
-    &:hover {
-      text-decoration: none;
+      padding: 10px 0;
+      transition: all 0.25s ease;
       outline: none;
+
+      &:hover {
+        background-color: $yellow;
+        border: 1px solid $yellow;
+        transform: translate3d(0, -2px, 0);
+      }
+
+      &:active {
+        background-color: white;
+        border: 1px solid $yellow;
+        transform: translate3d(0, 2px, 0);
+      }
+    }
+  }
+
+  // Visual
+  aside {
+    grid-area: aside;
+    width: 100%;
+    max-width: 20em;
+    margin: 0 auto;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+      transform: scaleX(-1);
+    }
+  }
+
+  @include phone {
+    display: flex;
+    flex-direction: column;
+
+    header {
+      > div {
+        display: block;
+        margin-bottom: 50px;
+      }
+    }
+
+    aside {
+      display: none;
+    }
+  }
+}
+
+// Location
+section.location {
+  width: 100%;
+  background-color: #f5f5f5;
+  min-height: 500px;
+
+  > div {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 0;
+
+    h3 {
+      display: block;
+      width: 40%;
+      font-size: 2rem;
+      font-family: $medium;
+    }
+
+    > div {
+      width: 50%;
+
+      p {
+        font-family: $book;
+        font-size: 1.25rem;
+        line-height: 1;
+
+        &:first-of-type {
+          font-size: 2rem;
+          font-family: $medium;
+          margin-bottom: 25px;
+          padding: 5px 0;
+        }
+
+        &:nth-of-type(3) {
+          margin-bottom: 25px;
+        }
+
+        span {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    @include tablet {
+      flex-direction: column;
+
+      h3 {
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      > div {
+        width: 100%;
+
+        p {
+          &:first-of-type {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    @include phone {
+      flex-direction: column;
+
+      h3 {
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      > div {
+        width: 100%;
+
+        p {
+          &:first-of-type {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Map
+.map {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .marker {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: grab;
+    width: 50px;
+    img {
+      width: 100%;
     }
   }
 }
