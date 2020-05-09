@@ -140,18 +140,23 @@ $black: rgb(32, 32, 32);
     }
 
     input {
-      border: 1px solid #d3d3d3;
+      border: 1px solid #e5e5e5;
       font-size: 1.25rem;
       padding: 5px;
       outline: none;
       -webkit-appearance: none;
     }
 
+    input[type="email"] {
+      border-radius: 2px 0 0 2px;
+    }
+
     input[type="submit"] {
       font-family: "CircularStd-Medium", sans-serif;
       padding: 5px 10px;
+      border-radius: 0 2px 2px 0;
       &:hover {
-        background-color: #f3f3f3;
+        background-color: #d8d8d8;
       }
     }
   }
@@ -163,6 +168,7 @@ $black: rgb(32, 32, 32);
     font-size: 1.5rem;
     background-color: white;
     border: 1px solid #d3d3d3;
+    border-radius: 10px;
     &:hover {
       background-color: #f3f3f3;
     }
