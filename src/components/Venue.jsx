@@ -19,9 +19,6 @@ const Venue = (props) => {
     });
   };
 
-  console.log(venue);
-  console.log(address);
-
   return (
     <div>
       {venue.name === "Online event" ? null : (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import moment from "moment";
 
 // Styles
 import css from "./styles.module.scss";
@@ -16,7 +17,7 @@ const Events = () => {
 
   const getEvents = async () => {
     await Axios.get(
-      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
+      "https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
     ).then((response) => {
       setEvents(response.data.events);
     });
@@ -86,34 +87,35 @@ const Events = () => {
 
   return (
     <div>
-      {events.slice(0, 3).map((event, i) => (
-        <div className={css.container} key={i}>
-          <aside>
-            <p>{formatDay(event.start.local)}</p>
-            <p>{formatDate(event.start.local)}</p>
-            <p>{formatMonth(event.start.local)}</p>
-          </aside>
-          <div>
-            <p className={css.date}>
-              <span>
-                {formatMonth(event.start.local)},{" "}
-                {formatDate(event.start.local)}
-              </span>{" "}
-              <span>
-                @ {formatTime(event.start.local)} -{" "}
-                {formatTime(event.end.local)}
-              </span>{" "}
+      {events.slice(0, 3).map((event, i) =>
+        moment(event.start.local).isBefore() ? null : (
+          <div className={css.container} key={i}>
+            <aside>
+              <p>{formatDay(event.start.local)}</p>
+              <p>{formatDate(event.start.local)}</p>
               <p>{event.online_event ? "Online" : null}</p>
-            </p>
-            <p className={css.title}>{event.name.text}</p>
-            <p className={css.text}>{formatText(event.summary)}</p>
-            <p>{event.venue_id ? <Venue id={event.venue_id} /> : null}</p>
-            <a href={event.url} target="_blank" rel="noopener noreferrer">
-              Learn more +
-            </a>
+            </aside>
+            <div>
+              <p className={css.date}>
+                <span>
+                  {formatMonth(event.start.local)},{" "}
+                  {formatDate(event.start.local)}
+                </span>{" "}
+                <span>
+                  @ {formatTime(event.start.local)} -{" "}
+                  {formatTime(event.end.local)}
+                </span>{" "}
+              </p>
+              <p className={css.title}>{event.name.text}</p>
+              <p className={css.text}>{formatText(event.summary)}</p>
+              <p>{event.venue_id ? <Venue id={event.venue_id} /> : null}</p>
+              <a href={event.url} target="_blank" rel="noopener noreferrer">
+                Learn more +
+              </a>
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      )}
     </div>
   );
 };
