@@ -8,7 +8,7 @@ const Venue = (props) => {
 
   useEffect(() => {
     getVenue(); // eslint-disable-line
-  });
+  }, {});
 
   const getVenue = async () => {
     await Axios.get(
@@ -18,9 +18,6 @@ const Venue = (props) => {
       setAddress(response.data.address);
     });
   };
-
-  console.log(venue);
-  console.log(address);
 
   return (
     <div>

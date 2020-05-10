@@ -21,7 +21,7 @@ export class Nav extends Component {
         <div className="nav-container">
           <div className="logo">
             <div className="logo-desktop">
-              <Link to="/home">
+              <Link to="/">
                 <img
                   src={require("../assets/icons/shortcut-logo.png")}
                   alt="shortcut-logo"
