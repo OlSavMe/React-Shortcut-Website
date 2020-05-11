@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
 const Venue = (props) => {
-  const [venue, setVenue] = useState({});
+  const [venue, setVenue] = useState([]);
   const [address, setAddress] = useState({});
   const id = props.id;
 
   useEffect(() => {
-    getVenue(); // eslint-disable-line
-  }, {});
+    getVenue(); // eslint-disable-next-line
+  }, []);
 
   const getVenue = async () => {
     await Axios.get(
@@ -18,9 +18,6 @@ const Venue = (props) => {
       setAddress(response.data.address);
     });
   };
-
-  console.log(venue);
-  console.log(address);
 
   return (
     <div>
