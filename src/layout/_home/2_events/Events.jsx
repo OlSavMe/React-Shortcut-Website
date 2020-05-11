@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import moment from "moment";
-
+import SkeletonList from "../../../components/SceletonList";
 // Styles
 import css from "./styles.module.scss";
 
@@ -10,6 +10,7 @@ import { Venue } from "../../../components/index";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getEvents();
@@ -20,6 +21,7 @@ const Events = () => {
       "https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
     ).then((response) => {
       setEvents(response.data.events);
+      setLoading(false);
     });
   };
 
@@ -87,6 +89,7 @@ const Events = () => {
 
   return (
     <div>
+      {loading && <SkeletonList />}
       {events.slice(0, 3).map((event, i) =>
         moment(event.start.local).isBefore() ? null : (
           <div className={css.container} key={i}>
