@@ -91,7 +91,7 @@ const Events = () => {
           <aside>
             <p>{formatDay(event.start.local)}</p>
             <p>{formatDate(event.start.local)}</p>
-            <p>{event.online_event ? "Online" : null}</p>
+            <p>{formatMonth(event.start.local)}</p>
           </aside>
           <div>
             <p className={css.date}>
@@ -103,6 +103,7 @@ const Events = () => {
                 @ {formatTime(event.start.local)} -{" "}
                 {formatTime(event.end.local)}
               </span>{" "}
+              <p>{event.online_event ? "Online" : null}</p>
             </p>
             <p className={css.title}>{event.name.text}</p>
             <p className={css.text}>{formatText(event.summary)}</p>

@@ -6,8 +6,16 @@ import css from "./styles.module.scss";
 const Partners = () => {
   return (
     <div className={css.container}>
-      <p>Our partners</p>
-      <div className={css.logos}>
+      <header>
+        <p>Our partners</p>
+        <p>
+          Junction's partner companies, ranging from startups to tech industry
+          leaders, provide their latest tech and pressing challenges for our
+          hackers to tackle during the weekend.
+        </p>
+      </header>
+
+      <div>
         <a
           href="https://www.mege.fi/"
           target="_blank"
