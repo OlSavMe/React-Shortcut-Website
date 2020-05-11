@@ -21,16 +21,11 @@ const SkeletonList = () => {
             <div>
               <p className={css.date}>
                 <span>
-<<<<<<< HEAD
                   <Skeleton height={10} width={200} />
-=======
-                  <Skeleton height={40} width={200} />
->>>>>>> 466ba6d0579e0801df850c7470cb908ad2a04332
                 </span>{" "}
               </p>
               <p className={css.title}>
                 {" "}
-<<<<<<< HEAD
                 <Skeleton height={40} width={700} />
               </p>
               <p className={css.text}>
@@ -40,17 +35,6 @@ const SkeletonList = () => {
               <p>
                 {" "}
                 <Skeleton height={20} width={700} />
-=======
-                <Skeleton height={20} width={800} />
-              </p>
-              <p className={css.text}>
-                {" "}
-                <Skeleton height={20} width={800} />
-              </p>
-              <p>
-                {" "}
-                <Skeleton height={20} width={800} />
->>>>>>> 466ba6d0579e0801df850c7470cb908ad2a04332
               </p>
             </div>
           </div>
