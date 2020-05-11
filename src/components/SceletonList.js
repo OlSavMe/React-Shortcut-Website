@@ -9,7 +9,7 @@ const SkeletonList = () => {
         .fill()
         .map((item, index) => (
           <div className={css.container} key={index}>
-            <Skeleton height={180} />
+            <Skeleton height={`100%`} />
             <aside>
               <p>
                 <Skeleton height={50} width={50} />{" "}
@@ -21,20 +21,20 @@ const SkeletonList = () => {
             <div>
               <p className={css.date}>
                 <span>
-                  <Skeleton width={200} />
+                  <Skeleton height={40} width={200} />
                 </span>{" "}
               </p>
               <p className={css.title}>
                 {" "}
-                <Skeleton height={30} width={811} />
+                <Skeleton height={20} width={800} />
               </p>
               <p className={css.text}>
                 {" "}
-                <Skeleton width={811} />
+                <Skeleton height={20} width={800} />
               </p>
               <p>
                 {" "}
-                <Skeleton width={811} />
+                <Skeleton height={20} width={800} />
               </p>
             </div>
           </div>
