@@ -8,7 +8,7 @@ const Venue = (props) => {
 
   useEffect(() => {
     getVenue(); // eslint-disable-line
-  });
+  }, {});
 
   const getVenue = async () => {
     await Axios.get(
@@ -29,12 +29,12 @@ const Venue = (props) => {
           {" "}
           {venue.name ? (
             <p>
-              Location: {venue.name}
+              {venue.name}
               {", "}
               {address.localized_address_display}{" "}
             </p>
           ) : (
-            <p>Location: {address.localized_address_display} </p>
+            <p>{address.localized_address_display} </p>
           )}
         </div>
       )}

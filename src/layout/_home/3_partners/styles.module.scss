@@ -5,19 +5,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
+  padding: 75px 0 50px;
 
-  p {
-    font-family: $medium;
-    font-size: 2rem;
-    padding: 50px 0;
-
-    @include phone {
-      font-size: 1.5rem;
+  // Header
+  header {
+    @include container;
+    text-align: center;
+    p {
+      &:first-of-type {
+        font-family: $medium;
+        font-size: 2rem;
+        @include phone {
+          font-size: 1.5rem;
+        }
+      }
+      &:nth-of-type(2) {
+        font-family: $book;
+        font-size: 1.25rem;
+      }
     }
   }
 
-  .logos {
+  // Container with logos
+  > div {
     width: 70%;
     display: flex;
     flex-wrap: wrap;
@@ -63,11 +73,13 @@
     }
   }
 
+  // Bottom link
   a {
     font-size: 1.5rem;
     font-family: "CircularStd-Book", sans-serif;
     padding: 50px 0;
     color: $black;
+    text-decoration: underline;
     &:hover {
       text-decoration: none;
     }

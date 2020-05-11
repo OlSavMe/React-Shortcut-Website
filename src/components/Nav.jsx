@@ -122,7 +122,7 @@ export class Nav extends Component {
                         alt="icon"
                       />
                     </div>
-                    <a href="/all-events">All events</a>
+                    <a href="/events">Events</a>
                   </li>
                 </ul>
               </li>

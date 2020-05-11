@@ -5,17 +5,36 @@
   width: 80vw;
   max-width: 60em;
   margin: 100px auto;
-  //border: 1px solid red;
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  max-width: 60em;
+  margin: 50px auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  box-shadow: 5px 5px 50px #f5f5f5;
+  padding: 25px 10px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  &:hover {
+    box-shadow: 0 2px 14px #d3d3d3;
+  }
+
   aside {
-    //border: 1px solid red;
+    border-right: 1px solid #d3d3d3;
+    border: 1px solid red;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding: 0 50px;
+    margin-right: 50px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
 
     p {
-      font-family: "CircularStd-Medium", sans-serif;
+      font-family: $medium;
       margin: 0;
       &:first-of-type {
         text-transform: uppercase;

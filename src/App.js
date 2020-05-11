@@ -20,7 +20,7 @@ import Contact from "./layout/1_about/6_contact/Contact";
 import ForMedia from "./layout/3_resources/3_for_media/ForMedia";
 
 // Events
-import AllEvents from "./layout/2_events/AllEvents";
+import Events from "./layout/2_events/Events";
 
 // Footer
 import PrivacyPolicies from "./layout/footer/PrivacyPolicies";
@@ -46,7 +46,7 @@ export class App extends Component {
           <Route path="/media" component={ForMedia} />
 
           {/* All events */}
-          <Route path="/all-events" component={AllEvents} />
+          <Route path="/events" component={Events} />
 
           {/* Footer */}
           <Route path="/privacy" component={PrivacyPolicies} />

@@ -6,11 +6,9 @@ import css from "./styles.module.scss";
 
 // Children
 import { Venue } from "../../components/index";
-import { Spinner } from "../../components/index";
 
-const AllEvents = () => {
+const EventsList = () => {
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getEvents();
@@ -21,7 +19,6 @@ const AllEvents = () => {
       "https://www.eventbriteapi.com/v3/users/me/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
     ).then((response) => {
       setEvents(response.data.events);
-      setLoading(false);
     });
   };
 
@@ -87,16 +84,14 @@ const AllEvents = () => {
     return eventText;
   };
 
-  // online
   return (
-    <div>
-      {loading && <Spinner />}
+    <div className={css.list}>
       {events.slice(0, 10).map((event, i) => (
-        <div className={css.container} key={i}>
+        <div className={css.item} key={i}>
           <aside>
-            <p>{formatDay(event.start.local)}</p>
-            <p>{formatDate(event.start.local)}</p>
-            <p>{event.online_event ? "Online" : null}</p>
+            <div>
+              <img src={event.logo.original.url} alt="event-logo" />
+            </div>
           </aside>
           <div>
             <p className={css.date}>
@@ -111,13 +106,10 @@ const AllEvents = () => {
             </p>
             <p className={css.title}>{event.name.text}</p>
             <p className={css.text}>{formatText(event.summary)}</p>
-            <p>{event.venue_id ? <Venue id={event.venue_id} /> : null}</p>
+            <p>{event.venue_id ? <Venue id={event.venue_id} /> : "Online"}</p>
             <a href={event.url} target="_blank" rel="noopener noreferrer">
               Learn more +
             </a>
-            <div>
-              <img src={event.logo.original.url} alt="event-logo" />
-            </div>
           </div>
         </div>
       ))}
@@ -125,4 +117,4 @@ const AllEvents = () => {
   );
 };
 
-export default AllEvents;
+export default EventsList;
