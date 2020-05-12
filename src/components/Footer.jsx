@@ -113,9 +113,8 @@ const Footer = () => {
 
         <section>
           <p className={css.text}>
-            The Shortcut is the largest talent accelerator in the Nordics. We
-            equip foreign talent with the skills and networks they need to
-            succeed in the startup world.
+            We equip talent with the skills and networks they need to become an
+            entrepreneur or work for a high-growth company/startup.
           </p>
           <div>
             <form>

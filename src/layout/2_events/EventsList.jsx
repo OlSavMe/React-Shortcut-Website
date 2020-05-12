@@ -5,7 +5,7 @@ import Axios from "axios";
 import css from "./styles.module.scss";
 
 // Children
-import { Venue } from "../../components/index";
+import Event from "./Event";
 
 const EventsList = () => {
   const [events, setEvents] = useState([]);
@@ -22,96 +22,10 @@ const EventsList = () => {
     });
   };
 
-  // date
-  const formatDate = (e) => {
-    const date = new Date(e);
-    const eventDate = date.getDay();
-    return eventDate;
-  };
-
-  // time
-  const formatTime = (e) => {
-    const date = new Date(e);
-    const eventTime = date.toLocaleString("en-US", {
-      hour: "numeric",
-      minute: "numeric",
-      hour12: true,
-    });
-    return eventTime;
-  };
-
-  // day
-  const formatDay = (e) => {
-    const days = [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ];
-    const date = new Date(e);
-    const eventDay = days[date.getDay()].substring(0, 3);
-    return eventDay;
-  };
-
-  // month
-  const formatMonth = (e) => {
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-
-    const date = new Date(e);
-    const eventMonth = months[date.getMonth()];
-    return eventMonth;
-  };
-
-  // month
-  const formatText = (e) => {
-    const eventText = e + " ...";
-    return eventText;
-  };
-
   return (
     <div className={css.list}>
       {events.slice(0, 10).map((event, i) => (
-        <div className={css.item} key={i}>
-          <aside>
-            <div>
-              <img src={event.logo.original.url} alt="event-logo" />
-            </div>
-          </aside>
-          <div>
-            <p className={css.date}>
-              <span>
-                {formatMonth(event.start.local)},{" "}
-                {formatDate(event.start.local)}
-              </span>{" "}
-              <span>
-                @ {formatTime(event.start.local)} -{" "}
-                {formatTime(event.end.local)}
-              </span>{" "}
-            </p>
-            <p className={css.title}>{event.name.text}</p>
-            <p className={css.text}>{formatText(event.summary)}</p>
-            <p>{event.venue_id ? <Venue id={event.venue_id} /> : "Online"}</p>
-            <a href={event.url} target="_blank" rel="noopener noreferrer">
-              Learn more +
-            </a>
-          </div>
-        </div>
+        <Event key={i} event={event} />
       ))}
     </div>
   );
