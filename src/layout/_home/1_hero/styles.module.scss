@@ -2,25 +2,27 @@
 
 .hero {
   width: 100%;
-  height: 80vh;
-  background-image: linear-gradient(
-      rgba(77, 204, 229, 0.5),
-      rgba(255, 255, 255, 0.05)
-    ),
-    url("../../../assets/photos/hero.jpg");
+  height: 70vh;
+
+  // #f2f2f2 = rgb(242,242,242)
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("../../../assets/photos/hero3.jpg");
   background-position: center;
+
   background-repeat: no-repeat;
   background-size: cover;
 
   > div {
-    //border: 1px solid white;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
     text-align: left;
     font-family: $book;
+    // background-color: rgba(253, 200, 30, 0.25);
+    padding: 10px 25px;
+    border-radius: 10px;
 
     h1 {
       font-family: $medium;
@@ -28,17 +30,22 @@
       margin: 0;
       position: relative;
       left: -12px;
+      color: $black;
+      color: white;
     }
 
     h2 {
       font-size: 2rem;
       margin: 10px 0;
+      max-width: 20em;
+      color: white;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       max-width: 35em;
       margin: 10px 0;
+      color: white;
     }
 
     // Buttons
@@ -51,11 +58,11 @@
       a {
         display: block;
         margin-right: 10px;
-        width: 200px;
+        width: 225px;
         font-size: 1.5rem;
         text-align: center;
         text-decoration: none;
-        padding: 10px 25px;
+        padding: 8px 25px;
         border: none;
         border-radius: 10px;
         color: $black;
@@ -66,8 +73,9 @@
         }
 
         &:nth-of-type(2) {
-          border: 2px solid $black;
+          border: 2px solid white;
           background-color: transparent;
+          color: white;
         }
 
         &:hover {

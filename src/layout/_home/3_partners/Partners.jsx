@@ -93,7 +93,10 @@ const Partners = () => {
           />
         </a>
       </div>
-      <a href="/#">Work with us</a>
+
+      <footer>
+        <a href="/#">Work with us</a>
+      </footer>
     </div>
   );
 };

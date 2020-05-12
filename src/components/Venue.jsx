@@ -20,22 +20,20 @@ const Venue = (props) => {
   };
 
   return (
-    <div>
+    <p>
       {venue.name === "Online event" ? null : (
-        <div>
-          {" "}
+        <span>
           {venue.name ? (
-            <p>
-              {venue.name}
-              {", "}
-              {address.localized_address_display}{" "}
-            </p>
+            <span>
+              `{venue.name}, {address.localized_address_display}`
+            </span>
           ) : (
-            <p>{address.localized_address_display} </p>
+            <span>{address.localized_address_display}</span>
           )}
-        </div>
+        </span>
       )}
-    </div>
+    </p>
   );
 };
+
 export default Venue;

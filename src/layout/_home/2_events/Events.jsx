@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import { Link } from "react-router-dom";
 import moment from "moment";
 import SkeletonList from "../../../components/SceletonList";
+
 // Styles
 import css from "./styles.module.scss";
 
 // Children
-import { Venue } from "../../../components/index";
+import Event from "./Event";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -25,100 +27,26 @@ const Events = () => {
     });
   };
 
-  // date
-  const formatDate = (e) => {
-    const date = new Date(e);
-    const eventDate = date.getDay();
-    return eventDate;
-  };
-
-  // time
-  const formatTime = (e) => {
-    const date = new Date(e);
-    const eventTime = date.toLocaleString("en-US", {
-      hour: "numeric",
-      minute: "numeric",
-      hour12: true,
-    });
-    return eventTime;
-  };
-
-  // day
-  const formatDay = (e) => {
-    const days = [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ];
-    const date = new Date(e);
-    const eventDay = days[date.getDay()].substring(0, 3);
-    return eventDay;
-  };
-
-  // month
-  const formatMonth = (e) => {
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-
-    const date = new Date(e);
-    const eventMonth = months[date.getMonth()];
-    return eventMonth;
-  };
-
-  // month
-  const formatText = (e) => {
-    const eventText = e + " ...";
-    return eventText;
-  };
-
   return (
-    <div>
-      {loading && <SkeletonList />}
-      {events.slice(0, 3).map((event, i) =>
-        moment(event.start.local).isBefore() ? null : (
-          <div className={css.container} key={i}>
-            <aside>
-              <p>{formatDay(event.start.local)}</p>
-              <p>{formatDate(event.start.local)}</p>
-              <p>{event.online_event ? "Online" : null}</p>
-            </aside>
-            <div>
-              <p className={css.date}>
-                <span>
-                  {formatMonth(event.start.local)},{" "}
-                  {formatDate(event.start.local)}
-                </span>{" "}
-                <span>
-                  @ {formatTime(event.start.local)} -{" "}
-                  {formatTime(event.end.local)}
-                </span>{" "}
-              </p>
-              <p className={css.title}>{event.name.text}</p>
-              <p className={css.text}>{formatText(event.summary)}</p>
-              <p>{event.venue_id ? <Venue id={event.venue_id} /> : null}</p>
-              <a href={event.url} target="_blank" rel="noopener noreferrer">
-                Learn more +
-              </a>
-            </div>
-          </div>
-        )
-      )}
+    <div className={css.container}>
+      <div>
+        <header>
+          <p>Upcoming events:</p>
+        </header>
+        {loading && <SkeletonList />}
+        {events
+          .slice(0, 3)
+          .map((event, i) =>
+            moment(event.start.local).isAfter() ? null : (
+              <Event key={i} event={event} />
+            )
+          )}
+        <footer>
+          <Link to="/events">
+            <a href="/">See all events</a>
+          </Link>
+        </footer>
+      </div>
     </div>
   );
 };
