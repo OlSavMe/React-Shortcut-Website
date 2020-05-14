@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import SkeletonList from "../../../components/SceletonList";
+import SkeletonList from "../../../components/SkeletonList";
 
 // Styles
 import css from "./styles.module.scss";

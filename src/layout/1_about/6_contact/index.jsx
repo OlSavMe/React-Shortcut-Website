@@ -37,11 +37,13 @@ const Contact = () => {
         </aside>
 
         <form>
-          <label for="name">Name: </label>
-          <input type="text" name="name" />
-
-          <label for="email"> Email:</label>
-          <input type="email" name="email" />
+          <div>
+            {" "}
+            <label for="name">Name: </label>
+            <input type="text" name="name" />
+            <label for="email"> Email:</label>
+            <input type="email" name="email" />
+          </div>
 
           <label for="subjects">Choose subject:</label>
           <select name="subjects">

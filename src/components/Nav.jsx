@@ -47,7 +47,7 @@ export class Nav extends Component {
                   <Link to="/story" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/story.png")}
+                        src={require("../assets/icons/new/about.png")}
                         alt="icon"
                       />
                     </div>
@@ -56,7 +56,7 @@ export class Nav extends Component {
                   <Link to="/success" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/story.png")}
+                        src={require("../assets/icons/new/success.png")}
                         alt="icon"
                       />
                     </div>
@@ -65,7 +65,7 @@ export class Nav extends Component {
                   <Link to="/team" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/team-icon.png")}
+                        src={require("../assets/icons/new/team.png")}
                         alt="icon"
                       />
                     </div>
@@ -74,7 +74,7 @@ export class Nav extends Component {
                   <Link to="/code" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/code-of-conduct.png")}
+                        src={require("../assets/icons/new/code.png")}
                         alt="icon"
                       />
                     </div>
@@ -84,7 +84,7 @@ export class Nav extends Component {
                   <Link to="/faq" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/faq.png")}
+                        src={require("../assets/icons/new/faq.png")}
                         alt="icon"
                       />
                     </div>
@@ -93,7 +93,7 @@ export class Nav extends Component {
                   <Link to="/contact" className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/contact.png")}
+                        src={require("../assets/icons/new/contact.png")}
                         alt="icon"
                       />
                     </div>
@@ -102,29 +102,9 @@ export class Nav extends Component {
                 </ul>
               </li>
               <li className="submenu" id="events">
-                <a className="submenu-btn" href="#events">
+                <a className="submenu-btn" href="/events">
                   Events
                 </a>
-                <ul className="submenu-list">
-                  <li className="link">
-                    <div>
-                      <img
-                        src={require("../assets/icons/nav-icon.png")}
-                        alt="icon"
-                      />
-                    </div>
-                    <a href="/#">What's on?</a>
-                  </li>
-                  <li className="link">
-                    <div>
-                      <img
-                        src={require("../assets/icons/all-events.png")}
-                        alt="icon"
-                      />
-                    </div>
-                    <a href="/events">Events</a>
-                  </li>
-                </ul>
               </li>
 
               <li className="submenu" id="resources">
@@ -135,7 +115,7 @@ export class Nav extends Component {
                   <li className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/blog.png")}
+                        src={require("../assets/icons/new/blog.png")}
                         alt="icon"
                       />
                     </div>
@@ -144,7 +124,7 @@ export class Nav extends Component {
                   <li className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/gallery.png")}
+                        src={require("../assets/icons/new/gallery.png")}
                         alt="icon"
                       />
                     </div>
@@ -154,7 +134,7 @@ export class Nav extends Component {
                   <li className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/whitepaper.png")}
+                        src={require("../assets/icons/new/whitepaper.png")}
                         alt="icon"
                       />
                     </div>
@@ -169,7 +149,7 @@ export class Nav extends Component {
                   <li className="link">
                     <div>
                       <img
-                        src={require("../assets/icons/for-media.png")}
+                        src={require("../assets/icons/new/for-media.png")}
                         alt="icon"
                       />
                     </div>
@@ -189,7 +169,7 @@ export class Nav extends Component {
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Info</a>
+                    <a href="/#">Page 1</a>
                   </li>
                   <li className="link">
                     <div>
@@ -198,7 +178,16 @@ export class Nav extends Component {
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Contact</a>
+                    <a href="/#">Page 2</a>
+                  </li>
+                  <li className="link">
+                    <div>
+                      <img
+                        src={require("../assets/icons/nav-icon.png")}
+                        alt="icon"
+                      />
+                    </div>
+                    <a href="/#">Page 3</a>
                   </li>
                 </ul>
               </li>
@@ -206,26 +195,6 @@ export class Nav extends Component {
                 <a className="submenu-btn" href="#join">
                   Join
                 </a>
-                <ul className="submenu-list">
-                  <li className="link">
-                    <div>
-                      <img
-                        src={require("../assets/icons/nav-icon.png")}
-                        alt="icon"
-                      />
-                    </div>
-                    <a href="/#">Intern</a>
-                  </li>
-                  <li className="link">
-                    <div>
-                      <img
-                        src={require("../assets/icons/nav-icon.png")}
-                        alt="icon"
-                      />
-                    </div>
-                    <a href="/#">Volunteer</a>
-                  </li>
-                </ul>
               </li>
             </ul>
           </nav>

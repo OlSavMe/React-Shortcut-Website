@@ -7,12 +7,12 @@ const SuccessStories = () => {
   return (
     <div className={css.container}>
       <header>
-        <h2>Success Stories</h2>
+        <h2>Success stories</h2>
       </header>
 
       <section>
         <h3>
-          <span>1. </span> Ekaterina
+          <span>1.</span> Ekaterina
         </h3>
         <p>
           Originally from Russia, Ekaterina is a professional in International
@@ -32,7 +32,7 @@ const SuccessStories = () => {
       <section>
         <h3>
           {" "}
-          <span>2. </span>Nguyen Le
+          <span>2.</span>Nguyen Le
         </h3>
         <p>
           After moving to Finland from Vietnam and studying marketing at Hanken
@@ -55,7 +55,7 @@ const SuccessStories = () => {
       <section>
         <h3>
           {" "}
-          <span>3. </span>Thomas
+          <span>3.</span>Thomas
         </h3>
         <p>
           Two years ago, Thomas moved from his native Czech Republic to Finland
@@ -79,7 +79,7 @@ const SuccessStories = () => {
       <section>
         <h3>
           {" "}
-          <span>4. </span>Maya Kristina
+          <span>4.</span>Maya Kristina
         </h3>
         <p>
           Originally from Syria, Maya Kristina came to Finland in 2016. Through
@@ -104,7 +104,7 @@ const SuccessStories = () => {
       <section>
         <h3>
           {" "}
-          <span>5. </span>Noemi
+          <span>5.</span>Noemi
         </h3>
         <p>
           The Swiss-born Noemi came to Finland in 2018 with a resume full of

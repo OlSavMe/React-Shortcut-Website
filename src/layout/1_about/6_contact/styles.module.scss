@@ -9,17 +9,17 @@ section.form {
   @include container;
   padding: 0 0 100px;
   display: grid;
-  grid-template-columns: 4fr 2fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 6fr 2fr;
+  grid-template-rows: 100px auto;
   grid-template-areas:
     "header aside"
     "form aside";
 
   // Header
   header {
-    // border: 1px solid red;
+    //border: 1px solid red;
     grid-area: header;
-    padding: 50px 0 0;
+    padding: 0;
     display: flex;
     margin-bottom: 25px;
 
@@ -47,14 +47,21 @@ section.form {
     grid-area: form;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 45em;
     border: 1px solid #e5e5e5;
     border-radius: 10px;
     box-shadow: 5px 5px 50px #f5f5f5;
     padding: 35px 25px;
+    //border: 1px solid red;
 
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     label {
+      //border: 1px solid red;
       font-size: 1.25rem;
       margin-bottom: 10px;
     }
@@ -105,9 +112,10 @@ section.form {
 
   // Visual
   aside {
+    border: 1px solid red;
     grid-area: aside;
     width: 100%;
-    max-width: 20em;
+    max-width: 10em;
     margin: 0 auto;
     margin-left: 25px;
     display: flex;

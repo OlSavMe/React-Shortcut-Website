@@ -16,7 +16,8 @@ $red: rgb(232, 89, 46);
 .nav {
   box-shadow: 5px 5px 5px #f0f0f0;
   transition: background-color 0.5s ease;
-  z-index: 30;
+  position: relative;
+  z-index: 50;
 
   &:hover {
     box-shadow: none;

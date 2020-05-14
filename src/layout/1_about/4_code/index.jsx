@@ -3,13 +3,13 @@ import React from "react";
 // Styles
 import css from "./styles.module.scss";
 
-export default function Code() {
+const Code = () => {
   return (
-    <>
-      <div className={css.container}>
-        <header>
-          <h2>Code of conduct</h2>
-        </header>
+    <div className={css.container}>
+      <header>
+        <h2>Code of conduct</h2>
+      </header>
+      <section>
         <h3>
           <span>1.</span> Background
         </h3>
@@ -25,6 +25,8 @@ export default function Code() {
           entrepreneurship, growth and innovation. Located in Maria 01, The
           Shortcut is at the epicenter of the Nordics’ startup community.
         </p>
+      </section>
+      <section>
         <h3>
           <span>2.</span> Purpose
         </h3>
@@ -38,6 +40,8 @@ export default function Code() {
           conduct. Any breach of these principles will lead to disciplinary
           action.
         </p>
+      </section>
+      <section>
         <h3>
           <span>3.</span> Scope
         </h3>
@@ -46,7 +50,8 @@ export default function Code() {
           attendees are expected to adhere to The Shortcut’s code of conduct
           across all activities.
         </p>
-
+      </section>
+      <section>
         <h3>
           <span>4.</span> Code of conduct
         </h3>
@@ -89,7 +94,8 @@ export default function Code() {
             appropriate{" "}
           </li>
         </ul>
-
+      </section>
+      <section>
         <h3>
           <span>5.</span> Disciplinary action
         </h3>
@@ -105,7 +111,8 @@ export default function Code() {
           <li>&mdash; Permanent expulsion from The Shortcut’s office space</li>
           <li>&mdash; Termination of contract</li>
         </ul>
-
+      </section>
+      <section>
         <h3>
           <span>6.</span> What to do if you observe inappropriate conduct
         </h3>
@@ -114,7 +121,9 @@ export default function Code() {
           inform The Shortcut HR team immediately:{" "}
           <a href="mailto:hr@theshortcut.org">hr@theshortcut.org</a>
         </p>
-      </div>
-    </>
+      </section>
+    </div>
   );
-}
+};
+
+export default Code;

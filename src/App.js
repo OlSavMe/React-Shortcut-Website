@@ -5,22 +5,25 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
+//Functional components
+import ScrollToTop from "./components/ScrollToTop";
+
 // Home
 import Home from "./layout/_home/Home";
 
 // About
-import AboutUs from "./layout/1_about/1_about_us/AboutUs";
-import SuccessStories from "./layout/1_about/2_success_stories/SuccessStories";
+import AboutUs from "./layout/1_about/1_about_us/index.jsx";
+import SuccessStories from "./layout/1_about/2_success_stories/index.jsx";
 import Team from "./layout/1_about/3_team/Team";
-import Code from "./layout/1_about/4_code/Code";
-import FAQ from "./layout/1_about/5_faq/FAQ";
-import Contact from "./layout/1_about/6_contact/Contact";
+import Code from "./layout/1_about/4_code/index.jsx";
+import FAQ from "./layout/1_about/5_faq/index.jsx";
+import Contact from "./layout/1_about/6_contact/index.jsx";
 
 // Resources
 import ForMedia from "./layout/3_resources/3_for_media/ForMedia";
 
 // Events
-import Events from "./layout/2_events/Events";
+import Events from "./layout/2_events/index.jsx";
 
 // Footer
 import PrivacyPolicies from "./layout/footer/PrivacyPolicies";
@@ -29,6 +32,7 @@ export class App extends Component {
   render() {
     return (
       <Router>
+        <ScrollToTop />
         <Nav />
         <Switch>
           {/* Home */}
