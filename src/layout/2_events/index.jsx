@@ -12,7 +12,7 @@ const Events = () => {
     <div className={css.container}>
       <header>
         <h2>
-          Our events
+          Events
           <span>Find yours and register now!</span>
         </h2>
         <div>
@@ -24,16 +24,15 @@ const Events = () => {
       </header>
       <section>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolore
-          ducimus non praesentium aspernatur rerum laborum perspiciatis vel,
-          dolorum dolorem sed ad, explicabo vero, dolores tenetur asperiores
-          reiciendis minus odit.
+          The Shortcut organises a huge range of events and there’s always
+          something on. From workshops to training programs, our events connect
+          you with experts ready to offer you the skills and knowledge you need
+          to make it in the Finnish tech industry and the startup ecosystem –
+          and they’re free to boot!
         </p>{" "}
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolore
-          ducimus non praesentium aspernatur rerum laborum perspiciatis vel,
-          dolorum dolorem sed ad, explicabo vero, dolores tenetur asperiores
-          reiciendis minus odit.
+          Curious about what’s up and coming? Take a look at our events
+          calendar.
         </p>
       </section>
       <h3>Search events</h3>

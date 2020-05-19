@@ -11,7 +11,7 @@ const FAQ = () => {
     <div className="faq">
       <header>
         <h2>
-          Frequently Asked Questions
+          FAQ
           <br />
           <span>How can we help?</span>
         </h2>

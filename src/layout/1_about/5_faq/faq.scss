@@ -11,12 +11,14 @@
 
   // Header
   header {
+    //border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 50em;
 
     h2 {
+      //border: 1px solid red;
       font-family: $medium;
       font-size: 3rem;
       max-width: 10em;
@@ -54,6 +56,7 @@
     }
 
     > div {
+      //border: 1px solid red;
       width: 350px;
 
       @include phone {

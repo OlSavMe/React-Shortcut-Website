@@ -9,7 +9,7 @@ import Map from "./Map";
 const Contact = () => {
   return (
     <div className={css.container}>
-      <section className={css.form}>
+      <section>
         <header>
           <h2>Get in touch</h2>
           <div>
@@ -37,37 +37,36 @@ const Contact = () => {
         </aside>
 
         <form>
-          <div>
+          {" "}
+          <label for="name">
+            Name: <input type="text" name="name" />
+          </label>
+          <label for="email">
             {" "}
-            <label for="name">Name: </label>
-            <input type="text" name="name" />
-            <label for="email"> Email:</label>
-            <input type="email" name="email" />
-          </div>
-
-          <label for="subjects">Choose subject:</label>
+            Email: <input type="email" name="email" />
+          </label>
           <select name="subjects">
-            <option value="One">Trainings and clubs</option>
-            <option selected value="Two">
-              Events and workshops
+            <option selected value="0">
+              Choose subject
             </option>
-            <option value="Three">Sales and partnerships</option>
-            <option value="Four">Becoming a part of the community </option>
+            <option value="1">Trainings and clubs</option>
+            <option value="2">Events and workshops</option>
+            <option value="3">Sales and partnerships</option>
+
+            <option value="4">Becoming a part of the community </option>
           </select>
-
-          <label for="message">Message:</label>
-          <textarea type="message"></textarea>
-
+          <label for="message">
+            Message:<textarea type="message"></textarea>
+          </label>
           <div>
             <input type="submit" value="Submit" />
           </div>
         </form>
       </section>
 
-      <section className={css.location}>
+      <section>
         <div>
           <h3>Where to find us:</h3>
-
           <div>
             <p> The Shortcut Lab</p>
             <p>+358 46 640 3900</p>
@@ -79,7 +78,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className={css.map}>
+      <section>
         <Map />
       </section>
     </div>

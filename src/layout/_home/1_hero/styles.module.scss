@@ -2,11 +2,11 @@
 
 .hero {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
 
   // #f2f2f2 = rgb(242,242,242)
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("../../../assets/photos/hero3.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)),
+    url("../../../assets/photos/hero5.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
