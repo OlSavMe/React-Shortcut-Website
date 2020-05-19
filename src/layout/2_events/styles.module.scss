@@ -8,71 +8,140 @@
   // Header
   header {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60em;
 
     h2 {
       font-family: $medium;
-      font-size: 3.5rem;
-      padding: 50px 0;
+      font-size: 3rem;
+      max-width: 10em;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 2rem;
+        max-width: 25rem;
+        color: $yellow;
+      }
+
+      @include tablet {
+        font-size: 2.5rem;
+
+        span {
+          font-size: 2rem;
+        }
+      }
 
       @include phone {
-        font-size: 3rem;
+        font-size: 2rem;
+
+        span {
+          font-size: 1.5rem;
+        }
       }
 
       @include big-desktop {
         font-size: 3.5rem;
+
+        span {
+          font-size: 2.5rem;
+        }
       }
     }
 
-    p {
-      font-size: 1.25rem;
-      padding: 0 0 25px;
+    > div {
+      width: 350px;
+
+      @include phone {
+        width: 50vw;
+      }
     }
   }
 
   // Text
-
   section {
+    //border: 1px solid red;
     width: 100%;
-    // ?? where comes from
-    padding: 25px 0;
+    padding: 50px 0;
 
-    border: 1px solid red;
     p {
       font-size: 1.25rem;
+      line-height: 1.5;
+
+      @include phone {
+        font-size: 1.15rem;
+      }
+
+      @include big-desktop {
+        font-size: 1.5rem;
+      }
     }
+  }
+
+  // Heading
+  h3 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: $medium;
+    font-size: 2rem;
+    padding: 25px 0 50px;
   }
 
   // Toolbar
   .toolbar {
     ul {
+      //border: 1px solid red;
       padding: 0;
+      margin: 0;
       list-style: none;
       display: flex;
+      align-items: center;
+      flex-wrap: wrap;
 
       li {
         font-family: $medium;
         font-size: 1.25rem;
-        margin-right: 10px;
+        margin: 0 10px 10px 0;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        // Box border/shadow effect
         border: 1px solid #e5e5e5;
         border-radius: 10px;
         box-shadow: 5px 5px 50px #f5f5f5;
-        padding: 5px 10px;
-        cursor: pointer;
         transition: box-shadow 0.5s ease;
-        transition: color 0.25s ease;
-
         &:hover {
           box-shadow: 0 2px 14px #d3d3d3;
-          color: $yellow;
+          border: 1px solid $yellow;
+        }
+      }
+
+      // Input container
+      .search {
+        margin: 0;
+        padding: 0;
+
+        input {
+          font-family: $medium;
+          font-size: 1.25rem;
+          border: none;
+          outline: none;
+
+          &::placeholder {
+            font-family: $book;
+            color: gray;
+          }
+
+          // Search icon
+          background-image: url("../../assets/icons/search.png");
+          background-position: 185px 5px;
+          background-size: 10%;
+          background-repeat: no-repeat;
         }
       }
     }
-  }
-
-  // Search
-  .search {
-    margin: 25px 0;
   }
 
   // Events
@@ -175,6 +244,37 @@
 
         aside {
           border-right: 1px solid $yellow;
+        }
+      }
+
+      @include desktop {
+        padding: 10px;
+        aside {
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          margin-right: 50px;
+          border-right: none;
+
+          img {
+            border-radius: 10px;
+            overflow: hidden;
+          }
+
+          p {
+            display: none;
+          }
+
+          // Visual
+          > div {
+            display: block;
+          }
+        }
+
+        &:hover {
+          aside {
+            border-right: none;
+          }
         }
       }
 

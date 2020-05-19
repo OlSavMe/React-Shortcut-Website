@@ -2,25 +2,23 @@
 
 .hero {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
 
   // #f2f2f2 = rgb(242,242,242)
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("../../../assets/photos/hero3.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)),
+    url("../../../assets/photos/hero5.jpg");
   background-position: center;
-
   background-repeat: no-repeat;
   background-size: cover;
 
   > div {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
     text-align: left;
     font-family: $book;
-    // background-color: rgba(253, 200, 30, 0.25);
     padding: 10px 25px;
     border-radius: 10px;
 
@@ -29,7 +27,7 @@
       font-size: 5rem;
       margin: 0;
       position: relative;
-      left: -12px;
+      left: -10px;
       color: $black;
       color: white;
     }
@@ -37,14 +35,7 @@
     h2 {
       font-size: 2rem;
       margin: 10px 0;
-      max-width: 20em;
-      color: white;
-    }
-
-    p {
-      font-size: 1.25rem;
-      max-width: 35em;
-      margin: 10px 0;
+      max-width: 19em;
       color: white;
     }
 
@@ -57,15 +48,16 @@
 
       a {
         display: block;
-        margin-right: 10px;
         width: 225px;
-        font-size: 1.5rem;
+        margin-right: 10px;
+        font-family: $book;
+        font-size: 1.25rem;
+        color: $black;
         text-align: center;
         text-decoration: none;
-        padding: 8px 25px;
+        padding: 8px 0px;
         border: none;
         border-radius: 10px;
-        color: $black;
         transition: all 0.25s ease;
 
         &:first-of-type {
@@ -73,7 +65,7 @@
         }
 
         &:nth-of-type(2) {
-          border: 2px solid white;
+          border: 1px solid white;
           background-color: transparent;
           color: white;
         }
@@ -81,14 +73,13 @@
         &:hover {
           background-color: $black;
           color: white;
-          border: 2px solid $black;
+          border: 1px solid $black;
         }
       }
     }
 
     @media only screen and (max-width: 1000px) {
       width: 90%;
-      //max-width: 25em;
 
       h1 {
         font-size: 4rem;

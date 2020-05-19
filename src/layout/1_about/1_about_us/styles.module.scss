@@ -3,19 +3,20 @@
 .container {
   @include container;
   @include page-transitions;
-  padding: 50px 0 100px;
+  padding: 100px 0 50px;
 
+  // Header
   header {
     display: flex;
     align-items: center;
+    padding: 25px 0 50px;
 
     h2 {
-      font-family: $book;
-      font-size: 3.5rem;
-      padding: 50px 0;
+      font-family: $medium;
+      font-size: 3rem;
 
       @include phone {
-        font-size: 3rem;
+        font-size: 2rem;
       }
 
       @include big-desktop {
@@ -24,16 +25,38 @@
     }
   }
 
+  // Text
   p {
     font-size: 1.25rem;
     line-height: 1.5;
+
+    @include phone {
+      font-size: 1.15rem;
+    }
 
     @include big-desktop {
       font-size: 1.5rem;
     }
   }
 
-  > div {
-    padding: 50px 0;
+  // Bottom link
+  a {
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+    font-family: $book;
+    font-size: 1.5rem;
+    color: $black;
+    text-decoration: underline;
+    transition: all 0.25s ease;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    @include phone {
+      margin: 25px auto;
+      font-size: 1.25rem;
+    }
   }
 }
