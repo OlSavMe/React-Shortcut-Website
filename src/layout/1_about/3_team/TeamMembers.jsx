@@ -6,9 +6,11 @@ import css from "./styles.module.scss";
 
 // Children
 import Profile from "./Profile";
+import SkeletonGrid from "../../../components/SkeletonGrid";
 
 const TeamMembers = () => {
   const [teammates, setTeammates] = useState([]);
+  const [loading, setLoading] = useState(true);
   const URL = "https://theshortcut.org/wp-json/wp/v2/team/?per_page=100";
 
   useEffect(() => {
@@ -16,13 +18,15 @@ const TeamMembers = () => {
   }, []);
 
   const getTeammates = async () => {
-    Axios.get(URL).then((response) => {
+    await Axios.get(URL).then((response) => {
       setTeammates(response.data);
+      setLoading(false);
     });
   };
 
   return (
     <div className={css.team}>
+      {loading && <SkeletonGrid />}
       {teammates.reverse().map((person, i) => (
         <Profile key={i} {...person} />
       ))}
