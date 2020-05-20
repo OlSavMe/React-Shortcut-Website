@@ -16,7 +16,7 @@ const EventsList = () => {
 
   const getEvents = async () => {
     await Axios.get(
-      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
+      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
     ).then((response) => {
       setEvents(response.data.events);
     });

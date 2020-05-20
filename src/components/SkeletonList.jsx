@@ -8,35 +8,16 @@ const SkeletonList = () => {
       {Array(3)
         .fill()
         .map((item, index) => (
-          <div className={css.container} key={index}>
-            <Skeleton height={`100%`} />
+          <div className={css.event} key={index}>
+            <Skeleton height={160} />
             <aside>
               <p>
-                <Skeleton height={50} width={50} />{" "}
-              </p>
-              <p>
-                <Skeleton height={50} width={50} />{" "}
+                <Skeleton height={120} width={50} />{" "}
               </p>
             </aside>
-            <div>
-              <p className={css.date}>
-                <span>
-                  <Skeleton height={10} width={200} />
-                </span>{" "}
-              </p>
-              <p className={css.title}>
-                {" "}
-                <Skeleton height={40} width={700} />
-              </p>
-              <p className={css.text}>
-                {" "}
-                <Skeleton height={20} width={700} />
-              </p>
-              <p>
-                {" "}
-                <Skeleton height={20} width={700} />
-              </p>
-            </div>
+            <p>
+              <Skeleton count={6} height={10} width={250} />
+            </p>
           </div>
         ))}
     </div>
