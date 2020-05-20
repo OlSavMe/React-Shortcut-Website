@@ -19,7 +19,7 @@ const Event = ({ event }) => {
   // date
   const formatDate = (e) => {
     const date = new Date(e);
-    const eventDate = date.getDay();
+    const eventDate = date.getDate();
     return eventDate;
   };
 
@@ -37,13 +37,13 @@ const Event = ({ event }) => {
   // day
   const formatDay = (e) => {
     const days = [
+      "Sunday",
       "Monday",
       "Tuesday",
       "Wednesday",
       "Thursday",
       "Friday",
       "Saturday",
-      "Sunday",
     ];
     const date = new Date(e);
     const eventDay = days[date.getDay()].substring(0, 3);

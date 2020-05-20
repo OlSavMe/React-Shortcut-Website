@@ -20,7 +20,7 @@ const Events = () => {
 
   const getEvents = async () => {
     await Axios.get(
-      "https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=created_desc&token=AZNI42XD3WB4DJ5MPNSW"
+      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
     ).then((response) => {
       setEvents(response.data.events);
       setLoading(false);
@@ -37,9 +37,9 @@ const Events = () => {
         {events
           .slice(0, 3)
           .map((event, i) =>
-            moment(event.start.local).isAfter() ? null : (
+            moment(event.start.local).isBefore() ? (
               <Event key={i} event={event} />
-            )
+            ) : null
           )}
         <footer>
           <Link to="/events">
