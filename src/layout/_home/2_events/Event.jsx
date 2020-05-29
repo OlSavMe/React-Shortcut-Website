@@ -14,7 +14,6 @@ const Event = ({ event }) => {
   const online = event.online_event;
   const venue = event.venue_id;
   const link = event.url;
-  const img = event.logo.original.url;
 
   // date
   const formatDate = (e) => {
@@ -84,9 +83,6 @@ const Event = ({ event }) => {
         <p>{formatDay(start)}</p>
         <p>{formatDate(start)}</p>
         <p>{formatMonth(start)}</p>
-        <div>
-          <img src={img} alt="" />
-        </div>
       </aside>
       <div>
         <p className={css.date}>

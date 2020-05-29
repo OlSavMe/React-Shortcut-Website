@@ -1,4 +1,5 @@
 import React from "react";
+import defaultImage from "../../assets/photos/defaultImage.png";
 
 // Styles
 import css from "./styles.module.scss";
@@ -14,7 +15,7 @@ const Event = ({ event }) => {
   const online = event.online_event;
   const venue = event.venue_id;
   const link = event.url;
-  const img = event.logo.original.url;
+  const img = event.logo;
 
   // date
   const formatDate = (e) => {
@@ -85,7 +86,11 @@ const Event = ({ event }) => {
         <p>{formatDate(start)}</p>
         <p>{formatMonth(start)}</p>
         <div>
-          <img src={img} alt="" />
+          {img !== null ? (
+            <img src={img.original.url} alt="" />
+          ) : (
+            <img src={defaultImage} alt="" />
+          )}
         </div>
       </aside>
       <div>

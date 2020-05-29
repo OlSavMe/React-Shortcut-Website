@@ -17,9 +17,14 @@ const EventsList = () => {
   const getEvents = async () => {
     await Axios.get(
       "https://www.eventbriteapi.com/v3/users/me/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
-    ).then((response) => {
-      setEvents(response.data.events);
-    });
+    )
+      .then((response) => {
+        console.log(response.status);
+        setEvents(response.data.events);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
