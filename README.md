@@ -24,3 +24,6 @@ Pushing to remote:
 - font-awesome
 - Axios
 - Firebase
+
+
+![picture](https://github.com/OlSavMe/React-Shortcut-Website/blob/master/The-TS.png)
