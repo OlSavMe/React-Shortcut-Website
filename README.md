@@ -12,3 +12,15 @@ Pushing to remote:
 - create a pull request to master
 - request a review by OlSavMe or Alina Ilina (1 review is required)
 
+## Toold used
+
+React
+react-bootstrap
+react-router-dom
+react-map-gl
+react-skeleton-loading
+moments
+font-awesome
+Axios
+SCSS
+Firebase
