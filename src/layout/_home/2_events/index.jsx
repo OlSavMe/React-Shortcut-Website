@@ -21,10 +21,15 @@ const Events = () => {
   const getEvents = async () => {
     await Axios.get(
       "https://www.eventbriteapi.com/v3/users/me/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
-    ).then((response) => {
-      setEvents(response.data.events);
-      setLoading(false);
-    });
+    )
+      .then((response) => {
+        console.log(response.status);
+        setEvents(response.data.events);
+        setLoading(false);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -37,7 +42,7 @@ const Events = () => {
         {events
           .slice(0, 3)
           .map((event, i) =>
-            moment(event.start.local).isBefore() ? (
+            moment(event.start.local).isAfter() ? (
               <Event key={i} event={event} />
             ) : null
           )}
