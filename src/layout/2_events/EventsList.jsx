@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import Items from "./Items";
+import Pagination from "../../components/functional/Pagination";
 
 // Styles
 import css from "./styles.module.scss";
@@ -8,7 +10,10 @@ import css from "./styles.module.scss";
 import Event from "./Event";
 
 const EventsList = () => {
-  const [events, setEvents] = useState([]);
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   useEffect(() => {
     getEvents();
@@ -20,18 +25,33 @@ const EventsList = () => {
     )
       .then((response) => {
         console.log(response.status);
-        setEvents(response.data.events);
+        setItems(response.data.events);
+        setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
 
+  // Get current items
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className={css.list}>
-      {events.slice(0, 10).map((event, i) => (
+      <Items items={currentItems} loading={loading} />
+      <Pagination
+        itemsPerPage={itemsPerPage}
+        totalItems={items.length}
+        paginate={paginate}
+      />
+      {/* {events.slice(0, 10).map((event, i) => (
         <Event key={i} event={event} />
-      ))}
+      ))} */}
     </div>
   );
 };
