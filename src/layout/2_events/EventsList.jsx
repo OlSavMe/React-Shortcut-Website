@@ -8,19 +8,27 @@ import css from "./styles.module.scss";
 // Children
 import Event from "./Event";
 
-const EventsList = () => {
+const EventsList = ({ search }) => {
   const [events, setEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(10);
   const [loading, setLoading] = useState(true);
 
+  const [searchWord, setSearchWord] = useState("order_by=start_desc");
+  
   useEffect(() => {
     getEvents();
-  }, []);
+  }, [search]);
 
   const getEvents = async () => {
+    if (search) {
+      setSearchWord("name_filter=" + search + "&time_filter=current_future");
+    }
+
     await Axios.get(
-      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
+      `https://www.eventbriteapi.com/v3/users/me/events/?` +
+        searchWord +
+        `&token=AZNI42XD3WB4DJ5MPNSW`
     )
       .then((response) => {
         console.log(response.status);

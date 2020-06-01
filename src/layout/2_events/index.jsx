@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Styles
 import css from "./styles.module.scss";
@@ -8,6 +8,8 @@ import EventsList from "./EventsList";
 import Toolbar from "./Toolbar";
 
 const Events = () => {
+  const [search, setSearch] = useState("");
+  
   return (
     <div className={css.container}>
       <header>
@@ -36,8 +38,8 @@ const Events = () => {
         </p>
       </section>
       <h3>Search events</h3>
-      <Toolbar />
-      <EventsList />
+      <Toolbar setSearch={setSearch} />
+      <EventsList search={search} />
     </div>
   );
 };
