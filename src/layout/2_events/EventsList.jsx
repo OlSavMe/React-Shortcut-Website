@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import Items from "./Items";
 import Pagination from "../../components/functional/Pagination";
 
 // Styles
@@ -10,10 +9,9 @@ import css from "./styles.module.scss";
 import Event from "./Event";
 
 const EventsList = () => {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [events, setEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+  const [perPage] = useState(10);
 
   useEffect(() => {
     getEvents();
@@ -25,33 +23,54 @@ const EventsList = () => {
     )
       .then((response) => {
         console.log(response.status);
-        setItems(response.data.events);
-        setLoading(false);
+        setEvents(response.data.events);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
 
-  // Get current items
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+  const previousButton = () => {
+    setCurrentPage(currentPage - 1);
+  };
 
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const nextButton = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const paginate = (number) => setCurrentPage(number);
+  const lastItem = currentPage * perPage;
+  const firstItem = lastItem - perPage;
+  const currentItems = events.slice(firstItem, lastItem);
+  const totalItems = events.length;
 
   return (
     <div className={css.list}>
-      <Items items={currentItems} loading={loading} />
       <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={items.length}
+        perPage={perPage}
+        totalItems={totalItems}
         paginate={paginate}
+        currentPage={currentPage}
+        previousButton={previousButton}
+        nextButton={nextButton}
       />
-      {/* {events.slice(0, 10).map((event, i) => (
-        <Event key={i} event={event} />
+      <div className="row">
+        {currentItems.map((event, index) => {
+          return <Event key={index} event={event} />;
+        })}
+      </div>
+      {/* 
+      {currentItems.map((event, index) => (
+        <Event key={index} event={event} />
       ))} */}
+      <Pagination
+        perPage={perPage}
+        totalItems={totalItems}
+        paginate={paginate}
+        currentPage={currentPage}
+        previousButton={previousButton}
+        nextButton={nextButton}
+      />
     </div>
   );
 };
