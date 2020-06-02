@@ -42,6 +42,7 @@ export class Nav extends Component {
               </Link>
             </div>
           </div>
+
           <nav>
             <ul className={this.state.navActive ? "menu active" : "menu"}>
               <li className="menu-item">
@@ -174,44 +175,13 @@ export class Nav extends Component {
                   </li>
                 </ul>
               </li>
-              <li className="menu-item" id="partners">
-                <p className="btn" href="#partners" onClick={this.toggleSubnav}>
+
+              <li className="menu-item" id="forpartners">
+                <a className="btn" href="/forpartners">
                   For partners
-                </p>
-                <ul
-                  className={
-                    this.state.subnavActive ? "submenu active" : "submenu"
-                  }
-                >
-                  <li className="submenu-item">
-                    <div>
-                      <img
-                        src={require("../../assets/icons/nav-icon.png")}
-                        alt="icon"
-                      />
-                    </div>
-                    <a href="/#">Page 1</a>
-                  </li>
-                  <li className="submenu-item">
-                    <div>
-                      <img
-                        src={require("../../assets/icons/nav-icon.png")}
-                        alt="icon"
-                      />
-                    </div>
-                    <a href="/#">Page 2</a>
-                  </li>
-                  <li className="submenu-item">
-                    <div>
-                      <img
-                        src={require("../../assets/icons/nav-icon.png")}
-                        alt="icon"
-                      />
-                    </div>
-                    <a href="/#">Page 3</a>
-                  </li>
-                </ul>
+                </a>
               </li>
+
               <li className="menu-item" id="join">
                 <a className="btn" href="#join">
                   Join
