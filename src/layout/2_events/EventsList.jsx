@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-
+import Pagination from "../../components/functional/Pagination";
+import SkeletonEvents from "../../components/SkeletonEvents";
 // Styles
 import css from "./styles.module.scss";
 
@@ -9,6 +10,9 @@ import Event from "./Event";
 
 const EventsList = () => {
   const [events, setEvents] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage] = useState(10);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getEvents();
@@ -21,17 +25,49 @@ const EventsList = () => {
       .then((response) => {
         console.log(response.status);
         setEvents(response.data.events);
+        setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
 
+  const previousButton = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
+  const nextButton = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const paginate = (number) => setCurrentPage(number);
+  const lastItem = currentPage * perPage;
+  const firstItem = lastItem - perPage;
+  const currentItems = events.slice(firstItem, lastItem);
+  const totalItems = events.length;
+
   return (
     <div className={css.list}>
-      {events.slice(0, 10).map((event, i) => (
-        <Event key={i} event={event} />
+      <Pagination
+        perPage={perPage}
+        totalItems={totalItems}
+        paginate={paginate}
+        currentPage={currentPage}
+        previousButton={previousButton}
+        nextButton={nextButton}
+      />
+      {loading && <SkeletonEvents />}
+      {currentItems.map((event, index) => (
+        <Event key={index} event={event} />
       ))}
+      <Pagination
+        perPage={perPage}
+        totalItems={totalItems}
+        paginate={paginate}
+        currentPage={currentPage}
+        previousButton={previousButton}
+        nextButton={nextButton}
+      />
     </div>
   );
 };
