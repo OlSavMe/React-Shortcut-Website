@@ -15,30 +15,38 @@ const EventsList = ({ search }) => {
   const [loading, setLoading] = useState(true);
 
   const [searchWord, setSearchWord] = useState("order_by=start_desc");
-  
-  useEffect(() => {
-    getEvents();
-  }, [search]);
+
+  const setSearch = () => {
+    if (search.length > 0) {
+      setSearchWord(`name_filter=${search}&order_by=start_desc`);
+    } else {
+      setSearchWord(`order_by=start_desc`);
+    }
+  };
 
   const getEvents = async () => {
-    if (search) {
-      setSearchWord("name_filter=" + search + "&time_filter=current_future");
-    }
-
     await Axios.get(
-      `https://www.eventbriteapi.com/v3/users/me/events/?` +
+      "https://www.eventbriteapi.com/v3/users/me/events/?" +
         searchWord +
-        `&token=AZNI42XD3WB4DJ5MPNSW`
+        "&token=AZNI42XD3WB4DJ5MPNSW"
     )
       .then((response) => {
         console.log(response.status);
         setEvents(response.data.events);
+
         setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
+  useEffect(() => {
+    setSearch();
+  }, [search]);
+
+  useEffect(() => {
+    getEvents();
+  }, [searchWord]);
 
   const previousButton = () => {
     setCurrentPage(currentPage - 1);
