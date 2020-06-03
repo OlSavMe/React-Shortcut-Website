@@ -6,12 +6,12 @@ import css from "./styles.module.scss";
 // Children
 import Search from "./Search";
 
-const Toolbar = () => {
+const Toolbar = (props) => {
   return (
     <div className={css.toolbar}>
       <ul>
         <li>
-          <Search />
+          <Search setSearch={props.setSearch} />
         </li>
         <li>Workshops</li>
         <li>Trainings</li>

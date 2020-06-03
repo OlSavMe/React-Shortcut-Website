@@ -8,29 +8,45 @@ import css from "./styles.module.scss";
 // Children
 import Event from "./Event";
 
-const EventsList = () => {
+const EventsList = ({ search }) => {
   const [events, setEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(10);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    getEvents();
-  }, []);
+  const [searchWord, setSearchWord] = useState("order_by=start_desc");
+
+  const setSearch = () => {
+    if (search.length > 0) {
+      setSearchWord(`name_filter=${search}&order_by=start_desc`);
+    } else {
+      setSearchWord(`order_by=start_desc`);
+    }
+  };
 
   const getEvents = async () => {
     await Axios.get(
-      "https://www.eventbriteapi.com/v3/users/me/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
+      "https://www.eventbriteapi.com/v3/users/me/events/?" +
+        searchWord +
+        "&token=AZNI42XD3WB4DJ5MPNSW"
     )
       .then((response) => {
         console.log(response.status);
         setEvents(response.data.events);
+
         setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
+  useEffect(() => {
+    setSearch();
+  }, [search]);
+
+  useEffect(() => {
+    getEvents();
+  }, [searchWord]);
 
   const previousButton = () => {
     setCurrentPage(currentPage - 1);
