@@ -51,10 +51,14 @@ const EventsList = ({ search }) => {
   const currentItems = filterEvents.slice(firstItem, lastItem);
   const totalItems = filterEvents.length;
 
-  return (
+  return loading ? (
+    <div className={css.list}>
+      <SkeletonEvents />
+    </div>
+  ) : (
     <div className={css.list}>
       {filterEvents.length === 0 ? (
-        <p className="">No searches found... </p>
+        <p className="">No matching events... </p>
       ) : (
         <div>
           <Pagination
@@ -65,7 +69,7 @@ const EventsList = ({ search }) => {
             previousButton={previousButton}
             nextButton={nextButton}
           />
-          {loading && <SkeletonEvents />}
+          {/* {loading && <SkeletonEvents />} */}
           {currentItems.map((event, index) => (
             <Event key={index} event={event} />
           ))}

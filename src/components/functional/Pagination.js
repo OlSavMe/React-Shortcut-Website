@@ -1,4 +1,5 @@
 import React from "react";
+import "./Pagination.scss";
 
 const Pagination = ({
   perPage,
@@ -16,17 +17,17 @@ const Pagination = ({
   return (
     <>
       <div className="row justify-content-center align-items-center">
-        <ul className="pagination">
+        <ul className="pagination max-size='10">
           <li className={`page-item${currentPage === 1 ? " disabled" : ""}`}>
             <button className="page-link" onClick={previousButton} href="#">
-              {"<"}
+              &laquo;
             </button>
           </li>
 
           {pageNumbers.map((number) => (
             <li
               key={number}
-              className={`page-item${currentPage === number ? " active" : ""}`}
+              className={`page-item${currentPage === number ? "-active" : ""}`}
             >
               <button
                 onClick={() => paginate(number)}
@@ -46,7 +47,7 @@ const Pagination = ({
             }`}
           >
             <button className="page-link" onClick={nextButton} href="#">
-              {">"}
+              &raquo;
             </button>
           </li>
         </ul>
