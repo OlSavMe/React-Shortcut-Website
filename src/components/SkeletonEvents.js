@@ -5,6 +5,7 @@ import css from "../layout/2_events/styles.module.scss";
 const SkeletonEvents = () => {
   return (
     <>
+      <p style={{ minHeight: "2rem" }}> </p>
       {Array(10)
         .fill()
         .map((index) => (
