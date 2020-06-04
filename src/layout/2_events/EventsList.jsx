@@ -14,39 +14,24 @@ const EventsList = ({ search }) => {
   const [perPage] = useState(10);
   const [loading, setLoading] = useState(true);
 
-  const [searchWord, setSearchWord] = useState("order_by=start_desc");
-
-  const setSearch = () => {
-    if (search.length > 0) {
-      setSearchWord(`name_filter=${search}&order_by=start_desc`);
-    } else {
-      setSearchWord(`order_by=start_desc`);
-    }
-  };
-
   const getEvents = async () => {
     await Axios.get(
-      "https://www.eventbriteapi.com/v3/users/me/events/?" +
-        searchWord +
-        "&token=AZNI42XD3WB4DJ5MPNSW"
+      "https://www.eventbriteapi.com/v3/users/me/events/?&order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
     )
       .then((response) => {
         console.log(response.status);
         setEvents(response.data.events);
-
+        console.log(response.data.events);
         setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
-  useEffect(() => {
-    setSearch();
-  }, [search]);
 
   useEffect(() => {
     getEvents();
-  }, [searchWord]);
+  }, []);
 
   const previousButton = () => {
     setCurrentPage(currentPage - 1);
@@ -56,34 +41,44 @@ const EventsList = ({ search }) => {
     setCurrentPage(currentPage + 1);
   };
 
+  let filterEvents = events.filter((event) =>
+    event.name.text.toLowerCase().includes(search.toLowerCase())
+  );
+
   const paginate = (number) => setCurrentPage(number);
   const lastItem = currentPage * perPage;
   const firstItem = lastItem - perPage;
-  const currentItems = events.slice(firstItem, lastItem);
-  const totalItems = events.length;
+  const currentItems = filterEvents.slice(firstItem, lastItem);
+  const totalItems = filterEvents.length;
 
   return (
     <div className={css.list}>
-      <Pagination
-        perPage={perPage}
-        totalItems={totalItems}
-        paginate={paginate}
-        currentPage={currentPage}
-        previousButton={previousButton}
-        nextButton={nextButton}
-      />
-      {loading && <SkeletonEvents />}
-      {currentItems.map((event, index) => (
-        <Event key={index} event={event} />
-      ))}
-      <Pagination
-        perPage={perPage}
-        totalItems={totalItems}
-        paginate={paginate}
-        currentPage={currentPage}
-        previousButton={previousButton}
-        nextButton={nextButton}
-      />
+      {filterEvents.length === 0 ? (
+        <p className="">No searches found... </p>
+      ) : (
+        <div>
+          <Pagination
+            perPage={perPage}
+            totalItems={totalItems}
+            paginate={paginate}
+            currentPage={currentPage}
+            previousButton={previousButton}
+            nextButton={nextButton}
+          />
+          {loading && <SkeletonEvents />}
+          {currentItems.map((event, index) => (
+            <Event key={index} event={event} />
+          ))}
+          <Pagination
+            perPage={perPage}
+            totalItems={totalItems}
+            paginate={paginate}
+            currentPage={currentPage}
+            previousButton={previousButton}
+            nextButton={nextButton}
+          />
+        </div>
+      )}
     </div>
   );
 };
