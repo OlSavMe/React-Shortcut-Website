@@ -26,16 +26,26 @@ div {
       }
     }
 
-    // li.page-item {
-    //   display: none;
-    // }
+    li {
+      span {
+        font-size: 1.3rem;
+        padding: 0.5rem 1.3rem;
+        color: black;
+        @include phone {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
 
-    // // .page-item:nth-child(-n + 1),
-    // // .page-item:nth-last-child(-n + 1),
-    // .page-item,
-    // .page-item-active {
-    //   display: block;
-    // }
+    li.page-item {
+      display: none;
+    }
+
+    .page-item:nth-child(-n + 2),
+    .page-item:nth-last-child(-n + 2),
+    .page-item-active {
+      display: block;
+    }
 
     .page-item {
       .page-link {

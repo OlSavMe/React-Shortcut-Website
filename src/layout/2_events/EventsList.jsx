@@ -10,7 +10,6 @@ import Event from "./Event";
 
 const EventsList = ({ search }) => {
   const [events, setEvents] = useState([]);
-  // const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(10);
   const [loading, setLoading] = useState(true);
@@ -20,9 +19,7 @@ const EventsList = ({ search }) => {
 
   const getEvents = async () => {
     await Axios.get(url).then((response) => {
-      // setEvents(response.data.events);
       let pages = response.data.pagination.page_count;
-
       const promises = [];
 
       for (let page = 1; page <= pages; page++) {
@@ -53,8 +50,6 @@ const EventsList = ({ search }) => {
     });
   };
 
-  console.log(events);
-
   useEffect(() => {
     getEvents();
   }, []);
@@ -78,8 +73,6 @@ const EventsList = ({ search }) => {
   const firstItem = lastItem - perPage;
   const currentItems = filterEvents.slice(firstItem, lastItem);
   const totalItems = filterEvents.length;
-
-  console.log(filterEvents.length);
 
   return loading ? (
     <div className={css.list}>
