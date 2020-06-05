@@ -10,24 +10,50 @@ import Event from "./Event";
 
 const EventsList = ({ search }) => {
   const [events, setEvents] = useState([]);
+  // const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(10);
   const [loading, setLoading] = useState(true);
 
+  const url =
+    "https://www.eventbriteapi.com/v3/users/me/events/?&order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW";
+
   const getEvents = async () => {
-    await Axios.get(
-      "https://www.eventbriteapi.com/v3/users/me/events/?&order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
-    )
-      .then((response) => {
-        console.log(response.status);
-        setEvents(response.data.events);
-        console.log(response.data.events);
+    await Axios.get(url).then((response) => {
+      // setEvents(response.data.events);
+      let pages = response.data.pagination.page_count;
+
+      const promises = [];
+
+      for (let page = 1; page <= pages; page++) {
+        promises.push(
+          Axios({
+            method: "get",
+            url: `https://www.eventbriteapi.com/v3/users/me/events/?&order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW&page=${page}`,
+          })
+        );
+      }
+
+      Axios.all(promises).then((responses) => {
+        const processedResponses = [];
+        responses.map((response) => {
+          processedResponses.push(response.data.events);
+          return processedResponses;
+        });
+        console.log(processedResponses);
+        let result = [];
+
+        processedResponses.map((x) => {
+          result = result.concat(x);
+          return result;
+        });
+        setEvents(result);
         setLoading(false);
-      })
-      .catch(function (error) {
-        console.log(error);
       });
+    });
   };
+
+  console.log(events);
 
   useEffect(() => {
     getEvents();
@@ -41,8 +67,10 @@ const EventsList = ({ search }) => {
     setCurrentPage(currentPage + 1);
   };
 
-  let filterEvents = events.filter((event) =>
-    event.name.text.toLowerCase().includes(search.toLowerCase())
+  const filterEvents = events.filter(
+    (event) =>
+      String(event.name.text).toLowerCase().includes(search.toLowerCase()) ||
+      String(event.summary).toLowerCase().includes(search.toLowerCase())
   );
 
   const paginate = (number) => setCurrentPage(number);
@@ -50,6 +78,8 @@ const EventsList = ({ search }) => {
   const firstItem = lastItem - perPage;
   const currentItems = filterEvents.slice(firstItem, lastItem);
   const totalItems = filterEvents.length;
+
+  console.log(filterEvents.length);
 
   return loading ? (
     <div className={css.list}>
@@ -69,7 +99,6 @@ const EventsList = ({ search }) => {
             previousButton={previousButton}
             nextButton={nextButton}
           />
-          {/* {loading && <SkeletonEvents />} */}
           {currentItems.map((event, index) => (
             <Event key={index} event={event} />
           ))}
