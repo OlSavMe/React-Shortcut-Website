@@ -1,4 +1,5 @@
 import React from "react";
+import "./Pagination.scss";
 
 const Pagination = ({
   perPage,
@@ -13,20 +14,32 @@ const Pagination = ({
     pageNumbers.push(i);
   }
 
-  return (
+  return pageNumbers.length <= 1 ? null : (
     <>
       <div className="row justify-content-center align-items-center">
-        <ul className="pagination">
-          <li className={`page-item${currentPage === 1 ? " disabled" : ""}`}>
-            <button className="page-link" onClick={previousButton} href="#">
-              {"<"}
+        <ul className="pagination max-size='10">
+          <li className="page-item">
+            <button
+              className="page-link"
+              onClick={() => paginate(pageNumbers[0])}
+              href="#"
+            >
+              {" "}
+              {pageNumbers[0]}
             </button>
           </li>
-
+          <li className={`page-item${currentPage === 1 ? " disabled" : ""}`}>
+            <button className="page-link" onClick={previousButton} href="#">
+              &laquo;
+            </button>
+          </li>
+          <li>
+            <span>{"  ...  "}</span>
+          </li>
           {pageNumbers.map((number) => (
             <li
               key={number}
-              className={`page-item${currentPage === number ? " active" : ""}`}
+              className={`page-item${currentPage === number ? "-active" : ""}`}
             >
               <button
                 onClick={() => paginate(number)}
@@ -37,7 +50,9 @@ const Pagination = ({
               </button>
             </li>
           ))}
-
+          <li>
+            <span>{"  ...  "}</span>
+          </li>
           <li
             className={`page-item${
               currentPage === pageNumbers[pageNumbers.length - 1]
@@ -46,7 +61,16 @@ const Pagination = ({
             }`}
           >
             <button className="page-link" onClick={nextButton} href="#">
-              {">"}
+              &raquo;
+            </button>
+          </li>
+          <li className="page-item">
+            <button
+              className="page-link"
+              onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}
+              href="#"
+            >
+              {pageNumbers[pageNumbers.length - 1]}
             </button>
           </li>
         </ul>

@@ -1,0 +1,70 @@
+@mixin phone {
+  @media only screen and (max-width: 1000px) {
+    @content;
+  }
+}
+
+$blue: rgb(77, 204, 229);
+$yellow: rgb(253, 200, 30);
+$green: rgb(0, 169, 157);
+$red: rgb(232, 89, 46);
+
+div {
+  @include phone {
+    padding: 0 0.5rem;
+  }
+  .pagination {
+    button {
+      margin: 0 0.3rem;
+      font-size: 1.3rem;
+      border-radius: 10%;
+
+      @include phone {
+        margin: 0;
+        border: none;
+        border-radius: 10%;
+      }
+    }
+
+    li {
+      span {
+        font-size: 1.3rem;
+        padding: 0.5rem 1.3rem;
+        color: black;
+        @include phone {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+
+    li.page-item {
+      display: none;
+    }
+
+    .page-item:nth-child(-n + 2),
+    .page-item:nth-last-child(-n + 2),
+    .page-item-active {
+      display: block;
+    }
+
+    .page-item {
+      .page-link {
+        padding: 0.5rem 1.3rem;
+        color: black;
+        @include phone {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+    .page-item-active {
+      .page-link {
+        padding: 0.5rem 1.3rem;
+        color: white;
+        background-color: $blue;
+        @include phone {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+}
