@@ -107,7 +107,7 @@ const Nav = () => {
                 </ul>
               </li>
               <li className="menu-item" id="events">
-                <Link className="btn" to="/events" onClick={(e) => toggleSubnav(e)}>
+                <Link className="btn" to="/events" onClick={toggleNav}>
                   Events
                 </Link>
               </li>
@@ -168,13 +168,13 @@ const Nav = () => {
               </li>
 
               <li className="menu-item" id="forpartners">
-                <Link className="btn" to="/forpartners">
+                <Link className="btn" to="/forpartners" onClick={toggleNav}>
                   For partners
                 </Link>
               </li>
 
               <li className="menu-item" id="join">
-                <Link className="btn" to="/join">
+                <Link className="btn" to="/join" onClick={toggleNav}>
                   Join
                 </Link>
               </li>
