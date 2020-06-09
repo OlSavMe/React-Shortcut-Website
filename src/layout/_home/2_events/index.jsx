@@ -48,7 +48,7 @@ const Events = () => {
           )}
         <footer>
           <Link to="/events">
-            <a href="/">See all events</a>
+            <span>See all events</span>
           </Link>
         </footer>
       </div>

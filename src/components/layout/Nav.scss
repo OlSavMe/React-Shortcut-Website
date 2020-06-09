@@ -163,7 +163,6 @@ $red: rgb(232, 89, 46);
     position: absolute;
     top: 75px;
     left: 0;
-
     transform: scaleY(0);
     transform-origin: 50% 0;
     transition: all 0.1s linear 0.05s;
@@ -205,7 +204,7 @@ $red: rgb(232, 89, 46);
       }
     }
 
-    a {
+    span {
       font-family: "CircularStd-Book", sans-serif;
       font-size: 1rem;
       text-decoration: none;
@@ -253,8 +252,7 @@ $red: rgb(232, 89, 46);
         margin: 0;
 
         .btn {
-          display: block;
-          width: 100%;
+          width: 40%;
           font-size: 1.25rem;
           text-align: left;
           padding: 10px 35px;
@@ -294,6 +292,9 @@ $red: rgb(232, 89, 46);
         img {
           width: 100%;
         }
+      }
+      span{
+        color: rgb(32, 32, 32);
       }
     }
   }

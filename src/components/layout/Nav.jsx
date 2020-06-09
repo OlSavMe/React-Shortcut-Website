@@ -1,26 +1,26 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Nav.scss";
 
 import { Link } from "react-router-dom";
 
-export class Nav extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      navActive: false,
-      subnavActive: false,
-    };
-  }
 
-  toggleNav = () => {
-    this.setState((prevState) => ({ navActive: !prevState.navActive }));
+const Nav = () => {
+  const [navActive, setnavActive] = useState(false)
+  const [subnavActive, setSubnavActive] = useState(false)
+  const [search, setSearch] = useState('')
+
+  const toggleNav = () => {
+    setnavActive(!navActive)
   };
 
-  toggleSubnav = () => {
-    this.setState((prevState) => ({ subnavActive: !prevState.subnavActive }));
+  const toggleSubnav = (e) => {
+    const {id, nextSibling} = e.target
+    if(id === 'about' || id === 'resources'){
+      setSubnavActive(!subnavActive)
+      !subnavActive ? nextSibling.classList.add('active') : nextSibling.classList.remove('active')
+    }
   };
 
-  render() {
     return (
       <div className="navigation">
         <div className="nav-container">
@@ -42,169 +42,158 @@ export class Nav extends Component {
               </Link>
             </div>
           </div>
-
           <nav>
-            <ul className={this.state.navActive ? "menu active" : "menu"}>
+            <ul className={navActive ? "menu active" : "menu"}>
               <li className="menu-item">
-                <p href="/#" className="btn" onClick={this.toggleSubnav}>
-                  About
+                <p href="/#" className="btn" id="about" onClick={(e) => toggleSubnav(e)}>
+                About 
                 </p>
-                <ul
-                  className={
-                    this.state.subnavActive ? "submenu active" : "submenu"
-                  }
-                >
-                  <Link to="/story" className="submenu-item">
+                <ul className="submenu">
+                  <Link to="/story" className="submenu-item" onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/about.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">About us</a>
+                    <span>About us</span>
                   </Link>
-                  <Link to="/success" className="submenu-item">
+                  <Link to="/success" className="submenu-item" onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/success.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/success">Success stories</a>
+                    <span>Success stories</span>
                   </Link>
-                  <Link to="/team" className="submenu-item">
+                  <Link to="/team" className="submenu-item" onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/team.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Our team</a>
+                    <span>Our team</span>
                   </Link>
-                  <Link to="/code" className="submenu-item">
+                  <Link to="/code" className="submenu-item" onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/code.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Code of conduct</a>
+                    <span>Code of conduct</span>
                   </Link>
 
-                  <Link to="/faq" className="submenu-item">
+                  <Link to="/faq" className="submenu-item" onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/faq.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">FAQ</a>
+                    <span>FAQ</span>
                   </Link>
-                  <Link to="/contact" className="submenu-item">
+                  <Link to="/contact" className="submenu-item" onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/contact.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Contact</a>
+                    <span>Contact</span>
                   </Link>
                 </ul>
               </li>
               <li className="menu-item" id="events">
-                <a className="btn" href="/events">
+                <Link className="btn" to="/events" onClick={(e) => toggleSubnav(e)}>
                   Events
-                </a>
+                </Link>
               </li>
 
               <li className="menu-item" id="resources">
                 <p
                   className="btn"
                   href="#resources"
-                  onClick={this.toggleSubnav}
+                  id="resources"
+                  onClick={(e) => toggleSubnav(e)}
                 >
                   Resources
                 </p>
-                <ul
-                  className={
-                    this.state.subnavActive ? "submenu active" : "submenu"
-                  }
-                >
-                  <li className="submenu-item">
+                <ul className="submenu">
+                  <Link to="/blog" className="submenu-item"  onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/blog.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Blog</a>
-                  </li>
-                  <li className="submenu-item">
+                    <span>Blog</span>
+                  </Link>
+                  <Link to="/gallery" className="submenu-item" onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/gallery.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/#">Gallery</a>
-                  </li>
+                    <span>Gallery</span>
+                  </Link>
 
-                  <li className="submenu-item">
+                  <Link 
+                    to="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf" 
+                    rel="noopener noreferrer"
+                    className="submenu-item" 
+                    onClick={toggleNav}
+                  >
                     <div>
                       <img
                         src={require("../../assets/icons/nav/whitepaper.png")}
                         alt="icon"
                       />
                     </div>
-                    <a
-                      href="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      White paper
-                    </a>
-                  </li>
-                  <li className="submenu-item">
+                    <span>White paper</span>
+                  </Link>
+                  <Link to="/media" className="submenu-item" onClick={toggleNav}>
                     <div>
                       <img
                         src={require("../../assets/icons/nav/for-media.png")}
                         alt="icon"
                       />
                     </div>
-                    <a href="/media">For media</a>
-                  </li>
+                    <span>For media</span>
+                  </Link>
                 </ul>
               </li>
 
               <li className="menu-item" id="forpartners">
-                <a className="btn" href="/forpartners">
+                <Link className="btn" to="/forpartners">
                   For partners
-                </a>
+                </Link>
               </li>
 
               <li className="menu-item" id="join">
-                <a className="btn" href="#join">
+                <Link className="btn" to="/join">
                   Join
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
 
           <div className="search">
             <input type="text" placeholder="Search" />
-            <input type="Submit" value="" />
+            <input type="Submit" value={search} onChange={(e) => setSearch(e.target.value)} />
           </div>
 
           <div
-            onClick={this.toggleNav}
-            className={this.state.navActive ? "toggle active" : "toggle"}
+            onClick={toggleNav}
+            className={navActive ? "toggle active" : "toggle"}
           >
             <div className="hamburger"></div>
           </div>
         </div>
       </div>
     );
-  }
 }
-
 export default Nav;

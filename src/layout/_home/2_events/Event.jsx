@@ -86,7 +86,7 @@ const Event = ({ event }) => {
         <p>{formatMonth(start)}</p>
       </aside>
       <div>
-        <img src={img} />
+        <img src={img} alt="img" />
       </div>
       <div>
         <p className={css.date}>
