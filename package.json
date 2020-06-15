@@ -23,6 +23,8 @@
     "react-scripts": "^3.4.1",
     "react-skeleton-loading": "^1.0.0",
     "reactstrap": "^8.4.1",
+    "strip-attributes": "^0.2.0",
+    "striptags": "^3.1.1",
     "url-loader": "^3.0.0"
   },
   "scripts": {
