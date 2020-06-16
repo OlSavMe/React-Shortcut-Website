@@ -15,7 +15,7 @@ const EventsList = ({ search }) => {
   const [loading, setLoading] = useState(true);
 
   const url =
-    "https://www.eventbriteapi.com/v3/users/me/events/?&order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW";
+    "https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW";
 
   const getEvents = async () => {
     await Axios.get(url).then((response) => {
@@ -26,7 +26,7 @@ const EventsList = ({ search }) => {
         promises.push(
           Axios({
             method: "get",
-            url: `https://www.eventbriteapi.com/v3/users/me/events/?&order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW&page=${page}`,
+            url: `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW&page=${page}`,
           })
         );
       }
