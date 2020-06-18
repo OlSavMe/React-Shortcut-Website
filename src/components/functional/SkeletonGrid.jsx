@@ -1,6 +1,6 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
-import css from "../layout/1_about/3_team/styles.module.scss";
+import css from "../../layout/1_about/3_team/styles.module.scss";
 
 const SkeletonGrid = () => {
   return (
