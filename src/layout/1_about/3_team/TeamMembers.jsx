@@ -6,7 +6,7 @@ import css from "./styles.module.scss";
 
 // Children
 import Profile from "./Profile";
-import SkeletonGrid from "../../../components/SkeletonGrid";
+import SkeletonGrid from "../../../components/functional/SkeletonGrid";
 
 const TeamMembers = () => {
   const [teammates, setTeammates] = useState([]);

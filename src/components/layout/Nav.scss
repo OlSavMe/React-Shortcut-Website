@@ -60,6 +60,7 @@ $red: rgb(232, 89, 46);
 
       @include phone {
         width: 50px;
+        min-width: 50px;
 
         .logo-desktop {
           display: none;
@@ -293,7 +294,7 @@ $red: rgb(232, 89, 46);
           width: 100%;
         }
       }
-      span{
+      span {
         color: rgb(32, 32, 32);
       }
     }

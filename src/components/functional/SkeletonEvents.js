@@ -1,6 +1,6 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
-import css from "../layout/2_events/styles.module.scss";
+import css from "../../layout/2_events/styles.module.scss";
 
 const SkeletonEvents = () => {
   return (

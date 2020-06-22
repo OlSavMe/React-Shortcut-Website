@@ -5,7 +5,7 @@ import defaultImage from "../../assets/photos/defaultImage.png";
 import css from "./styles.module.scss";
 
 // Children
-import { Venue } from "../../components/index";
+import Venue from "../../components/functional/Venue";
 
 const Event = ({ event }) => {
   const start = event.start.local;

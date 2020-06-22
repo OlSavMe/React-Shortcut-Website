@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Pagination from "../../components/functional/Pagination";
-import SkeletonEvents from "../../components/SkeletonEvents";
+import SkeletonEvents from "../../components/functional/SkeletonEvents";
 // Styles
 import css from "./styles.module.scss";
 
