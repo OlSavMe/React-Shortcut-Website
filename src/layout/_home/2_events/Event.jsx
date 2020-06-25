@@ -4,7 +4,7 @@ import React from "react";
 import css from "./styles.module.scss";
 
 // Children
-import { Venue } from "../../../components/index";
+import Venue from "../../../components/functional/Venue";
 
 const Event = ({ event }) => {
   const start = event.start.local;
@@ -14,6 +14,7 @@ const Event = ({ event }) => {
   const online = event.online_event;
   const venue = event.venue_id;
   const link = event.url;
+  const img = event.logo.original.url;
 
   // date
   const formatDate = (e) => {
@@ -84,6 +85,9 @@ const Event = ({ event }) => {
         <p>{formatDate(start)}</p>
         <p>{formatMonth(start)}</p>
       </aside>
+      <div>
+        <img src={img} alt="img" />
+      </div>
       <div>
         <p className={css.date}>
           <span>

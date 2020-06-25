@@ -21,6 +21,10 @@ import Contact from "./layout/1_about/6_contact/index.jsx";
 
 // Resources
 import ForMedia from "./layout/3_resources/3_for_media/index.jsx";
+import Blog from "./layout/3_resources/1_blog/index.jsx";
+
+// For partners
+import ForPartners from "./layout/4_ForPartners";
 
 // Events
 import Events from "./layout/2_events/index.jsx";
@@ -46,11 +50,15 @@ export class App extends Component {
           <Route path="/faq" component={FAQ} />
           <Route path="/contact" component={Contact} />
 
-          {/* Resources */}
-          <Route path="/media" component={ForMedia} />
-
           {/* All events */}
           <Route path="/events" component={Events} />
+
+          {/* Resources */}
+          <Route path="/media" component={ForMedia} />
+          <Route path="/blog" component={Blog} />
+
+          {/* For partners */}
+          <Route path="/forpartners" component={ForPartners} />
 
           {/* Footer */}
           <Route path="/privacy" component={PrivacyPolicies} />

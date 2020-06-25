@@ -6,23 +6,23 @@ import css from "./styles.module.scss";
 // Children
 import Search from "./Search";
 
-const Toolbar = () => {
+const Toolbar = ({setSearch}) => {
   return (
     <div className={css.toolbar}>
       <ul>
         <li>
-          <Search />
+          <Search setSearch={setSearch} />
         </li>
-        <li>Workshops</li>
-        <li>Trainings</li>
-        <li>Certifications</li>
-        <li>Clubs</li>
+        <li onClick={() =>setSearch('workshop')}>Workshops</li>
+        <li onClick={() =>setSearch('training')}>Trainings</li>
+        <li onClick={() =>setSearch('certification')}>Certifications</li>
+        <li onClick={() => setSearch('club')}>Clubs</li>
       </ul>
       <ul>
-        <li>#mystartupdebut</li>
-        <li>#python</li>
-        <li>#talentheist</li>
-        <li>#schoolofstartups</li>
+        <li onClick={() => setSearch('my startup debut')}>#mystartupdebut</li>
+        <li onClick={() => setSearch('python')}>#python</li>
+        <li onClick={() => setSearch('talent heist')}>#talentheist</li>
+        <li onClick={() => setSearch('school of startup')}>#schoolofstartups</li>
       </ul>
     </div>
   );
