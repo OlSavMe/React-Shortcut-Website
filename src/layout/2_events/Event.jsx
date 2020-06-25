@@ -1,5 +1,6 @@
 import React from "react";
 import defaultImage from "../../assets/photos/defaultImage.png";
+import moment from "moment";
 
 // Styles
 import css from "./styles.module.scss";
@@ -22,6 +23,13 @@ const Event = ({ event }) => {
     const date = new Date(e);
     const eventDate = date.getDate();
     return eventDate;
+  };
+
+  // year
+  const formatYear = (e) => {
+    const date = new Date(e);
+    const eventYear = date.getFullYear();
+    return eventYear;
   };
 
   // time
@@ -96,21 +104,28 @@ const Event = ({ event }) => {
       <div>
         <p className={css.date}>
           <span>
-            {formatMonth(start)}, {formatDate(start)}
-          </span>{" "}
+            {formatMonth(start)}, {formatDate(start)}, {formatYear(start)}
+          </span>
+          {moment(end.substring(0, 10)).isSame(
+            start.substring(0, 10)
+          ) ? null : (
+            <span>
+              {" "}
+              - {formatMonth(end)}, {formatDate(end)}, {formatYear(start)}
+            </span>
+          )}
           <span>
-            @ {formatTime(start)} - {formatTime(end)}
+            {" "}
+            @{formatTime(start)} - {formatTime(end)}
           </span>{" "}
         </p>
         <p className={css.title}>{title}</p>
         <p className={css.summary}>{formatText(summary)}</p>
-
         {venue ? (
           <Venue id={venue} />
         ) : (
           <p className={css.online}>{online ? "Online" : null}</p>
         )}
-
         <a href={link} target="_blank" rel="noopener noreferrer">
           Learn more +
         </a>

@@ -42,7 +42,8 @@ const Events = () => {
         {events
           // .slice(0, 3)
           .map((event, i) =>
-            moment(event.start.local).isBefore() ? (
+            moment(event.start.local).isAfter() ||
+            moment(event.end.local).isAfter() ? (
               <Event key={i} event={event} />
             ) : null
           )}
