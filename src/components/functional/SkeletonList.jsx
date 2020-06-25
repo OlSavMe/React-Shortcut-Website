@@ -10,7 +10,7 @@ const SkeletonList = () => {
         .map((item, index) => (
           <div className={css.event} key={index}>
             <Skeleton height={160} />
-            <aside>
+            <aside className={css.single}>
               <p>
                 <Skeleton height={120} width={50} />{" "}
               </p>
