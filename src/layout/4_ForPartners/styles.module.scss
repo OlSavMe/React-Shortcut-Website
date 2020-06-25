@@ -1,13 +1,6 @@
 @import "../index.scss";
 
-// Facebook colors
-// #F0F2F5 background
-
-//#FFFFFF elements
-// #E4E6EA gray buttons
-
 .container {
-  //background-color: #f0f2f5;
   @include container;
   @include page-transitions;
   padding: 100px 0;
@@ -32,227 +25,220 @@
     }
   }
 
-  // Text
-  p:first-of-type {
-    font-size: 1.25rem;
-    padding: 25px 0;
-  }
-
-  // Sidebar/slider
   main {
-    background-color: #f2f2f2;
-    //border: 1px solid red;
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    scroll-behavior: smooth;
-    transition: all 1s ease;
-
-    // Sidebar
-    ul {
-      //border: 1px solid red;
-      position: absolute;
-      width: 300px;
-      height: 100%;
-      list-style: none;
-      padding: 0;
-      background-color: #f2f2f2;
-      border-right: 1px solid $yellow;
-      padding: 25px 0;
-      li {
-        padding: 5px 0;
-        a {
-          font-family: $book;
-          font-size: 1rem;
-          color: $black;
+    // Intro text
+    p {
+      font-size: 1.25rem;
+      a {
+        color: inherit;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+          color: $yellow;
         }
       }
     }
 
-    .sections {
-      transition: all 1s ease;
-      //height: 100%;
-      margin-left: 375px;
-      overflow: scroll;
-      scroll-behavior: smooth;
+    // Menu
+    > div {
+      padding: 50px 0 25px;
+      display: flex;
 
-      section {
-        transition: all 1s ease;
-        height: 100%;
-        padding: 25px 0;
-        //margin-left: 300px;
+      // List
+      > div:first-of-type {
+        width: 50%;
 
         h3 {
-          font-family: $book;
+          font-family: $medium;
+          font-size: 2rem;
+          margin-bottom: 40px;
         }
-        p {
-          font-size: 1.1rem;
-          a {
-            color: $black;
-            text-decoration: underline;
-            &:hover {
-              text-decoration: none;
-            }
+
+        ul {
+          padding: 0;
+          list-style-type: none;
+          li {
+            line-height: 2.5;
           }
         }
 
-        blockquote {
-          //font-family: $book;
-          font-size: 1.1rem;
-          font-style: oblique;
-          max-width: 35em;
-          padding-left: 45px;
-          position: relative;
-          z-index: -1;
-          margin-top: 25px;
-        }
-
-        blockquote:before {
-          display: block;
-          padding-left: 5px;
-          content: "\201C";
-          font-family: Arial, Helvetica, sans-serif;
-          position: absolute;
-          left: 10px;
-          top: -30px;
-          font-size: 60px;
-        }
-
-        blockquote cite {
-          font-size: 1.1rem;
-          display: block;
-          margin-top: 10px;
-        }
-
-        blockquote cite:before {
-          content: "\2014 \2009";
-        }
-      }
-    }
-  }
-
-  .item {
-    //background-color: #f5f5f5;
-    padding: 50px 0;
-    text-align: center;
-    h3 {
-      font-family: $medium;
-      text-align: center;
-    }
-  }
-
-  .form {
-    // Box
-    background-color: white;
-    border: 1px solid #d3d3d3;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px 1px #e4e6ea;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 15px;
-
-    // Image
-    > div {
-      width: 20%;
-      overflow: hidden;
-      border-radius: 5px;
-
-      img {
-        width: 100%;
-        border-radius: 150px;
-        filter: grayscale(0.25);
-      }
-    }
-
-    // Form
-    form {
-      //border: 1px solid red;
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      padding: 0 0 0 25px;
-
-      // Name/email
-      > div:first-of-type {
-        display: flex;
-        justify-content: space-between;
-
-        label {
-          //border: 1px solid red;
-          width: 50%;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          &:first-of-type {
-            margin-right: 10px;
-          }
-
-          input {
-            width: 100%;
-            font-size: 1.25rem;
-            padding: 5px;
-            background-color: transparent;
-            border: 1px solid #d3d3d3;
-            border-radius: 5px;
-            outline: none;
-
-            &::placeholder {
-              color: gray;
-            }
-          }
-        }
-      }
-
-      // Choose subject
-      select {
-        border: 1px solid #d3d3d3;
-        border-radius: 10px;
-        padding: 2px;
-        margin: 10px 0;
-        outline: none;
-      }
-
-      // Message
-      > div:nth-of-type(2) {
-        //border: 1px solid red;
-        margin: 5px 0;
-        label {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          textarea {
-            width: 100%;
-            resize: none;
-            height: 150px;
-            border: 1px solid #d3d3d3;
-            border-radius: 10px;
-          }
-        }
-      }
-
-      // Submit
-      > div:nth-of-type(3) {
-        display: flex;
-        justify-content: space-between;
-
-        input[type="submit"] {
+        a {
           font-size: 1.25rem;
-          width: 200px;
-          padding: 5px 0;
-          background-color: #f2f2f2;
-          border: 1px solid #d3d3d3;
-          border-radius: 10px;
+          color: $black;
+          font-family: $book;
           transition: all 0.25s ease;
 
-          &:hover {
-            //color: white;
+          &::after {
+            content: " >>";
+            color: $yellow;
+            opacity: 0;
+            display: none;
+            transition: all 0.25s ease;
+          }
 
-            background-color: #d3d3d3;
+          &:hover {
+            text-decoration: none;
+            color: $yellow;
+          }
+
+          &:hover::after {
+            display: inline;
+            opacity: 1;
           }
         }
+      }
+
+      // Visual
+      > div:nth-of-type(2) {
+        width: 45%;
+        max-width: 25em;
+        img {
+          width: 100%;
+        }
+      }
+
+      @include tablet {
+        > div:first-of-type {
+          width: 100%;
+          ul {
+            li {
+              line-height: 2;
+              a {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        // Visual
+        > div:nth-of-type(2) {
+          display: none;
+        }
+      }
+
+      @include phone {
+        > div:first-of-type {
+          width: 100%;
+
+          h3 {
+            font-size: 1.5rem;
+          }
+          ul {
+            li {
+              line-height: 2;
+              a {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        // Visual
+        > div:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+
+    // Title
+    h3 {
+      font-size: 1.5rem;
+      display: block;
+      width: 30%;
+      font-family: $book;
+
+      // Number
+      span {
+        background-color: $yellow;
+        border-radius: 5px;
+        padding: 2px 7px 2px 10px;
+        margin-right: 10px;
+      }
+
+      @include tablet {
+        font-size: 1.25rem;
+      }
+    }
+
+    // Description
+    > div {
+      width: 60%;
+      p {
+        font-size: 1.25rem;
+        a {
+          color: inherit;
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+            color: $yellow;
+          }
+        }
+      }
+
+      // Quote
+      blockquote {
+        font-size: 1.25rem;
+        max-width: 35em;
+        padding-left: 35px;
+        position: relative;
+        z-index: -1;
+        margin: 50px 0;
+      }
+
+      blockquote:before {
+        display: block;
+        padding-left: 5px;
+        content: "\201C";
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        left: 0;
+        top: -25px;
+        font-size: 70px;
+      }
+
+      blockquote cite {
+        font-size: 1.25rem;
+        font-style: normal;
+        display: block;
+        margin-top: 10px;
+      }
+
+      blockquote cite:before {
+        content: "\2014 \2009";
+      }
+    }
+
+    @include tablet {
+      flex-direction: column;
+      justify-content: initial;
+      padding: 25px 0;
+
+      h3 {
+        margin-bottom: 25px;
+      }
+
+      h3,
+      > div {
+        width: 100%;
+      }
+    }
+
+    @include phone {
+      flex-direction: column;
+      justify-content: initial;
+      padding: 25px 0;
+
+      h3 {
+        margin-bottom: 25px;
+      }
+      h3,
+      > div {
+        width: 100%;
       }
     }
   }
