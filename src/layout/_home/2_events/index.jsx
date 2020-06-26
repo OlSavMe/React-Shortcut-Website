@@ -40,9 +40,10 @@ const Events = () => {
         </header>
         {loading && <SkeletonList />}
         {events
-          .slice(0, 3)
+          // .slice(0, 3)
           .map((event, i) =>
-            moment(event.start.local).isAfter() ? (
+            moment(event.start.local).isAfter() ||
+            moment(event.end.local).isAfter() ? (
               <Event key={i} event={event} />
             ) : null
           )}

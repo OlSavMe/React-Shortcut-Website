@@ -2,6 +2,7 @@ import React from "react";
 
 // Styles
 import css from "./styles.module.scss";
+import moment from "moment";
 
 // Children
 import Venue from "../../../components/functional/Venue";
@@ -14,7 +15,9 @@ const Event = ({ event }) => {
   const online = event.online_event;
   const venue = event.venue_id;
   const link = event.url;
-  const img = event.logo.original.url;
+
+  console.log(end);
+  console.log(start);
 
   // date
   const formatDate = (e) => {
@@ -80,21 +83,38 @@ const Event = ({ event }) => {
 
   return (
     <div className={css.event}>
-      <aside>
-        <p>{formatDay(start)}</p>
-        <p>{formatDate(start)}</p>
-        <p>{formatMonth(start)}</p>
-      </aside>
-      <div>
-        <img src={img} alt="img" />
-      </div>
+      {moment(end.substring(0, 10)).isSame(start.substring(0, 10)) ? (
+        <aside className={css.single}>
+          <p>{formatDay(start)}</p>
+          <p>{formatDate(start)}</p>
+          <p>{formatMonth(start)}</p>
+        </aside>
+      ) : (
+        <aside className={css.continuous}>
+          <p>{formatDate(start)}</p>
+          <p>{formatMonth(start)}</p>
+          <p> - </p>
+          <p>{formatDate(end)}</p>
+          <p>{formatMonth(end)}</p>
+        </aside>
+      )}
       <div>
         <p className={css.date}>
           <span>
-            {formatMonth(start)}, {formatDate(start)}
-          </span>{" "}
+            {formatMonth(start)}, {formatDate(start)}{" "}
+          </span>
           <span>
-            @ {formatTime(start)} - {formatTime(end)}
+            {moment(end.substring(0, 10)).isSame(
+              start.substring(0, 10)
+            ) ? null : (
+              <span>
+                - {formatMonth(end)}, {formatDate(end)}
+              </span>
+            )}
+          </span>
+          <span>
+            {" "}
+            @{formatTime(start)} - {formatTime(end)}
           </span>{" "}
         </p>
         <p className={css.title}>{title}</p>
