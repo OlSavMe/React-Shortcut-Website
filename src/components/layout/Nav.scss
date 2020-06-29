@@ -143,7 +143,11 @@ $red: rgb(232, 89, 46);
         text-decoration: none;
         cursor: default;
         margin-top: 15px;
-        outline: none;
+      }
+
+      .btn:focus {
+        outline: 0;
+        box-shadow: none !important;
       }
     }
 
