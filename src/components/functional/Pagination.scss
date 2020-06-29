@@ -9,7 +9,7 @@ $yellow: rgb(253, 200, 30);
 $green: rgb(0, 169, 157);
 $red: rgb(232, 89, 46);
 
-div {
+.pagination-container {
   @include phone {
     padding: 0 0.5rem;
   }
