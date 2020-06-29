@@ -14,7 +14,7 @@ const SkeletonEvents = () => {
             key={index}
             style={{ border: "none", boxShadow: "none" }}
           >
-            <aside>
+            <aside className={css.single}>
               <p>
                 {" "}
                 <Skeleton height={120} width={50} />

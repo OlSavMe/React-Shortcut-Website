@@ -9,22 +9,25 @@ $yellow: rgb(253, 200, 30);
 $green: rgb(0, 169, 157);
 $red: rgb(232, 89, 46);
 
-.pagination-container {
+div {
   @include phone {
     padding: 0 0.5rem;
   }
-
   .pagination {
     button {
+      border: none;
       margin: 0 0.3rem;
       font-size: 1.3rem;
-      border-radius: 10%;
+      border-radius: 10px;
 
       @include phone {
         margin: 0;
-        border: none;
-        border-radius: 10%;
       }
+    }
+
+    button:focus {
+      outline: 0;
+      box-shadow: none !important;
     }
 
     li {
@@ -60,8 +63,9 @@ $red: rgb(232, 89, 46);
     .page-item-active {
       .page-link {
         padding: 0.5rem 1.3rem;
-        color: white;
-        background-color: $blue;
+        color: black;
+        background-color: rgba(77, 204, 229, 0.5);
+
         @include phone {
           padding: 0.5rem 1rem;
         }

@@ -30,12 +30,10 @@ const Pagination = ({
           </li>
           <li className={`page-item${currentPage === 1 ? " disabled" : ""}`}>
             <button className="page-link" onClick={previousButton} href="#">
-              &laquo;
+              {"<"}
             </button>
           </li>
-          <li>
-            <span>{"  ...  "}</span>
-          </li>
+
           {pageNumbers.map((number) => (
             <li
               key={number}
@@ -50,9 +48,7 @@ const Pagination = ({
               </button>
             </li>
           ))}
-          <li>
-            <span>{"  ...  "}</span>
-          </li>
+
           <li
             className={`page-item${
               currentPage === pageNumbers[pageNumbers.length - 1]
@@ -61,7 +57,7 @@ const Pagination = ({
             }`}
           >
             <button className="page-link" onClick={nextButton} href="#">
-              &raquo;
+              {">"}
             </button>
           </li>
           <li className="page-item">

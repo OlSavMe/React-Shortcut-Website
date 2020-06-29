@@ -180,13 +180,15 @@
       transform: scale(1.025);
       border: 1px solid $yellow;
 
-      aside {
+      .single,
+      .continuous {
         border-right: 1px solid $yellow;
       }
     }
 
     @include phone {
-      aside {
+      .single,
+      .continuous {
         display: none;
       }
 

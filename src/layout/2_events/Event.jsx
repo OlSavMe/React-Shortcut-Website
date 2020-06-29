@@ -89,18 +89,35 @@ const Event = ({ event }) => {
 
   return (
     <div className={css.event}>
-      <aside>
-        <p>{formatDay(start)}</p>
-        <p>{formatDate(start)}</p>
-        <p>{formatMonth(start)}</p>
-        <div>
-          {img !== null ? (
-            <img src={img.original.url} alt="" />
-          ) : (
-            <img src={defaultImage} alt="" />
-          )}
-        </div>
-      </aside>
+      {moment(end.substring(0, 10)).isSame(start.substring(0, 10)) ? (
+        <aside className={css.single}>
+          <p>{formatDay(start)}</p>
+          <p>{formatDate(start)}</p>
+          <p>{formatMonth(start)}</p>
+          <div>
+            {img !== null ? (
+              <img src={img.original.url} alt="" />
+            ) : (
+              <img src={defaultImage} alt="" />
+            )}
+          </div>
+        </aside>
+      ) : (
+        <aside className={css.continuous}>
+          <p>{formatDate(start)}</p>
+          <p>{formatMonth(start)}</p>
+          <p> - </p>
+          <p>{formatDate(end)}</p>
+          <p>{formatMonth(end)}</p>
+          <div>
+            {img !== null ? (
+              <img src={img.original.url} alt="" />
+            ) : (
+              <img src={defaultImage} alt="" />
+            )}
+          </div>
+        </aside>
+      )}
       <div>
         <p className={css.date}>
           <span>
