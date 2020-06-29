@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Styles
 import css from "./styles.module.scss";
@@ -12,8 +13,8 @@ const Hero = () => {
           Accelerating talent through tech startups & high growth companies
         </h2>
         <div className={css.buttons}>
-          <a href="/">For talents</a>
-          <a href="/">For partners</a>
+          <Link to="/story">For talents</Link>
+          <Link to="/forpartners">For partners</Link>
         </div>
       </div>
     </div>

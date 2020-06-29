@@ -7,18 +7,18 @@
   header {
     display: flex;
     align-items: center;
-    padding: 25px 0;
+    padding: 25px 0 50px;
 
     h2 {
-      font-family: "CircularStd-Medium", sans-serif;
-      font-size: 4rem;
-
-      @include tablet {
-        font-size: 6vw;
-      }
+      font-family: $medium;
+      font-size: 3rem;
 
       @include phone {
-        font-size: 8vw;
+        font-size: 2rem;
+      }
+
+      @include big-desktop {
+        font-size: 3.5rem;
       }
     }
   }

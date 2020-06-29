@@ -16,7 +16,7 @@ const Pagination = ({
 
   return pageNumbers.length <= 1 ? null : (
     <>
-      <div className="row justify-content-center align-items-center">
+      <div className="pagination-container row justify-content-center align-items-center">
         <ul className="pagination max-size='10">
           <li className="page-item">
             <button

@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   const [navActive, setnavActive] = useState(false);
   const [subnavActive, setSubnavActive] = useState(false);
-  const [search, setSearch] = useState("");
 
   const toggleNav = () => {
     setnavActive(!navActive);
@@ -136,7 +135,13 @@ const Nav = () => {
                 Resources
               </p>
               <ul className="submenu">
-                <Link to="/blog" className="submenu-item" onClick={toggleNav}>
+                <a
+                  className="submenu-item"
+                  onClick={toggleNav}
+                  href="https://theshortcut.org/blog/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div>
                     <img
                       src={require("../../assets/icons/nav/blog.png")}
@@ -144,11 +149,13 @@ const Nav = () => {
                     />
                   </div>
                   <span>Blog</span>
-                </Link>
-                <Link
-                  to="/gallery"
+                </a>
+                <a
                   className="submenu-item"
                   onClick={toggleNav}
+                  href="https://www.instagram.com/theshortcutorg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <div>
                     <img
@@ -157,7 +164,7 @@ const Nav = () => {
                     />
                   </div>
                   <span>Gallery</span>
-                </Link>
+                </a>
 
                 <Link
                   to="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf"
@@ -192,21 +199,18 @@ const Nav = () => {
             </li>
 
             <li className="menu-item" id="join">
-              <Link className="btn" to="/join" onClick={toggleNav}>
+              <a
+                className="btn"
+                onClick={toggleNav}
+                href="https://www.facebook.com/theshortcut/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Join
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>
-
-        <div className="search">
-          <input type="text" placeholder="Search" />
-          <input
-            type="Submit"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
 
         <div
           onClick={toggleNav}

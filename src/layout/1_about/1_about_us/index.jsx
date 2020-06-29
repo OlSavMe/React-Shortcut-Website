@@ -30,7 +30,15 @@ const AboutUs = () => {
           entry into the startup world; so what are you waiting for? Join our
           community – we just might be the shortcut to your dream career.{" "}
         </p>
-        <a href="/">Join now</a>
+
+        <a
+          href="https://www.facebook.com/theshortcut/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          <button>Join now</button>
+        </a>
       </div>
     </div>
   );

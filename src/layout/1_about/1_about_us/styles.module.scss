@@ -39,24 +39,22 @@
     }
   }
 
-  // Bottom link
-  a {
-    display: block;
-    margin: 50px auto;
-    text-align: center;
+  // Button
+  button {
+    width: 200px;
+    padding: 8px 0px;
+    border: none;
+    border-radius: 10px;
     font-family: $book;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: $black;
-    text-decoration: underline;
+    background-color: $yellow;
+    margin: 25px 0;
     transition: all 0.25s ease;
-
+    outline: none;
     &:hover {
-      text-decoration: none;
-    }
-
-    @include phone {
-      margin: 25px auto;
-      font-size: 1.25rem;
+      background-color: $black;
+      color: white;
     }
   }
 }

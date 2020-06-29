@@ -18,7 +18,7 @@ const Footer = () => {
           <div className={css.icons}>
             <div>
               <a
-                href="https://web.facebook.com/theshortcut/"
+                href="https://www.facebook.com/theshortcut/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,10 +75,10 @@ const Footer = () => {
               <Link to="/code">
                 <p>Code of coduct</p>
               </Link>
-              <Link to="/careers">
+              <Link to="/">
                 <p>Careers</p>
               </Link>
-              <Link to="/terms">
+              <Link to="/">
                 <p>Terms of use</p>
               </Link>
               <Link to="/privacy">
@@ -94,8 +94,16 @@ const Footer = () => {
             </div>
             <div>
               <h4>Resources</h4>
-              <p>For partners</p>
-              <p>Blog</p>
+              <Link to="/forpartners">
+                <p>For partners</p>
+              </Link>
+              <a
+                href="https://theshortcut.org/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog
+              </a>
               <Link to="/media">
                 <p>For media</p>
               </Link>

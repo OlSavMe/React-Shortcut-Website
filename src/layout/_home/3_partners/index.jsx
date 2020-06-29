@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Styles
 import css from "./styles.module.scss";
@@ -95,7 +96,9 @@ const Partners = () => {
       </div>
 
       <footer>
-        <a href="/#">Work with us</a>
+        <Link to="/forpartners">
+          <p>Work with us</p>
+        </Link>
       </footer>
     </div>
   );

@@ -59,14 +59,12 @@
 
     // Quote
     blockquote {
-      font-family: $book;
-      font-size: 1.5rem;
-      font-style: oblique;
+      font-size: 1.25rem;
       max-width: 35em;
-      padding-left: 125px;
+      padding-left: 35px;
       position: relative;
       z-index: -1;
-      margin-top: 50px;
+      margin: 50px 0;
     }
 
     blockquote:before {
@@ -74,15 +72,15 @@
       padding-left: 5px;
       content: "\201C";
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 80px;
       position: absolute;
-      left: 65px;
-      top: -30px;
-      font-size: 110px;
+      left: 0;
+      top: -25px;
+      font-size: 70px;
     }
 
     blockquote cite {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      font-style: normal;
       display: block;
       margin-top: 10px;
     }
@@ -93,11 +91,11 @@
 
     @include phone {
       blockquote {
-        padding-left: 50px;
+        padding-left: 35px;
       }
 
       blockquote:before {
-        left: -15px;
+        left: 0px;
       }
     }
   }
