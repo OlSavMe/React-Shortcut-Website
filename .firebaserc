@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "the-ts"
+    "default": "the-ts",
+    "staging": "theshortcut-beta"
   }
 }
