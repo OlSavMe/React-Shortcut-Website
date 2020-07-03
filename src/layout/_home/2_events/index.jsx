@@ -13,6 +13,7 @@ import Event from "./Event";
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const API_TOKEN = `${process.env.REACT_APP_EVENT_API_TOKEN}`;
 
   useEffect(() => {
     getEvents();
@@ -20,7 +21,7 @@ const Events = () => {
 
   const getEvents = async () => {
     await Axios.get(
-      "https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW"
+      `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=${API_TOKEN}`
     )
       .then((response) => {
         console.log(response.status);

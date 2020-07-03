@@ -13,9 +13,11 @@ const EventsList = ({ search }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(10);
   const [loading, setLoading] = useState(true);
+  const API_TOKEN = `${process.env.REACT_APP_EVENT_API_TOKEN}`;
 
-  const url =
-    "https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW";
+  console.log(API_TOKEN);
+
+  const url = `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=${API_TOKEN}`;
 
   const getEvents = async () => {
     await Axios.get(url).then((response) => {
@@ -26,7 +28,7 @@ const EventsList = ({ search }) => {
         promises.push(
           Axios({
             method: "get",
-            url: `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=AZNI42XD3WB4DJ5MPNSW&page=${page}`,
+            url: `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=${API_TOKEN}&page=${page}`,
           })
         );
       }
@@ -73,6 +75,11 @@ const EventsList = ({ search }) => {
   const firstItem = lastItem - perPage;
   const currentItems = filterEvents.slice(firstItem, lastItem);
   const totalItems = filterEvents.length;
+
+  // useEffect(() => {
+  //   paginate();
+  // }, []);
+  console.log(currentPage);
 
   return loading ? (
     <div className={css.list}>
