@@ -16,7 +16,7 @@ const Events = () => {
   const API_TOKEN = `${process.env.REACT_APP_EVENT_API_TOKEN}`;
 
   useEffect(() => {
-    getEvents();
+    getEvents(); // eslint-disable-next-line
   }, []);
 
   const getEvents = async () => {

@@ -16,9 +16,6 @@ const Event = ({ event }) => {
   const venue = event.venue_id;
   const link = event.url;
 
-  console.log(end);
-  console.log(start);
-
   // date
   const formatDate = (e) => {
     const date = new Date(e);

@@ -15,46 +15,54 @@ const EventsList = ({ search }) => {
   const [loading, setLoading] = useState(true);
   const API_TOKEN = `${process.env.REACT_APP_EVENT_API_TOKEN}`;
 
-  console.log(API_TOKEN);
-
   const url = `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=${API_TOKEN}`;
 
-  const getEvents = async () => {
-    await Axios.get(url).then((response) => {
-      let pages = response.data.pagination.page_count;
-      const promises = [];
-
-      for (let page = 1; page <= pages; page++) {
-        promises.push(
-          Axios({
-            method: "get",
-            url: `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=${API_TOKEN}&page=${page}`,
-          })
-        );
-      }
-
-      Axios.all(promises).then((responses) => {
-        const processedResponses = [];
-        responses.map((response) => {
-          processedResponses.push(response.data.events);
-          return processedResponses;
-        });
-        console.log(processedResponses);
-        let result = [];
-
-        processedResponses.map((x) => {
-          result = result.concat(x);
-          return result;
-        });
-        setEvents(result);
-        setLoading(false);
-      });
-    });
-  };
-
   useEffect(() => {
-    getEvents();
+    const getEvents = async () => {
+      await Axios.get(url).then((response) => {
+        let pages = response.data.pagination.page_count;
+        const promises = [];
+
+        for (let page = 1; page <= pages; page++) {
+          promises.push(
+            Axios({
+              method: "get",
+              url: `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=${API_TOKEN}&page=${page}`,
+            })
+          );
+        }
+
+        Axios.all(promises).then((responses) => {
+          const processedResponses = [];
+          responses.map((response) => {
+            processedResponses.push(response.data.events);
+            return processedResponses;
+          });
+          let result = [];
+          processedResponses.map((x) => {
+            result = result.concat(x);
+            return result;
+          });
+
+          setEvents(result);
+          setLoading(false);
+        });
+      });
+    };
+    getEvents(); // eslint-disable-next-line
   }, []);
+
+  const filterEvents = events.filter(
+    (event) =>
+      String(event.name.text).toLowerCase().includes(search.toLowerCase()) ||
+      String(event.summary).toLowerCase().includes(search.toLowerCase())
+  );
+
+  const paginate = (number) => {
+    return () => {
+      setCurrentPage(number);
+    };
+  };
 
   const previousButton = () => {
     setCurrentPage(currentPage - 1);
@@ -64,22 +72,10 @@ const EventsList = ({ search }) => {
     setCurrentPage(currentPage + 1);
   };
 
-  const filterEvents = events.filter(
-    (event) =>
-      String(event.name.text).toLowerCase().includes(search.toLowerCase()) ||
-      String(event.summary).toLowerCase().includes(search.toLowerCase())
-  );
-
-  const paginate = (number) => setCurrentPage(number);
   const lastItem = currentPage * perPage;
   const firstItem = lastItem - perPage;
   const currentItems = filterEvents.slice(firstItem, lastItem);
   const totalItems = filterEvents.length;
-
-  // useEffect(() => {
-  //   paginate();
-  // }, []);
-  console.log(currentPage);
 
   return loading ? (
     <div className={css.list}>
