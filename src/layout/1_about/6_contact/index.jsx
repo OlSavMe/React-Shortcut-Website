@@ -38,24 +38,21 @@ const Contact = () => {
 
         <form>
           {" "}
-          <label for="name">
+          <label htmlFor="name">
             Name: <input type="text" name="name" />
           </label>
-          <label for="email">
+          <label htmlFor="email">
             {" "}
             Email: <input type="email" name="email" />
           </label>
-          <select name="subjects">
-            <option selected value="0">
-              Choose subject
-            </option>
+          <select name="subjects" defaultValue={"DEFAULT"}>
+            <option value="DEFAULT">Choose subject</option>
             <option value="1">Trainings and clubs</option>
             <option value="2">Events and workshops</option>
             <option value="3">Sales and partnerships</option>
-
             <option value="4">Becoming a part of the community </option>
           </select>
-          <label for="message">
+          <label htmlFor="message">
             Message:<textarea type="message"></textarea>
           </label>
           <div>
