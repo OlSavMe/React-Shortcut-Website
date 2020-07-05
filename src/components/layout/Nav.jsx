@@ -166,12 +166,12 @@ const Nav = () => {
                   <span>Gallery</span>
                 </a>
 
-                <Link
-                  to="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <a
                   className="submenu-item"
                   onClick={toggleNav}
+                  href="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <div>
                     <img
@@ -180,7 +180,7 @@ const Nav = () => {
                     />
                   </div>
                   <span>White paper</span>
-                </Link>
+                </a>
                 <Link to="/media" className="submenu-item" onClick={toggleNav}>
                   <div>
                     <img
