@@ -169,6 +169,7 @@ const Nav = () => {
                 <Link
                   to="https://theshortcut.org/wp-content/uploads/2019/11/white-paper-diversity-and-inclusion-in-tech.pdf"
                   rel="noopener noreferrer"
+                  target="_blank"
                   className="submenu-item"
                   onClick={toggleNav}
                 >
