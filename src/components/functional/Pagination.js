@@ -1,9 +1,16 @@
 import React from "react";
 import "./Pagination.scss";
 
-const Pagination = (props) => {
+const Pagination = ({
+  perPage,
+  totalItems,
+  paginate,
+  currentPage,
+  previousButton,
+  nextButton,
+}) => {
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(props.totalItems / props.perPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalItems / perPage); i++) {
     pageNumbers.push(i);
   }
 
@@ -14,34 +21,25 @@ const Pagination = (props) => {
           <li className="page-item">
             <button
               className="page-link"
-              onClick={() => props.paginate(pageNumbers[0])}
+              onClick={() => paginate(pageNumbers[0])}
               href="#"
             >
               {" "}
               {pageNumbers[0]}
             </button>
           </li>
-          <li
-            className={`page-item${props.currentPage === 1 ? " disabled" : ""}`}
-          >
-            <button
-              className="page-link"
-              onClick={props.previousButton}
-              href="#"
-            >
+          <li className={`page-item${currentPage === 1 ? " disabled" : ""}`}>
+            <button className="page-link" onClick={previousButton} href="#">
               {"<"}
             </button>
           </li>
-
           {pageNumbers.map((number) => (
             <li
               key={number}
-              className={`page-item${
-                props.currentPage === number ? "-active" : ""
-              }`}
+              className={`page-item${currentPage === number ? "-active" : ""}`}
             >
               <button
-                onClick={() => props.paginate(number)}
+                onClick={() => paginate(number)}
                 href="#"
                 className="page-link"
               >
@@ -49,24 +47,21 @@ const Pagination = (props) => {
               </button>
             </li>
           ))}
-
           <li
             className={`page-item${
-              props.currentPage === pageNumbers[pageNumbers.length - 1]
+              currentPage === pageNumbers[pageNumbers.length - 1]
                 ? " disabled"
                 : ""
             }`}
           >
-            <button className="page-link" onClick={props.nextButton} href="#">
+            <button className="page-link" onClick={nextButton} href="#">
               {">"}
             </button>
           </li>
           <li className="page-item">
             <button
               className="page-link"
-              onClick={() =>
-                props.paginate(pageNumbers[pageNumbers.length - 1])
-              }
+              onClick={() => paginate(pageNumbers[pageNumbers.length - 1])}
               href="#"
             >
               {pageNumbers[pageNumbers.length - 1]}

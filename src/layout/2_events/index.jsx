@@ -9,7 +9,7 @@ import Toolbar from "./Toolbar";
 
 const Events = () => {
   const [search, setSearch] = useState("");
-  
+
   return (
     <div className={css.container}>
       <header>

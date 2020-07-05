@@ -58,19 +58,9 @@ const EventsList = ({ search }) => {
       String(event.summary).toLowerCase().includes(search.toLowerCase())
   );
 
-  const paginate = (number) => {
-    return () => {
-      setCurrentPage(number);
-    };
-  };
-
-  const previousButton = () => {
-    setCurrentPage(currentPage - 1);
-  };
-
-  const nextButton = () => {
-    setCurrentPage(currentPage + 1);
-  };
+  const paginate = (number) => setCurrentPage(number);
+  const previousButton = () => setCurrentPage(currentPage - 1);
+  const nextButton = () => setCurrentPage(currentPage + 1);
 
   const lastItem = currentPage * perPage;
   const firstItem = lastItem - perPage;
