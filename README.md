@@ -1,16 +1,20 @@
+## How to start the application locally:
+
+* clone the repository   
+* install the package dependencies
+* If you get the error 'Error: resolve-url-loader: CSS error', go to `node_modules>resolve-url-loader>index.js`and change `removeCR : false` to `removeCR : true`
+* add .env file to the project's root folder (the same level as public and src folders)
+* add the access tokens (for eventbrite and mapbox) into the .env file
+* run the project in localhost
+
+Bingo!
+
 
 ## Collaboration rules
 
 Direct pushing to the master branch is disabled by the protection rule.
 
-Before starting to work at a new feature:
-- git pull to your local master to get the latest updates
-- create a new branch named by the feature to be developed 
-
-Pushing to remote:
-- push your branch to a remote branch named by the feature to be added 
-- create a pull request to master
-- request a review by OlSavMe or Alina Ilina (1 review is required)
+For collaboration instructions check `git_workflow.md`
 
 ## Tools used
 
@@ -20,10 +24,10 @@ Pushing to remote:
 - react-router-dom
 - react-map-gl
 - react-skeleton-loading
-- moments
+- moment
 - font-awesome
 - Axios
 - Firebase
 
 
-![picture](https://github.com/OlSavMe/React-Shortcut-Website/blob/master/The-TS.png)
+
